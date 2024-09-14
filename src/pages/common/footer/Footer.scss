@@ -1,0 +1,45 @@
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background: linear-gradient(to bottom, #5a9b0c, #5ebb33);
+  color: white;
+  padding: 48px;
+  z-index: 2;
+  position: relative;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footerBlocks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerBlock {
+  unicode-bidi: isolate;
+}
+
+.footerBlockContainor {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.footerBlockHeading {
+  padding-bottom: 16px;
+  font-size: x-large;
+}
+
+.footerBlockBody {
+  list-style-type: none;
+}
+
+.anchor {
+  color: white;
+}
+
+.talkToUsLI {
+  color: white;
+  padding-left: 10px;
+}

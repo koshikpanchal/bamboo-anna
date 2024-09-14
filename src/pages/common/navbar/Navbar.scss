@@ -1,0 +1,58 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.leftButtons {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: inline-block;
+  line-height: 1;
+}
+
+.navbar-ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option {
+  position: relative;
+  padding: 12px;
+}
+
+.middleLogo {
+  max-width: calc(100% - 145px);
+}
+
+.headerLogo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+.rightButtons {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.headerRrightButton {
+  padding: 0 12px;
+}
+
+.anchor {
+  color: black;
+}
+
+.activeAnchor {
+  color: #5a9b0c;
+}
