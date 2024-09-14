@@ -1,12 +1,14 @@
 import "./Introduction.scss";
 import Straw from "../../../assets/STRAWS-min.jpg";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const IntroductionSection = () => {
   return (
     <section className="introductionSection">
       <div className="introImage">
-        <img src={Straw} alt="Introduction" />
+        <LazyLoadImage src={Straw} alt="Introduction" effect="blur" />
       </div>
       <div className="introText">
         <h2>Welcome to Bamboo Anna store</h2>

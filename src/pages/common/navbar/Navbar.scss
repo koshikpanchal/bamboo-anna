@@ -1,7 +1,49 @@
+/* Define color variables for light and dark themes */
+:root {
+  --header-bg-light: #ffffff;
+  --header-bg-dark: #333333;
+  --header-text-light: #2c3e50;
+  --header-text-dark: #ffffff;
+}
+
+/* Light theme styles */
+body.light-mode .header {
+  background-color: var(
+    --header-bg-light
+  ); /* Use variable for background color */
+  color: var(--header-text-light); /* Use variable for text color */
+}
+
+/* Dark theme styles */
+body.dark-mode .header {
+  background-color: var(
+    --header-bg-dark
+  ); /* Use variable for background color */
+  color: var(--header-text-dark); /* Use variable for text color */
+}
+
+/* Light theme styles */
+body.light-mode {
+  --navbar-bg: var(--navbar-bg-light);
+  --text-color: var(--text-light);
+  --button-bg: var(--button-bg-light);
+  --button-hover-bg: var(--button-hover-bg-light);
+}
+
+/* Dark theme styles */
+body.dark-mode {
+  --navbar-bg: var(--navbar-bg-dark);
+  --text-color: var(--text-dark);
+  --button-bg: var(--button-bg-dark);
+  --button-hover-bg: var(--button-hover-bg-dark);
+}
+
 .topBar {
   display: flex;
   justify-content: space-between;
   position: relative;
+  background-color: var(--navbar-bg); /* Use variable for background color */
+  color: var(--text-color); /* Use variable for text color */
 }
 
 .leftButtons {
@@ -50,9 +92,39 @@
 }
 
 .anchor {
-  color: black;
+  color: var(--text-color); /* Use variable for anchor text color */
 }
 
 .activeAnchor {
-  color: #5a9b0c;
+  color: var(--button-bg); /* Use variable for active anchor color */
+}
+
+.themeToggleButton {
+  background-color: var(
+    --button-bg
+  ); /* Use variable for button background color */
+  color: var(--text-color); /* Use variable for button text color */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.themeToggleButton:hover {
+  background-color: var(
+    --button-hover-bg
+  ); /* Use variable for button hover color */
+}
+
+.themeToggleButton:active {
+  transform: scale(0.98); /* Slight scale down on click */
+}
+
+.themeToggleButton svg {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1.2rem; /* Adjust icon size */
 }

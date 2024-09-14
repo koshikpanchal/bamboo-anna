@@ -3,8 +3,12 @@ import LogoColor from "../../../assets/LogoColor.png";
 import SearchIcon from "@mui/icons-material/Search";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { NavLink } from "react-router-dom";
+import { LightMode } from "@mui/icons-material";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <div className="topBar">
       <div className="leftButtons">
@@ -24,6 +28,14 @@ const Navbar = () => {
                 to="/products"
               >
                 Products
+              </NavLink>
+            </li>
+            <li className="option">
+              <NavLink
+                className={(e) => (e.isActive ? "activeAnchor" : "anchor")}
+                to="/whyBamboo"
+              >
+                Why Bamboo?
               </NavLink>
             </li>
             <li className="option">
@@ -67,9 +79,9 @@ const Navbar = () => {
           </a>
         </div>
         <div className="headerRrightButton">
-          <a className="anchor">
-            <DarkModeIcon />
-          </a>
+          <button className="themeToggleButton" onClick={toggleTheme}>
+            {isDarkMode ? <DarkModeIcon /> : <LightMode />}
+          </button>
         </div>
       </div>
     </div>

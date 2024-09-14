@@ -3,7 +3,7 @@
   flex-direction: row; /* Align divs side by side */
   align-items: center; /* Vertically center items */
   padding: 48px;
-  background-color: #f4f4f4; /* Light background for contrast */
+  background-color: var(--background-color); /* Light background for contrast */
 }
 
 .introImage {

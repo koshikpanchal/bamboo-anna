@@ -11,6 +11,8 @@ import tongueCleaner from "../../assets/dentalKit.jpg";
 import straw from "../../assets/P1030954-min.jpg";
 import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Products = () => {
   return (
@@ -43,15 +45,33 @@ const Products = () => {
           <h2>Wooden Combs</h2>
           <div className="product-items">
             <div className="product-item">
-              <img src={liceComb} alt="Wooden Comb 1" />
+              <LazyLoadImage
+                src={liceComb}
+                alt="For long and short hairs"
+                effect="blur"
+                width="300"
+                height="300"
+              />
               <p>For long and short hairs</p>
             </div>
             <div className="product-item">
-              <img src={HBComb} alt="Wooden Comb 2" />
-              <p>Hair/beared Neem comb</p>
+              <LazyLoadImage
+                src={HBComb}
+                alt="Hair/beard Neem comb"
+                effect="blur"
+                width="300"
+                height="300"
+              />
+              <p>Hair/beard Neem comb</p>
             </div>
             <div className="product-item">
-              <img src={NeemCombs} alt="Wooden Comb 2" />
+              <LazyLoadImage
+                src={NeemCombs}
+                alt="Compact pocket size combs"
+                effect="blur"
+                width="300"
+                height="300"
+              />
               <p>Compact pocket size combs</p>
             </div>
           </div>
@@ -62,22 +82,40 @@ const Products = () => {
           <h2>Straw</h2>
           <div className="product-items">
             <div className="product-item">
-              <img src={straw} alt="Razor 1" />
-              <p>coconut leaf Straw</p>
+              <LazyLoadImage
+                src={straw}
+                alt="Coconut leaf Straw"
+                effect="blur"
+                width="300"
+                height="300"
+              />
+              <p>Coconut leaf Straw</p>
             </div>
           </div>
         </section>
 
-        {/* Razors Section */}
+        {/* Pen & Pencil Section */}
         <section className="product-group">
           <h2>Pen & Pencil</h2>
           <div className="product-items">
             <div className="product-item">
-              <img src={pencil} alt="Razor 1" />
+              <LazyLoadImage
+                src={pencil}
+                alt="Plantable seed Pencil"
+                effect="blur"
+                width="300"
+                height="300"
+              />
               <p>Plantable seed Pencil</p>
             </div>
             <div className="product-item">
-              <img src={pen} alt="Razor 1" />
+              <LazyLoadImage
+                src={pen}
+                alt="Plantable seed Pen"
+                effect="blur"
+                width="300"
+                height="300"
+              />
               <p>Plantable seed Pen</p>
             </div>
           </div>
@@ -88,7 +126,13 @@ const Products = () => {
           <h2>Razors</h2>
           <div className="product-items">
             <div className="product-item">
-              <img src={razor} alt="Razor 1" />
+              <LazyLoadImage
+                src={razor}
+                alt="Skin friendly razors"
+                effect="blur"
+                width="300"
+                height="300"
+              />
               <p>Skin friendly razors</p>
             </div>
           </div>
