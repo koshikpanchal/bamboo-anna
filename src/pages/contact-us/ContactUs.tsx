@@ -27,7 +27,7 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const mailtoLink = `mailto:info@bambooanna.com?subject=Enquiry about ${encodeURIComponent(
+    const mailtoLink = `mailto:bambooannaa@gmail.com?subject=Enquiry about ${encodeURIComponent(
       formData.productService
     )}&body=Name: ${encodeURIComponent(
       formData.name
@@ -45,7 +45,6 @@ const ContactUs = () => {
   return (
     <div>
       <Header />
-
       <div className="contactUsPage">
         <div className="contactInfo">
           <section className="intro-section">

@@ -8,6 +8,7 @@ import Products from "./pages/products/Products";
 import WhyBamboo from "./pages/WhyBamboo/WhyBamboo";
 import { useTheme } from "./pages/context/ThemeContext";
 import { useEffect } from "react";
+import ProductDetailPage from "./pages/productDetailPage/ProductDetailPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,6 +18,7 @@ function App() {
     { path: "contactUs", element: <ContactUs /> },
     { path: "products", element: <Products /> },
     { path: "whyBamboo", element: <WhyBamboo /> },
+    { path: "pdp", element: <ProductDetailPage /> },
   ]);
 
   const { isDarkMode } = useTheme();

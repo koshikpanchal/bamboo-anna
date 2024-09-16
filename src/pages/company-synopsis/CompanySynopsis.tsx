@@ -43,7 +43,7 @@ const CompanySynopsis = () => {
 
         <section className="values-section">
           <div className="values-content">
-            <h2>Dentist Sellers</h2>
+            <h2>Dentist</h2>
             <p>
               We have a proven track record of working with dental care
               providers to supply bamboo-based products that align with their
