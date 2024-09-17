@@ -26,6 +26,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  flex-direction: row;
 }
 
 .mission-section .mission-image-container,
@@ -65,4 +66,51 @@
 
 .values-section ul li {
   margin-bottom: 10px;
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .intro-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-section p {
+    font-size: 1.2rem;
+  }
+
+  .mission-section,
+  .values-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Space between grid items */
+    text-align: center;
+  }
+
+  .mission-section .mission-content,
+  .values-section .values-content {
+    order: 3; /* Move content to last */
+    padding: 10px;
+  }
+
+  .mission-section .mission-image-container,
+  .values-section .values-image-container {
+    order: 2; /* Move image before content */
+    width: 100%;
+  }
+
+  .mission-section h2,
+  .values-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .mission-section p,
+  .values-section p {
+    font-size: 1rem;
+  }
+
+  .mission-section img,
+  .values-section img {
+    width: 100%;
+    border-radius: 10px;
+  }
 }

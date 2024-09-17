@@ -90,4 +90,63 @@
       }
     }
   }
+
+  /* Tablet (768px and above) */
+  @media (max-width: 1024px) {
+    .contactInfo,
+    .enquiryForm {
+      flex: 1 1 100%;
+      margin: 10px 0;
+    }
+  }
+
+  /* Mobile (480px and below) */
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+
+    .contactInfo,
+    .enquiryForm {
+      flex: 1 1 100%;
+      margin: 10px 0;
+    }
+
+    .intro-section {
+      margin-bottom: 30px;
+    }
+
+    .contactInfo p {
+      margin: 8px 0;
+    }
+
+    .socialLinks {
+      a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+
+    .enquiryForm h2 {
+      font-size: 1.5rem;
+    }
+
+    .formGroup {
+      margin-bottom: 10px;
+
+      label {
+        font-size: 0.9rem;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  }
 }

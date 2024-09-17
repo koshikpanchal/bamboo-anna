@@ -7,6 +7,14 @@
   text-align: center;
   font-size: 3rem;
   color: var(--text-heading-color);
+
+  @media (max-width: 1024px) {
+    font-size: 2.5rem; /* Adjust heading size for tablet */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem; /* Adjust heading size for mobile */
+  }
 }
 
 .product-group h2 {
@@ -16,6 +24,14 @@
   text-align: left;
   border-bottom: 2px solid #5a9b0c;
   padding-bottom: 10px;
+
+  @media (max-width: 1024px) {
+    font-size: 2rem; /* Adjust section heading size for tablet */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem; /* Adjust section heading size for mobile */
+  }
 }
 
 .product-items {
@@ -23,18 +39,34 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
+
+  @media (max-width: 1024px) {
+    justify-content: center; /* Center items on tablet */
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items vertically on mobile */
+    gap: 10px; /* Reduce gap on mobile */
+  }
 }
 
 .product-item {
-  width: calc(
-    (30%) - 13.33px
-  ); /* Adjust the width to fit three items per row */
+  width: calc(30% - 13.33px); /* Three items per row */
   text-align: center;
   padding: 20px;
   border: 1px solid #ecf0f1;
   border-radius: 10px;
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
+
+  @media (max-width: 1024px) {
+    width: calc(40% - 13.33px); /* Two items per row on tablet */
+  }
+
+  @media (max-width: 768px) {
+    width: 90%; /* Full width for mobile */
+    padding: 15px; /* Adjust padding for mobile */
+  }
 }
 
 .product-item:hover {
@@ -47,9 +79,25 @@
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
+
+  @media (max-width: 1024px) {
+    height: 250px; /* Reduce image height for tablet */
+  }
+
+  @media (max-width: 768px) {
+    height: 200px; /* Reduce image height for mobile */
+  }
 }
 
 .product-item p {
   font-size: 1.2rem;
   color: var(--text-heading-color);
+
+  @media (max-width: 1024px) {
+    font-size: 1.1rem; /* Adjust text size for tablet */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Adjust text size for mobile */
+  }
 }

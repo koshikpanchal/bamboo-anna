@@ -1,12 +1,24 @@
 .productSection {
   padding: 48px;
   background-color: var(--background-color); /* Light background for contrast */
+
+  @media (max-width: 768px) {
+    padding: 24px; /* Reduce padding for mobile */
+  }
 }
 
 .productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px; /* Spacing between cards */
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); /* Two products per row for tablet */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* One product per row for mobile */
+  }
 }
 
 .productCard {
@@ -16,6 +28,14 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 300px; /* Adjust height to maintain aspect ratio */
+
+  @media (max-width: 1024px) {
+    height: 250px; /* Reduce height for tablet */
+  }
+
+  @media (max-width: 768px) {
+    height: 200px; /* Reduce height for mobile */
+  }
 }
 
 .productImage,
@@ -53,4 +73,11 @@
   background: rgba(0, 0, 0, 0.5);
   padding: 8px 12px;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Adjust font size for mobile */
+    bottom: 8px;
+    left: 8px;
+    padding: 6px 10px;
+  }
 }
