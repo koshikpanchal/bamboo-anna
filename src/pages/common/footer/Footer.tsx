@@ -9,6 +9,7 @@ const Footer = () => {
     <div className="footerWrapper">
       <footer className="footer">
         <div className="footerBlocks">
+          {/* Quick Links Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
               <div className="footerBlockHeading">Quick Links</div>
@@ -20,7 +21,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <NavLink to="/companySynopsis" className="anchor">
-                    Comapny Synopsis
+                    Company Synopsis
                   </NavLink>
                 </li>
                 <li>
@@ -46,6 +47,8 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
+          {/* Products Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
               <div className="footerBlockHeading">Products</div>
@@ -77,7 +80,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <NavLink to="/" className="anchor">
-                    Bamboo tongue cleaner
+                    Bamboo Tongue Cleaner
                   </NavLink>
                 </li>
                 <li>
@@ -93,25 +96,36 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
+          {/* Talk To Us Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
               <div className="footerBlockHeading">Talk To Us</div>
               <ul className="footerBlockBody">
                 <li>
-                  <PhoneIcon />
+                  <PhoneIcon />{" "}
                   <span className="talkToUsLI">
                     +91-8000618916, +91-9887392445
                   </span>
                 </li>
                 <li>
-                  <EmailIcon />
+                  <EmailIcon />{" "}
                   <span className="talkToUsLI">bambooannaa@gmail.com</span>
                 </li>
                 <li>
-                  <LocationOnIcon />
+                  <LocationOnIcon />{" "}
                   <span className="talkToUsLI">Banswara, Rajasthan</span>
                 </li>
               </ul>
+
+              {/* Google Map Section */}
+              <div className="mapContainer">
+                <iframe
+                  className="mapIframe"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.1051262121267!2d74.44992621501598!3d23.546111484689246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967c7f6eb4b87e7%3A0xc26c73b1b849d0ff!2sBanswara%2C%20Rajasthan%20327001%2C%20India!5e0!3m2!1sen!2sus!4v1630927849010!5m2!1sen!2sus"
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

@@ -10,12 +10,7 @@ const HeroSection = () => {
     <div className="hero-container">
       <div className="hero-image-container">
         <div className="hero-image-wrapper">
-          <LazyLoadImage
-            src={brush}
-            alt="Hero 2"
-            className="hero-image"
-            effect="blur"
-          />
+          <LazyLoadImage src={brush} alt="Hero 2" className="hero-image" />
           <div className="hero-text">Feel the Nature</div>
           <p className="hero-text-p">
             Brush's frames are made from sustainable harvested Bamboo
@@ -30,12 +25,7 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="hero-image-wrapper">
-          <LazyLoadImage
-            src={tb}
-            alt="Hero 3"
-            className="hero-image"
-            effect="blur"
-          />
+          <LazyLoadImage src={tb} alt="Hero 3" className="hero-image" />
           <div className="hero-text">Strength & Flexibility</div>
           <p className="hero-text-p">
             Embrace the strength and flexibility of bamboo with worry free

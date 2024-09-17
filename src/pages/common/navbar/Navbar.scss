@@ -1,60 +1,37 @@
-/* Define color variables for light and dark themes */
-:root {
-  --header-bg-light: #ffffff;
-  --header-bg-dark: #333333;
-  --header-text-light: #2c3e50;
-  --header-text-dark: #ffffff;
-}
-
-/* Light theme styles */
-body.light-mode .header {
-  background-color: var(
-    --header-bg-light
-  ); /* Use variable for background color */
-  color: var(--header-text-light); /* Use variable for text color */
-}
-
-/* Dark theme styles */
-body.dark-mode .header {
-  background-color: var(
-    --header-bg-dark
-  ); /* Use variable for background color */
-  color: var(--header-text-dark); /* Use variable for text color */
-}
-
-/* Light theme styles */
-body.light-mode {
-  --navbar-bg: var(--navbar-bg-light);
-  --text-color: var(--text-light);
-  --button-bg: var(--button-bg-light);
-  --button-hover-bg: var(--button-hover-bg-light);
-}
-
-/* Dark theme styles */
-body.dark-mode {
-  --navbar-bg: var(--navbar-bg-dark);
-  --text-color: var(--text-dark);
-  --button-bg: var(--button-bg-dark);
-  --button-hover-bg: var(--button-hover-bg-dark);
-}
-
 .topBar {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  background-color: var(--navbar-bg); /* Use variable for background color */
-  color: var(--text-color); /* Use variable for text color */
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0 20px;
 }
 
-.leftButtons {
-  flex: 1 0 0;
+/* Left logo section */
+.leftLogo {
+  flex: 1;
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
-.navbar {
-  display: inline-block;
-  line-height: 1;
+/* Middle navbar section */
+.navbarOpen {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navbarClosed {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .navbar-ul {
@@ -62,69 +39,103 @@ body.dark-mode {
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 60px; /* Adjust to your header height */
+    left: 0;
+    width: 100%; /* Ensure it takes full width */
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(
+      --background-color
+    ); /* Ensure background color covers full width */
+    transition: transform 0.5s ease-in-out;
+  }
 }
 
 .option {
-  position: relative;
   padding: 12px;
-}
-
-.middleLogo {
-  max-width: calc(100% - 145px);
-}
-
-.headerLogo {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 5;
-}
-
-.rightButtons {
-  flex: 1 0 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.headerRrightButton {
-  padding: 0 12px;
+  @media (max-width: 768px) {
+    list-style: none;
+    margin: 0;
+    flex-direction: column;
+    background-color: var(--background-color);
+    transition: transform 0.5s ease-in-out;
+  }
 }
 
 .anchor {
-  color: var(--text-color); /* Use variable for anchor text color */
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .activeAnchor {
-  color: var(--button-bg); /* Use variable for active anchor color */
+  color: var(--button-bg); /* Active link color */
+}
+
+/* Right buttons section */
+.rightButtons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .themeToggleButton {
-  background-color: var(
-    --button-bg
-  ); /* Use variable for button background color */
-  color: var(--text-color); /* Use variable for button text color */
+  background-color: var(--button-bg);
+  color: var(--text-color);
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
 }
 
 .themeToggleButton:hover {
-  background-color: var(
-    --button-hover-bg
-  ); /* Use variable for button hover color */
+  background-color: var(--button-hover-bg);
 }
 
-.themeToggleButton:active {
-  transform: scale(0.98); /* Slight scale down on click */
+.hamburger-menu {
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+  }
 }
 
-.themeToggleButton svg {
-  margin-right: 8px; /* Space between icon and text */
-  font-size: 1.2rem; /* Adjust icon size */
+.middleLogo {
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex: 10;
+    justify-content: center;
+    img {
+      width: 120px;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    display: none;
+    position: absolute;
+    top: 60px; // Adjust as per your topBar height
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
 }
