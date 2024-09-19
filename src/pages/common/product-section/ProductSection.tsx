@@ -1,15 +1,15 @@
-import bambooToothbrush from "../../../assets/TB 3-min.jpg";
-import bambooToothbrushH from "../../../assets/TB 2-min.jpg";
-import NeemComb from "../../../assets/Neem Comb 4-min.jpg";
-import NeemCombH from "../../../assets/Neem Comb 3-min.jpg";
-import DentalKit from "../../../assets/dentalKit.jpg";
-import DentalKitH from "../../../assets/bamboo-tongue-cleaner-.jpeg";
-import BeardComb from "../../../assets/H&B Combs.jpg";
-import BeardCombH from "../../../assets/H&B Comb.jpg";
-import Straw from "../../../assets/STRAWS-min.jpg";
-import StrawH from "../../../assets/coconut-leaf-straw.jpeg";
-import NeemCombBrush from "../../../assets/Brush 2.jpg";
-import NeemCombBrushH from "../../../assets/Neem Comb-min.jpg";
+import bambooToothbrush from "../../../assets/dentalCare/TB 3-min.jpg";
+import bambooToothbrushH from "../../../assets/dentalCare/TB 2-min.jpg";
+import NeemComb from "../../../assets/comb/Neem Comb 4-min.jpg";
+import NeemCombH from "../../../assets/comb/Neem Comb 3-min.jpg";
+import DentalKit from "../../../assets/dentalCare/dentalKit.jpg";
+import DentalKitH from "../../../assets/dentalCare/bamboo-tongue-cleaner-.jpeg";
+import BeardComb from "../../../assets/comb/H&B Combs.jpg";
+import BeardCombH from "../../../assets/comb/H&B Comb.jpg";
+import Straw from "../../../assets/straw/STRAWS-min.jpg";
+import StrawH from "../../../assets/straw/coconut-leaf-straw.jpeg";
+import NeemCombBrush from "../../../assets/comb/Brush 2.jpg";
+import NeemCombBrushH from "../../../assets/comb/Neem Comb-min.jpg";
 
 import "./ProductSection.scss";
 

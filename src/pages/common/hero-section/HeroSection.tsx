@@ -1,7 +1,7 @@
 import "./HeroSection.scss";
-import comb_brush from "../../../assets/P1040066-min.jpg";
-import brush from "../../../assets/P1030943-min.jpg";
-import tb from "../../../assets/P1030998-min.jpg";
+import comb_brush from "../../../assets/comb/P1040066-min.jpg";
+import brush from "../../../assets/dentalCare/P1030943-min.jpg";
+import tb from "../../../assets/razor/P1030998-min.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 

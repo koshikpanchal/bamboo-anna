@@ -4,7 +4,7 @@ import howStrongIsBamboo from "../../assets/how-strong-is-bamboo.webp";
 import ecoFriendly from "../../assets/eco-friendly-environment-bamboo-tube-straws.jpg";
 import products from "../../assets/bamboo-products.jpg";
 import bambooFarmer from "../../assets/bambooFarmer.jpg";
-import tb from "../../assets/TB 1.jpg";
+import tb from "../../assets/razor/P1030998-min.jpg";
 import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import { LazyLoadImage } from "react-lazy-load-image-component";

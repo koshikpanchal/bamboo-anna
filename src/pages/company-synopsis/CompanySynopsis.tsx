@@ -3,7 +3,7 @@ import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import doctorProduct from "../../assets/doctorProduct.webp";
-import onlineSell from "../../assets/P1030940-min.jpg";
+import brush from "../../assets/dentalCare/P1030940-min.jpg";
 import HotelAmenities from "../../assets/HotelAmenities.webp";
 import corporateGifting from "../../assets/corporateGifting.webp";
 import "./CompanySynopsis.scss";
@@ -26,7 +26,7 @@ const CompanySynopsis = () => {
 
         <section className="mission-section">
           <div className="mission-image-container">
-            <LazyLoadImage src={onlineSell} alt="Our Mission" effect="blur" />
+            <LazyLoadImage src={brush} alt="Our Mission" effect="blur" />
           </div>
           <div className="mission-content">
             <h2>Online Sellers</h2>

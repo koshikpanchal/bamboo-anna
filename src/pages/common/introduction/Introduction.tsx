@@ -1,5 +1,5 @@
 import "./Introduction.scss";
-import Straw from "../../../assets/STRAWS-min.jpg";
+import Straw from "../../../assets/straw/STRAWS-min.jpg";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
