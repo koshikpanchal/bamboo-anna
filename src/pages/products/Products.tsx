@@ -13,6 +13,7 @@ import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   return (
@@ -25,18 +26,21 @@ const Products = () => {
         <section className="product-group">
           <h2>Dental care</h2>
           <div className="product-items">
-            <div className="product-item">
+            <Link
+              to="/pdp?product=softBristleToothbrush"
+              className="product-item"
+            >
               <img src={brush} alt="Razor 1" />
               <p>Soft bristle toothbrush</p>
-            </div>
-            <div className="product-item">
+            </Link>
+            <Link to="/pdp?product=neemToothbrush" className="product-item">
               <img src={brush1} alt="Razor 1" />
               <p>Neem toothbrush</p>
-            </div>
-            <div className="product-item">
+            </Link>
+            <Link to="/pdp?product=tongueCleaner" className="product-item">
               <img src={tongueCleaner} alt="Razor 1" />
               <p>Tongue cleaner</p>
-            </div>
+            </Link>
           </div>
         </section>
 
@@ -44,7 +48,7 @@ const Products = () => {
         <section className="product-group">
           <h2>Wooden Combs</h2>
           <div className="product-items">
-            <div className="product-item">
+            <Link to="/pdp?product=comb" className="product-item">
               <LazyLoadImage
                 src={liceComb}
                 alt="For long and short hairs"
@@ -53,8 +57,8 @@ const Products = () => {
                 height="300"
               />
               <p>For long and short hairs</p>
-            </div>
-            <div className="product-item">
+            </Link>
+            <Link to="/pdp?product=beardComb" className="product-item">
               <LazyLoadImage
                 src={HBComb}
                 alt="Hair/beard Neem comb"
@@ -63,8 +67,8 @@ const Products = () => {
                 height="300"
               />
               <p>Hair/beard Neem comb</p>
-            </div>
-            <div className="product-item">
+            </Link>
+            <Link to="/pdp?product=pocketComb" className="product-item">
               <LazyLoadImage
                 src={NeemCombs}
                 alt="Compact pocket size combs"
@@ -72,52 +76,8 @@ const Products = () => {
                 width="300"
                 height="300"
               />
-              <p>Compact pocket size combs</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Straw Section */}
-        <section className="product-group">
-          <h2>Straw</h2>
-          <div className="product-items">
-            <div className="product-item">
-              <LazyLoadImage
-                src={straw}
-                alt="Coconut leaf Straw"
-                effect="blur"
-                width="300"
-                height="300"
-              />
-              <p>Coconut leaf Straw</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Pen & Pencil Section */}
-        <section className="product-group">
-          <h2>Pen & Pencil</h2>
-          <div className="product-items">
-            <div className="product-item">
-              <LazyLoadImage
-                src={pencil}
-                alt="Plantable seed Pencil"
-                effect="blur"
-                width="300"
-                height="300"
-              />
-              <p>Plantable seed Pencil</p>
-            </div>
-            <div className="product-item">
-              <LazyLoadImage
-                src={pen}
-                alt="Plantable seed Pen"
-                effect="blur"
-                width="300"
-                height="300"
-              />
-              <p>Plantable seed Pen</p>
-            </div>
+              <p>Compact pocket size neem combs</p>
+            </Link>
           </div>
         </section>
 
@@ -125,7 +85,7 @@ const Products = () => {
         <section className="product-group">
           <h2>Razors</h2>
           <div className="product-items">
-            <div className="product-item">
+            <Link to="/pdp?product=razor" className="product-item">
               <LazyLoadImage
                 src={razor}
                 alt="Skin friendly razors"
@@ -134,7 +94,51 @@ const Products = () => {
                 height="300"
               />
               <p>Skin friendly razors</p>
-            </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* Straw Section */}
+        <section className="product-group">
+          <h2>Straw</h2>
+          <div className="product-items">
+            <Link to="/pdp?product=straw" className="product-item">
+              <LazyLoadImage
+                src={straw}
+                alt="Coconut leaf Straw"
+                effect="blur"
+                width="300"
+                height="300"
+              />
+              <p>Coconut leaf Straw</p>
+            </Link>
+          </div>
+        </section>
+
+        {/* Pen & Pencil Section */}
+        <section className="product-group">
+          <h2>Pen & Pencil</h2>
+          <div className="product-items">
+            <Link to="/pdp?product=pencil" className="product-item">
+              <LazyLoadImage
+                src={pencil}
+                alt="Plantable seed Pencil"
+                effect="blur"
+                width="300"
+                height="300"
+              />
+              <p>Plantable seed Pencil</p>
+            </Link>
+            <Link to="/pdp?product=pen" className="product-item">
+              <LazyLoadImage
+                src={pen}
+                alt="Plantable seed Pen"
+                effect="blur"
+                width="300"
+                height="300"
+              />
+              <p>Plantable seed Pen</p>
+            </Link>
           </div>
         </section>
       </div>

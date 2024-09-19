@@ -12,12 +12,14 @@ import NeemCombBrush from "../../../assets/comb/Brush 2.jpg";
 import NeemCombBrushH from "../../../assets/comb/Neem Comb-min.jpg";
 
 import "./ProductSection.scss";
+import { Link } from "react-router-dom";
 
 type typeProduct = {
   id: number;
   name: string;
   img: string;
   hoverImg: string;
+  link: string;
 };
 
 const products: typeProduct[] = [
@@ -26,36 +28,42 @@ const products: typeProduct[] = [
     name: "Bamboo Toothbrush",
     img: bambooToothbrush,
     hoverImg: bambooToothbrushH,
+    link: "/pdp?product=softBristleToothbrush",
   },
   {
     id: 2,
     name: "Neem Comb",
     img: NeemComb,
     hoverImg: NeemCombH,
+    link: "/pdp?product=comb",
   },
   {
     id: 3,
     name: "Tongue cleaner",
     img: DentalKit,
     hoverImg: DentalKitH,
+    link: "/pdp?product=tongueCleaner",
   },
   {
     id: 4,
     name: "Neem Beared Comb",
     img: BeardComb,
     hoverImg: BeardCombH,
+    link: "/pdp?product=beardComb",
   },
   {
     id: 5,
     name: "Straw",
     img: Straw,
     hoverImg: StrawH,
+    link: "/pdp?product=straw",
   },
   {
     id: 6,
     name: "Neem Comb brush",
     img: NeemCombBrush,
     hoverImg: NeemCombBrushH,
+    link: "/pdp?product=pocketComb",
   },
 ];
 
@@ -64,7 +72,7 @@ const ProductSection = () => {
     <section className="productSection">
       <div className="productGrid">
         {products.map((product) => (
-          <div key={product.id} className="productCard">
+          <Link to={product.link} key={product.id} className="productCard">
             <img
               src={product.img}
               alt={product.name}
@@ -76,7 +84,7 @@ const ProductSection = () => {
               className="productHoverImage"
             />
             <div className="productName">{product.name}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

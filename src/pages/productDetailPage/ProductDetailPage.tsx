@@ -1,67 +1,82 @@
 import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import "./ProductDetailPage.scss";
-import SuggestedProducts from "./suggestedProducts/SuggestedProducts"; // Assuming you have a suggestions component
+import SuggestedProducts from "./suggestedProducts/SuggestedProducts";
 import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
-
-type productDetails = {
-  name: string;
-  description: string;
-  image: string;
-};
+import { productDetails, productDetailsType } from "./productData";
 
 const ProductDetailPage = () => {
   const [searchParams] = useSearchParams();
-  const product = searchParams.get("product"); // Get the product query param (e.g., "bambooToothbrush")
+  const product = searchParams.get("product");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // For carousel navigation
 
-  const productDetails: Record<string, productDetails> = {
-    bambooToothbrush: {
-      name: "Bamboo Toothbrush",
-      description: "Eco-friendly toothbrush made from sustainable bamboo.",
-      image: "/assets/bambooToothbrush.jpg",
-    },
-    bambooRazor: {
-      name: "Bamboo Razor",
-      description: "Durable bamboo razor for a smooth shave.",
-      image: "/assets/bambooRazor.jpg",
-    },
-    // Add other products similarly...
-    
+  const productData: productDetailsType | null =
+    product && productDetails[product] ? productDetails[product] : null;
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? productData!.images.length - 1 : prevIndex - 1
+    );
   };
 
-  const productName: productDetails | null =
-    product && productDetails[product] ? productDetails[product] : null;
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === productData!.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <>
       <Header />
       <div className="productDetailPage">
-        {productName ? (
-          <div className="productDetailContainer">
-            <div className="productImage">
-              <img
-                src={`/assets/${productName.image}.jpg`} // Assuming image is named after the product
-                alt={productName.name}
-              />
+        {productData ? (
+          <>
+            <div className="productDetailContainer">
+              <div className="productImage">
+                <div className="carousel">
+                  {productData.images.length !== 1 && (
+                    <button className="prev" onClick={handlePrevImage}>
+                      &#10094;
+                    </button>
+                  )}
+                  <img
+                    src={productData.images[currentImageIndex]}
+                    alt={productData.name}
+                  />
+                  {productData.images.length !== 1 && (
+                    <button className="next" onClick={handleNextImage}>
+                      &#10095;
+                    </button>
+                  )}
+                </div>
+              </div>
+              <div className="productDetailsSection">
+                <div className="productInfo">
+                  <h2>{productData.name}</h2>
+                  <p>{productData.description}</p>
+                  <div className="keyFeatures">
+                    <h3>Key Features:</h3>
+                    <ul>
+                      {productData.keyFeatures.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="productInfo">
-              <h2>{productName.name}</h2>
-              <p>
-                Here are the details about {productName.name}. We provide
-                customized and eco-friendly bamboo products.
-              </p>
-              <form className="inquiryForm">
-                <h3>Inquire about this product</h3>
-                <label> Your Name: </label>
-                <input type="text" name="name" required />
-                <label> Email: </label>
-                <input type="email" name="email" required />
-                <label> Enquiry Details: </label>
-                <textarea name="message" rows={4} required></textarea>
-                <button type="submit">Send Enquiry</button>
-              </form>
-            </div>
-          </div>
+            <form className="inquiryForm">
+              <h3>Inquire about this product</h3>
+              <label> Your Name: </label>
+              <input type="text" name="name" required />
+              <label> Email: </label>
+              <input type="email" name="email" required />
+              <label> Enquiry Details: </label>
+              <textarea name="message" rows={4} required></textarea>
+              <button type="submit">Send Enquiry</button>
+            </form>
+          </>
         ) : undefined}
         <SuggestedProducts />
       </div>

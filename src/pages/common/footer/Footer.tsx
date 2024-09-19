@@ -54,42 +54,40 @@ const Footer = () => {
               <div className="footerBlockHeading">Products</div>
               <ul className="footerBlockBody">
                 <li>
-                  <NavLink to="/" className="anchor">
+                  <NavLink
+                    to="/pdp?product=softBristleToothbrush"
+                    className="anchor"
+                  >
                     Bamboo Toothbrush
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
+                  <NavLink to="/pdp?product=comb" className="anchor">
                     Wooden Comb
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
-                    Dental Kit
+                  <NavLink to="/pdp?product=tongueCleaner" className="anchor">
+                    Tongue cleaner
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
-                    Wooden Back Scratcher
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/" className="anchor">
+                  <NavLink to="/pdp?product=straw" className="anchor">
                     Straw
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
-                    Bamboo Tongue Cleaner
+                  <NavLink to="/pdp?product=beardComb" className="anchor">
+                    Beard Comb
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
+                  <NavLink to="/pdp?product=razor" className="anchor">
                     Shaving Razor
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="anchor">
+                  <NavLink to="/pdp?product=pen" className="anchor">
                     Plantable Seed Pen & Pencil
                   </NavLink>
                 </li>
