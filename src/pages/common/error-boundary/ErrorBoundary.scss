@@ -1,0 +1,40 @@
+/* ErrorBoundary.scss */
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: #ff6b6b;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    color: var(--text-color);
+  }
+
+  a {
+    font-size: 1.1rem;
+    color: #007bff;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #007bff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
