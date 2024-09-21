@@ -9,11 +9,11 @@
   color: var(--text-heading-color);
 
   @media (max-width: 1024px) {
-    font-size: 2.5rem; /* Adjust heading size for tablet */
+    font-size: 2.5rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 2rem; /* Adjust heading size for mobile */
+    font-size: 2rem;
   }
 }
 
@@ -26,11 +26,11 @@
   padding-bottom: 10px;
 
   @media (max-width: 1024px) {
-    font-size: 2rem; /* Adjust section heading size for tablet */
+    font-size: 2rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 1.75rem; /* Adjust section heading size for mobile */
+    font-size: 1.75rem;
   }
 }
 
@@ -41,17 +41,17 @@
   justify-content: flex-start;
 
   @media (max-width: 1024px) {
-    justify-content: center; /* Center items on tablet */
+    justify-content: center;
   }
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Stack items vertically on mobile */
-    gap: 10px; /* Reduce gap on mobile */
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
 .product-item {
-  width: calc(30% - 13.33px); /* Three items per row */
+  width: calc(30% - 13.33px);
   text-align: center;
   padding: 20px;
   border: 1px solid #ecf0f1;
@@ -60,17 +60,17 @@
   transition: box-shadow 0.3s ease;
 
   @media (max-width: 1024px) {
-    width: calc(40% - 13.33px); /* Two items per row on tablet */
+    width: calc(40% - 13.33px);
   }
 
   @media (max-width: 768px) {
-    width: 90%; /* Full width for mobile */
-    padding: 15px; /* Adjust padding for mobile */
+    width: 90%;
+    padding: 15px;
   }
 }
 
 .product-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px var(--hover-shadow);
 }
 
 .product-item img {
@@ -81,11 +81,11 @@
   margin-bottom: 15px;
 
   @media (max-width: 1024px) {
-    height: 250px; /* Reduce image height for tablet */
+    height: 250px;
   }
 
   @media (max-width: 768px) {
-    height: 200px; /* Reduce image height for mobile */
+    height: 200px;
   }
 }
 
@@ -94,10 +94,10 @@
   color: var(--text-heading-color);
 
   @media (max-width: 1024px) {
-    font-size: 1.1rem; /* Adjust text size for tablet */
+    font-size: 1.1rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem; /* Adjust text size for mobile */
+    font-size: 1rem;
   }
 }

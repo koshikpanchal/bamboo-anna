@@ -78,7 +78,7 @@
       button {
         padding: 10px 20px;
         background-color: #5a9b0c;
-        color: var(--text-heading-color);
+        color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -146,6 +146,7 @@
       button {
         padding: 8px 16px;
         font-size: 0.9rem;
+        align-items: center;
       }
     }
   }

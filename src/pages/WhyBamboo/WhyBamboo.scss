@@ -90,6 +90,7 @@
   .values-section .values-content {
     order: 3; /* Move content to last */
     padding: 10px;
+    border-bottom: 2px solid var(--text-heading-color);
   }
 
   .mission-section .mission-image-container,

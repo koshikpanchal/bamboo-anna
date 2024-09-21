@@ -5,11 +5,17 @@ import SuggestedProducts from "./suggestedProducts/SuggestedProducts";
 import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
 import { productDetails, productDetailsType } from "./productData";
+import emailjs from "emailjs-com";
 
 const ProductDetailPage = () => {
   const [searchParams] = useSearchParams();
   const product = searchParams.get("product");
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // For carousel navigation
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const productData: productDetailsType | null =
     product && productDetails[product] ? productDetails[product] : null;
@@ -23,6 +29,48 @@ const ProductDetailPage = () => {
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === productData!.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { name, email, message } = formData;
+
+    // Define your EmailJS configuration
+    const SERVICE_ID = "YOUR_SERVICE_ID";
+    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+    const USER_ID = "YOUR_USER_ID";
+
+    // Prepare template parameters
+    const templateParams = {
+      name,
+      email,
+      message: `Product: ${productData?.name}\n\n${message}`, // Including product name in the message
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
+      () => {
+        alert("Your enquiry has been sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      },
+      (error) => {
+        console.error("Failed to send enquiry:", error);
+        alert("Failed to send enquiry. Please try again later.");
+      }
     );
   };
 
@@ -66,18 +114,44 @@ const ProductDetailPage = () => {
                 </div>
               </div>
             </div>
-            <form className="inquiryForm">
+            <form className="inquiryForm" onSubmit={handleSubmit}>
               <h3>Inquire about this product</h3>
-              <label> Your Name: </label>
-              <input type="text" name="name" required />
-              <label> Email: </label>
-              <input type="email" name="email" required />
-              <label> Enquiry Details: </label>
-              <textarea name="message" rows={4} required></textarea>
+              <label htmlFor="name">Your Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="message">Enquiry Details:</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                required
+              ></textarea>
               <button type="submit">Send Enquiry</button>
             </form>
           </>
-        ) : undefined}
+        ) : (
+          <div className="noProduct">
+            <h2>No product selected</h2>
+            <p>Please select a product from our catalog.</p>
+          </div>
+        )}
         <SuggestedProducts />
       </div>
       <Footer />

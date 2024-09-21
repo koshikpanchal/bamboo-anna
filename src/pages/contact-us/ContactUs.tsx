@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import "./ContactUs.scss";
@@ -27,19 +28,28 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const mailtoLink = `mailto:bambooannaa@gmail.com?subject=Enquiry about ${encodeURIComponent(
-      formData.productService
-    )}&body=Name: ${encodeURIComponent(
-      formData.name
-    )}%0AEmail: ${encodeURIComponent(
-      formData.email
-    )}%0ACountry: ${encodeURIComponent(
-      formData.country
-    )}%0APhone: ${encodeURIComponent(
-      formData.phone
-    )}%0AEnquiry Details: ${encodeURIComponent(formData.enquiryDetails)}`;
+    // Replace these with your actual EmailJS credentials
+    const SERVICE_ID = "service_hsdygcv";
+    const TEMPLATE_ID = "template_4j6evhm";
+    const USER_ID = "jAyaoCWoTkUntJywb";
 
-    window.location.href = mailtoLink;
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
+      .then((response) => {
+        alert("Enquiry sent successfully!");
+        setFormData({
+          productService: "",
+          name: "",
+          email: "",
+          country: "",
+          phone: "",
+          enquiryDetails: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to send enquiry:", error);
+        alert("Failed to send enquiry. Please try again.");
+      });
   };
 
   return (
@@ -93,7 +103,7 @@ const ContactUs = () => {
               <label htmlFor="name">Your Name:</label>
               <input
                 type="text"
-                id="name"
+                id="from_name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -143,7 +153,7 @@ const ContactUs = () => {
               <label htmlFor="enquiryDetails">Enquiry Details:</label>
               <textarea
                 id="enquiryDetails"
-                name="enquiryDetails"
+                name="messge"
                 value={formData.enquiryDetails}
                 onChange={handleChange}
                 required

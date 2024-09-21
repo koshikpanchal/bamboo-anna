@@ -3,6 +3,8 @@
   --background-color: #ffffff;
   --text-color: #000;
   --text-heading-color: #2c3e50;
+  --hover-shadow: rgba(0, 0, 0, 0.4);
+  --active-button: #5a9b0c;
 }
 
 [data-theme="dark"] {
@@ -10,6 +12,8 @@
   --background-color-bottom: #333;
   --text-color: #fff;
   --text-heading-color: #f4f4f4;
+  --hover-shadow: rgba(255, 255, 255, 0.4);
+  --active-button: #5a9b0c;
 }
 
 .app {
