@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./PlasticSaved.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import transitionImage from "../../../assets/transition.jpg";
 
 const PlasticSaved = () => {
   const [count, setCount] = useState(10); // Start from 10
@@ -45,8 +47,15 @@ const PlasticSaved = () => {
 
   return (
     <section className="amountSavedSection" ref={sectionRef}>
-      <h2>Amount Of Plastic Saved</h2>
-      <p className="count">{count} kg</p>
+      <LazyLoadImage
+        src={transitionImage}
+        alt="Plastic Saved Background"
+        className="transition-image"
+      />
+      <div className="overlay-content">
+        <h2>Amount Of Plastic Saved</h2>
+        <p className="count">{count} kg</p>
+      </div>
     </section>
   );
 };

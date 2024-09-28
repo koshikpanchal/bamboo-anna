@@ -9,10 +9,27 @@ import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Helmet } from "react-helmet";
 
 const WhyBamboo = () => {
   return (
     <>
+      <Helmet>
+        <title>Why Choose Bamboo? | Bamboo Anna</title>
+        <meta
+          name="description"
+          content="Discover why bamboo is the eco-friendly, sustainable choice for a wide range of products. Learn about the environmental benefits and versatility of bamboo."
+        />
+        <meta
+          name="keywords"
+          content="Why Bamboo, eco-friendly bamboo, sustainable products, bamboo benefits, bamboo vs plastic"
+        />
+        <meta property="og:title" content="Why Choose Bamboo? | Bamboo Anna" />
+        <meta
+          property="og:description"
+          content="Explore the benefits of choosing bamboo for eco-friendly, sustainable, and durable products. Bamboo Anna offers a range of bamboo products that are better for the environment."
+        />
+      </Helmet>
       <Header />
       <div className="why-bamboo-container">
         <section className="intro-section">

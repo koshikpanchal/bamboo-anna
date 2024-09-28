@@ -6,6 +6,7 @@ import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
 import { productDetails, productDetailsType } from "./productData";
 import emailjs from "emailjs-com";
+import { Helmet } from "react-helmet";
 
 const ProductDetailPage = () => {
   const [searchParams] = useSearchParams();
@@ -76,6 +77,33 @@ const ProductDetailPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{productData ? productData.name : "Product Details"}</title>
+        <meta
+          name="description"
+          content={
+            productData ? productData.description : "Explore our product"
+          }
+        />
+        <meta
+          property="og:title"
+          content={productData ? productData.name : "Product Details"}
+        />
+        <meta
+          property="og:description"
+          content={
+            productData ? productData.description : "Explore our product"
+          }
+        />
+        <meta
+          property="og:image"
+          content={productData ? productData.images[0] : "default-image.jpg"}
+        />
+        <link
+          rel="canonical"
+          href={`https://www.bambooanna.in/product/${product}`}
+        />
+      </Helmet>
       <Header />
       <div className="productDetailPage">
         {productData ? (

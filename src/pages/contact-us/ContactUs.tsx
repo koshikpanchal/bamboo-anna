@@ -3,22 +3,30 @@ import emailjs from "emailjs-com";
 import Footer from "../common/footer/Footer";
 import Header from "../common/header/Header";
 import "./ContactUs.scss";
+import Popup from "../common/pop-up/Popup";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     productService: "",
     name: "",
     email: "",
-    country: "",
+    address: "",
     phone: "",
     enquiryDetails: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleConfirm = () => {
+    setPopupOpen(false);
+    navigate("/products");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -28,20 +36,27 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Replace these with your actual EmailJS credentials
     const SERVICE_ID = "service_hsdygcv";
     const TEMPLATE_ID = "template_4j6evhm";
     const USER_ID = "jAyaoCWoTkUntJywb";
 
+    const templateParams = {
+      to_name: "Bamboo Anna",
+      from_name: formData.name,
+      message: formData.enquiryDetails,
+      product: formData.productService,
+      phone: formData.phone,
+    };
+
     emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
-      .then((response) => {
-        alert("Enquiry sent successfully!");
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then(() => {
+        setPopupOpen(true);
         setFormData({
           productService: "",
           name: "",
           email: "",
-          country: "",
+          address: "",
           phone: "",
           enquiryDetails: "",
         });
@@ -54,6 +69,17 @@ const ContactUs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us | Bamboo Anna</title>
+        <meta
+          name="description"
+          content="Contact Bamboo Anna for inquiries about our eco-friendly products."
+        />
+        <meta
+          name="keywords"
+          content="bamboo, eco-friendly products, contact us"
+        />
+      </Helmet>
       <Header />
       <div className="contactUsPage">
         <div className="contactInfo">
@@ -77,9 +103,9 @@ const ContactUs = () => {
             <strong>Website:</strong> www.bambooanna.in
           </p>
           <div className="socialLinks">
-            <a href="https://www.bambooanna.in/">Facebook</a>
+            <a href="https://www.bambooanna.com/">Facebook</a>
             <a href="https://www.instagram.com/bamboo.anna/">Instagram</a>
-            <a href="https://www.bambooanna.in/">LinkedIn</a>
+            <a href="https://www.bambooanna.com/">LinkedIn</a>
           </div>
         </div>
 
@@ -122,21 +148,14 @@ const ContactUs = () => {
               />
             </div>
             <div className="formGroup">
-              <label htmlFor="country">Select Country:</label>
-              <select
-                id="country"
-                name="country"
-                value={formData.country}
+              <label htmlFor="address">Address:</label>
+              <input
+                type="address"
+                id="address"
+                name="address"
+                value={formData.address}
                 onChange={handleChange}
-                required
-              >
-                <option value="">Select Country</option>
-                <option value="India">India</option>
-                <option value="USA">USA</option>
-                <option value="UK">UK</option>
-                <option value="Australia">Australia</option>
-                <option value="Canada">Canada</option>
-              </select>
+              />
             </div>
             <div className="formGroup">
               <label htmlFor="phone">Phone/Mobile:</label>
@@ -151,18 +170,24 @@ const ContactUs = () => {
             </div>
             <div className="formGroup">
               <label htmlFor="enquiryDetails">Enquiry Details:</label>
-              <textarea
+              <input
                 id="enquiryDetails"
-                name="messge"
+                name="enquiryDetails"
                 value={formData.enquiryDetails}
                 onChange={handleChange}
                 required
-              ></textarea>
+              ></input>
             </div>
             <button type="submit">Submit Enquiry</button>
           </form>
         </div>
       </div>
+      <Popup
+        message="Thanks for choosing Bamboo Anna, we'll connect to you soon! Do you want to browser our more products"
+        onClose={() => setPopupOpen(false)}
+        onConfirm={handleConfirm}
+        isOpen={isPopupOpen}
+      />
       <Footer />
     </div>
   );
