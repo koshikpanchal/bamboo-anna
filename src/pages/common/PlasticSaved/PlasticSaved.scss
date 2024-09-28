@@ -1,13 +1,14 @@
 .amountSavedSection {
   margin: 0 16px 16px 16px;
   position: relative;
-  width: 100%;
+  width: calc(100% - 32px); // Adjust width to maintain margin
   height: 400px; // Adjust height as per your design
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   text-align: center;
+  border-radius: 12px;
 
   .transition-image {
     position: absolute;
@@ -17,21 +18,17 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    filter: brightness(0.7);
   }
 
   .overlay-content {
     position: relative;
     z-index: 2;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); // Optional shadow for better contrast
-    background: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); // Semi-transparent background for better readability
-    padding: 20px; // Add padding to the content
-    border-radius: 12px; // Optional rounding for aesthetics
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
 
     h2 {
       font-size: 2.5rem;
@@ -47,21 +44,24 @@
 
   // Mobile view adjustments
   @media (max-width: 768px) {
-    height: auto; // Allow the section to adjust height on mobile
-    flex-direction: column; // Stack the content vertically
+    height: auto;
+    flex-direction: column;
+    margin: 16px;
 
     .transition-image {
       position: relative;
       height: auto;
+      max-height: 300px;
+      object-fit: cover;
     }
 
     .overlay-content {
       position: relative;
-      background: none; // Remove the background for mobile
-      text-shadow: none; // Remove shadow for mobile readability
-      padding: 0; // Remove padding for mobile
-      color: black; // Switch text color to black for visibility
-      margin-top: 16px; // Add spacing between image and content
+      background: none;
+      text-shadow: none;
+      padding: 0;
+      color: black;
+      margin-top: 16px;
     }
   }
 }
