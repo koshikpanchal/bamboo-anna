@@ -1,11 +1,11 @@
-import "./FloatingWhatsAppButton.scss";
+import './FloatingWhatsAppButton.scss';
 
 const FloatingWhatsAppButton = () => {
-  const phoneNumber = "+91800618916";
+  const phoneNumber = '+918000618916';
 
   const openWhatsApp = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
