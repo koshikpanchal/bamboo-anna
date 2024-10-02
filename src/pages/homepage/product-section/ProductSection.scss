@@ -2,6 +2,12 @@
   padding: 48px;
   background-color: var(--background-color); /* Light background for contrast */
 
+  h2 {
+    color: var(--text-heading-color);
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
   @media (max-width: 768px) {
     padding: 24px; /* Reduce padding for mobile */
   }
@@ -79,5 +85,32 @@
     bottom: 8px;
     left: 8px;
     padding: 6px 10px;
+  }
+}
+
+.viewAllProducts {
+  margin-top: 32px; /* Add more space from the grid */
+  display: flex;
+  width: 180px;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #5a9b0c; /* Button color */
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #4a8a0a; /* Darker button color on hover */
+  }
+
+  /* Center alignment within the parent container */
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    order: 3; /* Keep the button at the bottom */
   }
 }

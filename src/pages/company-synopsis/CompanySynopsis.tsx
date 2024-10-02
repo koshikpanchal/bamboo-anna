@@ -1,37 +1,21 @@
-import { Helmet } from "react-helmet";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import Footer from "../common/footer/Footer";
-import Header from "../common/header/Header";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import doctorProduct from "../../assets/doctorProduct.webp";
-import brush from "../../assets/dentalCare/P1030940-min.jpg";
-import HotelAmenities from "../../assets/HotelAmenities.webp";
-import corporateGifting from "../../assets/corporateGifting.webp";
-import "./CompanySynopsis.scss";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Footer from '../common/footer/Footer';
+import Header from '../common/header/Header';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import doctorProduct from '../../assets/doctorProduct.webp';
+import brush from '../../assets/dentalCare/P1030940-min.jpg';
+import HotelAmenities from '../../assets/HotelAmenities.webp';
+import corporateGifting from '../../assets/corporateGifting.webp';
+import './CompanySynopsis.scss';
+import CompanySynopsisHelmet from './CompanySynopsisHelmet';
 
 const CompanySynopsis = () => {
   const redirectLink =
-    "https://catalog.weblink.in/dynamic-files/ei/other-files/12880115/company-overview-1.pdf";
+    'https://catalog.weblink.in/dynamic-files/ei/other-files/12880115/company-overview-1.pdf';
 
   return (
     <>
-      <Helmet>
-        <title>Bamboo Anna - Company Synopsis</title>
-        <meta
-          name="description"
-          content="Learn about Bamboo Anna Enterprises and our journey in transforming bamboo into eco-friendly and innovative solutions. We offer customized bamboo products for online sellers, dental care providers, hotels, and corporate gifting."
-        />
-        <meta
-          name="keywords"
-          content="Bamboo products, eco-friendly bamboo, custom bamboo products, hotel amenities, corporate gifting, bamboo dental products"
-        />
-        <meta property="og:title" content="Bamboo Anna - Company Synopsis" />
-        <meta
-          property="og:description"
-          content="Explore Bamboo Anna Enterprises' range of innovative, sustainable bamboo solutions for various industries including dental care, hotels, corporate gifting, and online retail."
-        />
-      </Helmet>
-
+      <CompanySynopsisHelmet />
       <Header />
       <div className="company-synopsis-container">
         <section className="intro-section">

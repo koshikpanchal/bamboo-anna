@@ -1,20 +1,20 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import Footer from "../common/footer/Footer";
-import Header from "../common/header/Header";
-import "./ContactUs.scss";
-import Popup from "../common/pop-up/Popup";
-import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { useState } from 'react';
+import emailjs from 'emailjs-com';
+import Footer from '../common/footer/Footer';
+import Header from '../common/header/Header';
+import './ContactUs.scss';
+import Popup from '../common/pop-up/Popup';
+import { useNavigate } from 'react-router-dom';
+import ContactUsHelmet from './ContactUsHelmet';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    productService: "",
-    name: "",
-    email: "",
-    address: "",
-    phone: "",
-    enquiryDetails: "",
+    productService: '',
+    name: '',
+    email: '',
+    address: '',
+    phone: '',
+    enquiryDetails: '',
   });
 
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -23,7 +23,7 @@ const ContactUs = () => {
 
   const handleConfirm = () => {
     setPopupOpen(false);
-    navigate("/products");
+    navigate('/products');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,12 +36,12 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const SERVICE_ID = "service_hsdygcv";
-    const TEMPLATE_ID = "template_4j6evhm";
-    const USER_ID = "jAyaoCWoTkUntJywb";
+    const SERVICE_ID = 'service_hsdygcv';
+    const TEMPLATE_ID = 'template_4j6evhm';
+    const USER_ID = 'jAyaoCWoTkUntJywb';
 
     const templateParams = {
-      to_name: "Bamboo Anna",
+      to_name: 'Bamboo Anna',
       from_name: formData.name,
       message: formData.enquiryDetails,
       product: formData.productService,
@@ -53,33 +53,23 @@ const ContactUs = () => {
       .then(() => {
         setPopupOpen(true);
         setFormData({
-          productService: "",
-          name: "",
-          email: "",
-          address: "",
-          phone: "",
-          enquiryDetails: "",
+          productService: '',
+          name: '',
+          email: '',
+          address: '',
+          phone: '',
+          enquiryDetails: '',
         });
       })
       .catch((error) => {
-        console.error("Failed to send enquiry:", error);
-        alert("Failed to send enquiry. Please try again.");
+        console.error('Failed to send enquiry:', error);
+        alert('Failed to send enquiry. Please try again.');
       });
   };
 
   return (
     <div>
-      <Helmet>
-        <title>Contact Us | Bamboo Anna</title>
-        <meta
-          name="description"
-          content="Contact Bamboo Anna for inquiries about our eco-friendly products."
-        />
-        <meta
-          name="keywords"
-          content="bamboo, eco-friendly products, contact us"
-        />
-      </Helmet>
+      <ContactUsHelmet />
       <Header />
       <div className="contactUsPage">
         <div className="contactInfo">
@@ -97,15 +87,17 @@ const ContactUs = () => {
             <strong>Call Us:</strong> +91-8000618916, +91-9887392445
           </p>
           <p>
-            <strong>Email:</strong> bambooannaa@gmail.com
+            <strong>Email:</strong>support@bambooanna.com, bambooannaa@gmail.com
           </p>
           <p>
-            <strong>Website:</strong> www.bambooanna.in
+            <strong>Website:</strong> www.bambooanna.com
           </p>
           <div className="socialLinks">
             <a href="https://www.bambooanna.com/">Facebook</a>
             <a href="https://www.instagram.com/bamboo.anna/">Instagram</a>
-            <a href="https://www.bambooanna.com/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/bamboo-anna-69b279318/">
+              LinkedIn
+            </a>
           </div>
         </div>
 

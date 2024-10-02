@@ -1,13 +1,17 @@
-import { useEffect, useState, useRef } from "react";
-import "./PlasticSaved.scss";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import transitionImage from "../../../assets/transition.jpg";
+import { useEffect, useState, useRef } from 'react';
+import './PlasticSaved.scss';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import transitionImage from '../../../assets/transition.jpg';
 
 const PlasticSaved = () => {
-  const [count, setCount] = useState(10); // Start from 10
+  const [count, setCount] = useState(10);
   const sectionRef = useRef(null);
+  const countingRef = useRef(false);
 
   const incrementCount = () => {
+    if (countingRef.current) return;
+
+    countingRef.current = true;
     let start = 10;
     const end = Math.floor(100000 + Math.random() * 900000);
     const duration = 2000;
@@ -19,11 +23,11 @@ const PlasticSaved = () => {
         setCount(start);
       } else {
         clearInterval(timer);
+        countingRef.current = false;
       }
     }, stepTime);
   };
 
-  // Intersection Observer to detect when the section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,7 +35,7 @@ const PlasticSaved = () => {
           incrementCount();
         }
       },
-      { threshold: 0.5 } // Adjust the threshold as necessary
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) {
