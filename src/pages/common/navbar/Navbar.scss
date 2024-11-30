@@ -12,6 +12,27 @@
   flex: 1;
   display: flex;
   align-items: center;
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      display: block;
+    }
+
+    .logo-text {
+      margin-top: -10px;
+      margin-bottom: 5px;
+      font-size: 16px; // Adjust font size as needed
+      font-weight: 1000;
+      color: #5a9b0c; // Use theme color or define a specific color
+      text-align: center;
+    }
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -119,6 +140,25 @@
     justify-content: center;
     img {
       width: 120px;
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+
+      img {
+        display: block;
+      }
+
+      .logo-text {
+        margin-top: -10px;
+        margin-bottom: 5px;
+        font-size: 16px; // Adjust font size as needed
+        font-weight: 1000;
+        color: #5a9b0c; // Use theme color or define a specific color
+        text-align: center;
+      }
     }
   }
 }

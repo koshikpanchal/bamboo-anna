@@ -13,6 +13,7 @@ import ScrollToTop from './pages/routes/ScrollToTop';
 import FloatingWhatsAppButton from './pages/common/whats-app-button/FloatingWhatsAppButton';
 import { ErrorBoundary } from './pages/common/error-boundary/ErrorBoundary';
 import Sitemap from './pages/sitemap/Sitemap';
+import PhotoGallery from './pages/photo-gallery/PhotoGallery';
 
 const App: React.FC = () => {
   const { isDarkMode } = useTheme();
@@ -35,6 +36,7 @@ const App: React.FC = () => {
           <Route path="/pdp" element={<ProductDetailPage />} />
           <Route path="*" element={<ErrorBoundary />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/photoGallery" element={<PhotoGallery />} />
         </Routes>
       </BrowserRouter>
       <FloatingWhatsAppButton />

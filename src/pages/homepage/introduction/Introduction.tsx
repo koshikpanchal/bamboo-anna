@@ -1,14 +1,18 @@
-import "./Introduction.scss";
-import Straw from "../../../assets/straw/STRAWS-min.jpg";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import './Introduction.scss';
+import officeImage from '../../../assets/Homepage-image.jpg';
+import { Link } from 'react-router-dom';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const IntroductionSection = () => {
   return (
     <section className="introductionSection">
       <div className="introImage">
-        <LazyLoadImage src={Straw} alt="Introduction" effect="blur" />
+        <PhotoProvider>
+          <PhotoView src={officeImage}>
+            <img src={officeImage} alt="Our-Founders" />
+          </PhotoView>
+        </PhotoProvider>
       </div>
       <div className="introText">
         <h2>Welcome to Bamboo Anna store</h2>
