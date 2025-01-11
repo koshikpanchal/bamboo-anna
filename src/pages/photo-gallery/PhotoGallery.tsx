@@ -1,5 +1,6 @@
 import './PhotoGallery.scss';
 import founders from '../../assets/photoGallery/founders.jpg';
+import labour from '../../assets/photoGallery/labour.jpg';
 import office from '../../assets/photoGallery/office.jpg';
 import Footer from '../common/footer/Footer';
 import Header from '../common/header/Header';
@@ -11,6 +12,7 @@ const PhotoGallery = () => {
   const images = [
     { src: founders, alt: 'Our Founder' },
     { src: office, alt: 'Our Office' },
+    { src: labour, alt: 'Roots of Sustainability' },
   ];
 
   return (
