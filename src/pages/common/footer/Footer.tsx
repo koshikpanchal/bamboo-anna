@@ -1,8 +1,8 @@
-import "./Footer.scss";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { NavLink } from "react-router-dom";
+import './Footer.scss';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -101,17 +101,17 @@ const Footer = () => {
               <div className="footerBlockHeading">Talk To Us</div>
               <ul className="footerBlockBody">
                 <li>
-                  <PhoneIcon />{" "}
+                  <PhoneIcon />{' '}
                   <span className="talkToUsLI">
                     +91-8000618916, +91-9887392445
                   </span>
                 </li>
                 <li>
-                  <EmailIcon />{" "}
+                  <EmailIcon />{' '}
                   <span className="talkToUsLI">bambooannaa@gmail.com</span>
                 </li>
                 <li>
-                  <LocationOnIcon />{" "}
+                  <LocationOnIcon />{' '}
                   <span className="talkToUsLI">Banswara, Rajasthan</span>
                 </li>
               </ul>
@@ -126,6 +126,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="footerCopyright">
+          Copyright © {new Date().getFullYear()} Bamboo Anna. All rights
+          reserved.
         </div>
       </footer>
     </div>
