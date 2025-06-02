@@ -80,8 +80,8 @@ const ContactUs = () => {
             <strong>Name:</strong> Bamboo Anna Enterprises
           </p>
           <p>
-            <strong>Address:</strong> Near Dainik Bhaskar office Industrial area
-            Banswara Rajasthan 37001
+            <strong>Address:</strong> Plot No. 86, Gali No. 5, Shubash Nagar,
+            Banswara, Rajasthan
           </p>
           <p>
             <strong>Call Us:</strong> +91-8000618916, +91-9887392445

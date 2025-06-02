@@ -112,7 +112,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <LocationOnIcon />{' '}
-                  <span className="talkToUsLI">Banswara, Rajasthan</span>
+                  <span className="talkToUsLI">
+                    Plot No. 86, Gali No. 5, Shubash Nagar, Banswara, Rajasthan
+                  </span>
                 </li>
               </ul>
 
