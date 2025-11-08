@@ -6,6 +6,7 @@ import './ContactUs.scss';
 import Popup from '../common/pop-up/Popup';
 import { useNavigate } from 'react-router-dom';
 import ContactUsHelmet from './ContactUsHelmet';
+import ContactExperience from './ContactExperience';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -71,107 +72,87 @@ const ContactUs = () => {
     <div>
       <ContactUsHelmet />
       <Header />
-      <div className="contactUsPage">
-        <div className="contactInfo">
-          <section className="intro-section">
-            <h1>Contact Us</h1>
-          </section>
-          <p>
-            <strong>Name:</strong> Bamboo Anna Enterprises
-          </p>
-          <p>
-            <strong>Address:</strong> Plot No. 86, Gali No. 5, Shubash Nagar,
-            Banswara, Rajasthan
-          </p>
-          <p>
-            <strong>Call Us:</strong> +91-8000618916, +91-9887392445
-          </p>
-          <p>
-            <strong>Email:</strong>support@bambooanna.com, bambooannaa@gmail.com
-          </p>
-          <p>
-            <strong>Website:</strong> www.bambooanna.com
-          </p>
-          <div className="socialLinks">
-            <a href="https://www.bambooanna.com/">Facebook</a>
-            <a href="https://www.instagram.com/bamboo.anna/">Instagram</a>
-            <a href="https://www.linkedin.com/in/bamboo-anna-69b279318/">
-              LinkedIn
-            </a>
+      <div className='contact_page_container'>
+        <section className="intro-section">
+          <h1>Contact Us</h1>
+        </section>
+        <div className="contactUsPage">
+          <div className="contactInfo">
+            <ContactExperience />
           </div>
-        </div>
 
-        <div className="enquiryForm">
-          <h2>Send Us Your Enquiry</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="formGroup">
-              <label htmlFor="productService">
-                Product/Service Looking For:
-              </label>
-              <input
-                type="text"
-                id="productService"
-                name="productService"
-                value={formData.productService}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="name">Your Name:</label>
-              <input
-                type="text"
-                id="from_name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="address">Address:</label>
-              <input
-                type="address"
-                id="address"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="phone">Phone/Mobile:</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="enquiryDetails">Enquiry Details:</label>
-              <input
-                id="enquiryDetails"
-                name="enquiryDetails"
-                value={formData.enquiryDetails}
-                onChange={handleChange}
-                required
-              ></input>
-            </div>
-            <button type="submit">Submit Enquiry</button>
-          </form>
+          <div className="enquiryForm">
+            <h2>Send Us Your Enquiry</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="formGroup">
+                <label htmlFor="productService">
+                  Product/Service Looking For:
+                </label>
+                <input
+                  type="text"
+                  id="productService"
+                  name="productService"
+                  value={formData.productService}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label htmlFor="name">Your Name:</label>
+                <input
+                  type="text"
+                  id="from_name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="address"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="formGroup">
+                <label htmlFor="phone">Phone/Mobile:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label htmlFor="enquiryDetails">Enquiry Details:</label>
+                <input
+                  id="enquiryDetails"
+                  name="enquiryDetails"
+                  value={formData.enquiryDetails}
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <button type="submit">Submit Enquiry</button>
+            </form>
+          </div>
         </div>
       </div>
       <Popup
