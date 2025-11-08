@@ -59,7 +59,7 @@ const productDetails: Record<string, productDetailsType> = {
   bambooToothbrush: {
     name: 'Bamboo toothbrush',
     description:
-      'This is what our parents used to do in their young age. Good for TEETHS and SMILE.',
+      'Rediscover the traditional way of oral care with our authentic Bamboo Toothbrush, a time-honored practice passed down through generations. This natural toothbrush brings back the wisdom of our ancestors who understood the powerful benefits of bamboo for maintaining healthy teeth and gums. Perfect for those seeking a chemical-free, sustainable alternative to conventional toothbrushes, this bamboo toothbrush not only keeps your smile bright but also connects you to eco-friendly practices that have stood the test of time.',
     images: [nBrush2, nBrush, nBrush1],
     keyFeatures: [
       'Made from natural Bamboo',
@@ -94,7 +94,7 @@ const productDetails: Record<string, productDetailsType> = {
     ],
   },
   beardComb: {
-    name: 'Long and short hair Combs',
+    name: 'Beard/Short-hair Neem Comb',
     description:
       "Achieve effortless style and precision with our Short Hair Bamboo Comb, tailored for those with shorter haircuts. Its compact design and close-set teeth make it ideal for neat and defined styling, whether you're maintaining a classic look or creating a modern edge. ",
     images: [bComb, bComb1],
