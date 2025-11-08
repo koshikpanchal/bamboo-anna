@@ -9,7 +9,7 @@ import BeardCombH from '../../../assets/comb/H&B Comb.jpg';
 import Straw from '../../../assets/straw/STRAWS-min.jpg';
 import StrawH from '../../../assets/straw/coconut-leaf-straw.jpeg';
 import NeemCombBrush from '../../../assets/comb/Brush 2.jpg';
-import NeemCombBrushH from '../../../assets/comb/Neem Comb-min.jpg';
+import NeemCombBrushH from '../../../assets/comb/Brush 3.jpg';
 
 import './ProductSection.scss';
 import { Link } from 'react-router-dom';

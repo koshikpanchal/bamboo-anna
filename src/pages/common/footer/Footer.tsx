@@ -2,6 +2,9 @@ import './Footer.scss';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -98,6 +101,36 @@ const Footer = () => {
           {/* Talk To Us Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
+              <div className="footerBlockHeading">Follow Us</div>
+              <div className="socialMediaLinks">
+                <a
+                  href="https://www.youtube.com/@BambooAnna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="socialLink"
+                  aria-label="YouTube"
+                >
+                  <YouTubeIcon />
+                </a>
+                <a
+                  href="https://www.instagram.com/bamboo.anna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="socialLink"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/bamboo-anna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="socialLink"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon />
+                </a>
+              </div>
               <div className="footerBlockHeading">Talk To Us</div>
               <ul className="footerBlockBody">
                 <li>
