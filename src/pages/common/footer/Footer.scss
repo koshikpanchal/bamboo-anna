@@ -7,6 +7,15 @@
   margin-top: auto;
   font-size: 14px; // Smaller font size for compact layout
   line-height: 1.4;
+  .anchor {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .anchor:hover {
+    color: #dfffd0;
+  }
 }
 
 .footerBlocks {
@@ -34,15 +43,6 @@
 
 .footerBlockBody li {
   margin-bottom: 6px;
-}
-
-.anchor {
-  color: white;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.anchor:hover {
-  color: #dfffd0;
 }
 
 .talkToUsLI {

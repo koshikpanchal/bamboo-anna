@@ -17,26 +17,9 @@ const IntroductionSection = () => {
       <div className="introText">
         <h2>Welcome to Bamboo Anna</h2>
         <p>
-          पर्यावरण संरक्षणम्, With this motto our CEO & M.D. Mr. Anil Chauhan
-          and Founder Mr. Sawan Vaishnav started their journey with Bamboo Anna
-          in 2022. India is a country having largest population across globe and
-          so the consumer of plastic materials in different usage of day to day
-          life. Our focus is to serve and save mother nature and to aware our
-          people to use alternative resources of plastic wherever it is
-          possible. As we know human being starts his/her day with many
-          different daily usage products mainly made of plastics in which
-          toothbrush being commonly used, where toothbrush is having life span
-          of 4 to 5 month after which it will end up in land field and oceans
-          which hampers global eco system and environment. Our initiative is to
-          target and replace mainly plastic toothbrush and other amenities of
-          daily routine with eco friendly bamboo made products. With this we
-          have been working in Indian market from past three years and have
-          covered significant portion of Indian toothbrush market and we believe
-          in future to do more better and make people aware to use eco friendly
-          products (Bamboo Products) to replace plastic made toothbrush. We have
-          associated with many startups and promoted them to grow in same
-          journey of Bamboo products.
+          पर्यावरण संरक्षण (Environmental Conservation). This is the driving force behind Bamboo Anna, founded in 2022 by CEO & M.D. Mr. Anil Chauhan and Founder Mr. Sawan Vaishnav. Our world faces a critical challenge: the massive consumption of plastics in daily routines. Our mission is to actively protect Mother Nature and provide viable, eco-friendly alternatives to plastic wherever possible. We focus on replacing short-lifespan plastic products—like the conventional toothbrush—that ultimately pollute our land and oceans, disrupting the global ecosystem.
         </p>
+        <p>We are committed to helping businesses and consumers transition to sustainable living. We develop and promote high-quality eco-friendly bamboo products designed to replace plastic amenities in your daily routine. We believe in providing better choices and making people aware of sustainable options. We actively partner with startups and organizations worldwide, inviting them to join our growing global movement to champion environmentally conscious products and work towards a plastic-free future.</p>
         <Link to="/aboutUs" className="readMoreButton">
           Read More
         </Link>

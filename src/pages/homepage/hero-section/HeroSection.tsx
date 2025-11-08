@@ -21,7 +21,7 @@ const HeroSection = () => {
           </p>
         </Link>
         <Link to="/pdp?product=comb" className="hero-image-wrapper">
-          <LazyLoadImage src={comb_brush} alt="Hero 1" className="hero-image" />``
+          <LazyLoadImage src={comb_brush} alt="Hero 1" className="hero-image" />
           <div className="hero-text">Sustainable Source</div>
           <p className="hero-text-p">
             Promote Healty hair growth, used for beard and hair, with convenient

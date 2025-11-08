@@ -103,6 +103,7 @@ const Navbar = () => {
       <div className="rightButtons">
         <button className="themeToggleButton" onClick={toggleTheme}>
           {isDarkMode ? <DarkModeIcon /> : <LightMode />}
+          {isDarkMode ? "Dark mode" : "Light mode"}
         </button>
       </div>
     </div>
