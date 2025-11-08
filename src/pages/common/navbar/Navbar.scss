@@ -63,7 +63,7 @@
 
   @media (max-width: 768px) {
     position: fixed;
-    top: 60px; /* Adjust to your header height */
+    top: 80px; /* Adjust to your header height */
     left: 0;
     width: 100%; /* Ensure it takes full width */
     margin: 0;
@@ -178,5 +178,11 @@
     z-index: 100;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
+  }
+}
+
+.mode_name{
+  @media (max-width: 768px) {
+    display: none;
   }
 }

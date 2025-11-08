@@ -13,6 +13,7 @@ import NeemCombBrushH from '../../../assets/comb/Brush 3.jpg';
 
 import './ProductSection.scss';
 import { Link } from 'react-router-dom';
+import CTAButton from '../../common/cta-button/CTAButton';
 
 type typeProduct = {
   id: number;
@@ -88,9 +89,16 @@ const ProductSection = () => {
           </Link>
         ))}
       </div>
-      <Link to="/products" className="viewAllProducts">
-        View all Products
-      </Link>
+      <div className="product-section-actions">
+        <Link to="/products" className="viewAllProducts">
+          View all Products
+        </Link>
+        <CTAButton 
+          text="Need Custom Solutions?" 
+          variant="outline" 
+          size="medium"
+        />
+      </div>
     </section>
   );
 };

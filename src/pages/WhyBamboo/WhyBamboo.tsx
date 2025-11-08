@@ -10,6 +10,7 @@ import Header from '../common/header/Header';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import WhyBambooHelmet from './WhyBambooHelmet';
+import CTAButton from "../common/cta-button/CTAButton";
 
 const WhyBamboo = () => {
   return (
@@ -24,11 +25,6 @@ const WhyBamboo = () => {
             against climate change. Its rapid growth cycle, often reaching full
             maturity in just 3-5 years, makes it an incredibly renewable
             resource.
-            <br />
-            <br />
-            By choosing bamboo, you’re supporting a product that replenishes
-            itself quickly, reducing the pressure on forests and helping to
-            preserve biodiversity.
           </p>
         </section>
 
@@ -133,6 +129,11 @@ const WhyBamboo = () => {
             <LazyLoadImage src={bambooFarmer} alt="Our Values" effect="blur" />
           </div>
         </section>
+        <div className="hero-hero-cta">
+          <h1 className="hero-main-title">Sustainable Living Starts Here</h1>
+          <p className="hero-subtitle">Discover eco-friendly bamboo products that make a difference</p>
+          <CTAButton text="Talk to Our Experts" variant="primary" size="large" />
+        </div>
       </div>
       <Footer />
     </>

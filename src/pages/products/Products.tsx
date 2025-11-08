@@ -15,6 +15,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from 'react-router-dom';
 import ProductsHelmet from './ProductsHelmet';
+import CTASection from '../homepage/cta-section/CTASection';
 
 const Products = () => {
   return (
@@ -143,6 +144,12 @@ const Products = () => {
             </Link>
           </div>
         </section>
+        <CTASection
+          title="Have Questions About Our Products?"
+          description="We're here to help! Whether you're looking for bulk orders, custom solutions, or just want to learn more about sustainable living, our team is ready to assist you."
+          buttonText="Contact Our Team"
+          variant="default"
+        />
       </div>
       <Footer />
     </>

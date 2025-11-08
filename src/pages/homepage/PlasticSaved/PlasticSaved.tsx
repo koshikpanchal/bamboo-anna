@@ -158,7 +158,6 @@ const PlasticSaved = () => {
 
   return (
     <section className="amountSavedSection" ref={sectionRef}>
-      {/* @ts-expect-error - LazyLoadImage type compatibility issue with React 18 */}
       <LazyLoadImage
         src={transitionImage}
         alt="Plastic Saved Background"
