@@ -5,13 +5,20 @@
   background-color: var(--background-color);
   color: var(--text-color);
   padding: 0 20px;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 0 10px;
+  }
 }
 
 /* Left logo section */
 .leftLogo {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
+  min-width: 0;
 
   .logo-container {
     display: flex;
@@ -26,10 +33,22 @@
     .logo-text {
       margin-top: -10px;
       margin-bottom: 5px;
-      font-size: 16px; // Adjust font size as needed
+      font-size: 16px;
       font-weight: 1000;
-      color: #5a9b0c; // Use theme color or define a specific color
+      color: #5a9b0c;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    .logo-container {
+      img {
+        width: 100px;
+      }
+      .logo-text {
+        font-size: 12px;
+        margin-top: -5px;
+      }
     }
   }
 
@@ -60,25 +79,35 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap;
+  gap: 5px;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    gap: 2px;
+  }
 
   @media (max-width: 768px) {
     position: fixed;
-    top: 80px; /* Adjust to your header height */
+    top: 80px;
     left: 0;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%;
     margin: 0;
     padding: 0;
     flex-direction: column;
     text-align: center;
-    background-color: var(
-      --background-color
-    ); /* Ensure background color covers full width */
+    background-color: var(--background-color);
     transition: transform 0.5s ease-in-out;
   }
 }
 
 .option {
   padding: 12px;
+  white-space: nowrap;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 8px 6px;
+  }
+
   @media (max-width: 768px) {
     list-style: none;
     margin: 0;
@@ -91,6 +120,11 @@
 .anchor {
   color: var(--text-color);
   text-decoration: none;
+  font-size: 16px;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    font-size: 14px;
+  }
 }
 
 .activeAnchor {
@@ -99,9 +133,10 @@
 
 /* Right buttons section */
 .rightButtons {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .themeToggleButton {
@@ -114,6 +149,12 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  white-space: nowrap;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
 }
 
 .themeToggleButton:hover {
@@ -167,11 +208,14 @@
 .navbar {
   display: flex;
   justify-content: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     display: none;
     position: absolute;
-    top: 60px; // Adjust as per your topBar height
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: var(--background-color);
@@ -181,8 +225,8 @@
   }
 }
 
-.mode_name{
-  @media (max-width: 768px) {
+.mode_name {
+  @media (max-width: 1100px) {
     display: none;
   }
 }
