@@ -1,0 +1,40 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+}
+
+.marquee__track {
+  display: flex;
+  gap: 32px;
+  padding: 12px 0;
+  white-space: nowrap;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.marquee__track span {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--color-forest);
+}
+
+.marquee--slow .marquee__track {
+  animation-duration: 36s;
+}
+
+.marquee--fast .marquee__track {
+  animation-duration: 16s;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

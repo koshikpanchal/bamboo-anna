@@ -1,45 +1,52 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Homepage from './pages/homepage/Homepage';
-import AboutUs from './pages/about-us/AboutUs';
-import CompanySynopsis from './pages/company-synopsis/CompanySynopsis';
-import ContactUs from './pages/contact-us/ContactUs';
-import Products from './pages/products/Products';
-import WhyBamboo from './pages/WhyBamboo/WhyBamboo';
-import { useTheme } from './pages/context/ThemeContext';
-import { useEffect } from 'react';
-import ProductDetailPage from './pages/productDetailPage/ProductDetailPage';
+import { lazy, Suspense } from 'react';
 import ScrollToTop from './pages/routes/ScrollToTop';
-import FloatingWhatsAppButton from './pages/common/whats-app-button/FloatingWhatsAppButton';
-import { ErrorBoundary } from './pages/common/error-boundary/ErrorBoundary';
-import Sitemap from './pages/sitemap/Sitemap';
-import PhotoGallery from './pages/photo-gallery/PhotoGallery';
+import ScrollReveal from './pages/common/scroll-reveal/ScrollReveal';
+import SiteLayout from './site/layout/SiteLayout';
+
+const HomePage = lazy(() => import('./site/pages/home/HomePage'));
+const StudioPage = lazy(() => import('./site/pages/studio/StudioPage'));
+const CollectionsPage = lazy(() => import('./site/pages/collections/CollectionsPage'));
+const CataloguePage = lazy(() => import('./site/pages/catalogue/CataloguePage'));
+const ImpactPage = lazy(() => import('./site/pages/impact/ImpactPage'));
+const CustomPage = lazy(() => import('./site/pages/custom/CustomPage'));
+const GalleryPage = lazy(() => import('./site/pages/gallery/GalleryPage'));
+const ContactPage = lazy(() => import('./site/pages/contact/ContactPage'));
+const NotFoundPage = lazy(() => import('./site/pages/not-found/NotFoundPage'));
+const ProductPage = lazy(() => import('./site/pages/product/ProductPage'));
+const LegacyPdpRedirect = lazy(() => import('./site/pages/product/LegacyPdpRedirect'));
 
 const App: React.FC = () => {
-  const { isDarkMode } = useTheme();
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
-
   return (
     <div className="app">
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/companySynopsis" element={<CompanySynopsis />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/whyBamboo" element={<WhyBamboo />} />
-          <Route path="/pdp" element={<ProductDetailPage />} />
-          <Route path="*" element={<ErrorBoundary />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          <Route path="/photoGallery" element={<PhotoGallery />} />
-        </Routes>
+        <ScrollReveal />
+        <Suspense fallback={<div className="page-loading">Loading bamboo essentials...</div>}>
+          <Routes>
+            <Route element={<SiteLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/studio" element={<StudioPage />} />
+              <Route path="/collections" element={<CollectionsPage />} />
+              <Route path="/catalogue" element={<CataloguePage />} />
+              <Route path="/product/:slug" element={<ProductPage />} />
+              <Route path="/impact" element={<ImpactPage />} />
+              <Route path="/custom" element={<CustomPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/aboutUs" element={<StudioPage />} />
+              <Route path="/products" element={<CataloguePage />} />
+              <Route path="/whyBamboo" element={<ImpactPage />} />
+              <Route path="/companySynopsis" element={<CustomPage />} />
+              <Route path="/photoGallery" element={<GalleryPage />} />
+              <Route path="/contactUs" element={<ContactPage />} />
+              <Route path="/pdp" element={<LegacyPdpRedirect />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
-      <FloatingWhatsAppButton />
     </div>
   );
 };

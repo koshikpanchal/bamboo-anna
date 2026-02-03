@@ -1,0 +1,138 @@
+.artisan-section {
+  position: relative;
+}
+
+.artisan-section__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+
+.artisan-section__media {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.artisan-section__image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.artisan-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artisan-section__image--primary {
+  min-height: 360px;
+}
+
+.artisan-section__image--secondary {
+  width: 70%;
+  margin-left: auto;
+  margin-top: -60px;
+  border: 6px solid var(--background-color);
+}
+
+.artisan-section__tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(31, 63, 43, 0.9);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.artisan-section__content h2 {
+  font-size: clamp(2rem, 2.6vw, 2.8rem);
+  margin-top: 18px;
+}
+
+.artisan-section__steps {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.artisan-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.artisan-step span {
+  font-size: 1rem;
+  font-weight: 700;
+  background: rgba(214, 183, 120, 0.25);
+  color: var(--color-forest-dark);
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.artisan-step h3 {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+.artisan-step p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.artisan-section__link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-forest-dark);
+  position: relative;
+}
+
+.artisan-section__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-bamboo);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.artisan-section__link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 1024px) {
+  .artisan-section__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .artisan-section__image--secondary {
+    width: 85%;
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artisan-section__image--secondary {
+    width: 100%;
+    margin-top: 0;
+    border: none;
+  }
+}

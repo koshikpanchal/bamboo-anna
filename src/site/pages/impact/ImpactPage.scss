@@ -1,0 +1,60 @@
+.impact-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-facts__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+
+.impact-facts__image img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-strong);
+}
+
+.impact-facts__content ul {
+  padding-left: 20px;
+  margin: 20px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.impact-tiles__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.impact-tile {
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-soft);
+  padding-bottom: 16px;
+}
+
+.impact-tile img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.impact-tile h3 {
+  margin: 16px 16px 8px;
+}
+
+.impact-tile p {
+  margin: 0 16px;
+  color: var(--color-muted);
+}
+
+@media (max-width: 1024px) {
+  .impact-facts__inner {
+    grid-template-columns: 1fr;
+  }
+}

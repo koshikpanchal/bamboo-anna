@@ -47,7 +47,7 @@ const products: typeProduct[] = [
   },
   {
     id: 4,
-    name: 'Neem Beared Comb',
+    name: 'Neem Beard Comb',
     img: BeardComb,
     hoverImg: BeardCombH,
     link: '/pdp?product=beardComb',
@@ -70,34 +70,43 @@ const products: typeProduct[] = [
 
 const ProductSection = () => {
   return (
-    <section className="productSection">
-      <h2>Explore our Products</h2>
-      <div className="productGrid">
-        {products.map((product) => (
-          <Link to={product.link} key={product.id} className="productCard">
-            <img
-              src={product.img}
-              alt={product.name}
-              className="productImage"
-            />
-            <img
-              src={product.hoverImg}
-              alt={`${product.name} hover`}
-              className="productHoverImage"
-            />
-            <div className="productName">{product.name}</div>
+    <section className="productSection section" data-reveal>
+      <div className="section__inner">
+        <div className="productSection__header">
+          <span className="eyebrow">Signature line</span>
+          <h2>Explore bamboo essentials made to last.</h2>
+          <p>
+            Thoughtful tools for daily rituals, crafted with natural bamboo and
+            local expertise.
+          </p>
+        </div>
+        <div className="productGrid">
+          {products.map((product) => (
+            <Link to={product.link} key={product.id} className="productCard">
+              <img
+                src={product.img}
+                alt={product.name}
+                className="productImage"
+              />
+              <img
+                src={product.hoverImg}
+                alt={`${product.name} hover`}
+                className="productHoverImage"
+              />
+              <div className="productName">{product.name}</div>
+            </Link>
+          ))}
+        </div>
+        <div className="product-section-actions">
+          <Link to="/products" className="viewAllProducts">
+            View all Products
           </Link>
-        ))}
-      </div>
-      <div className="product-section-actions">
-        <Link to="/products" className="viewAllProducts">
-          View all Products
-        </Link>
-        <CTAButton 
-          text="Need Custom Solutions?" 
-          variant="outline" 
-          size="medium"
-        />
+          <CTAButton
+            text="Need Custom Solutions?"
+            variant="outline"
+            size="medium"
+          />
+        </div>
       </div>
     </section>
   );

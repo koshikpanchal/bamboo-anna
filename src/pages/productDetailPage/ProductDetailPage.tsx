@@ -49,7 +49,9 @@ const ProductDetailPage = () => {
     setLoading(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -97,7 +99,7 @@ const ProductDetailPage = () => {
       <div className="productDetailPage">
         {productData ? (
           <>
-            <div className="productDetailContainer">
+            <div className="productDetailContainer" data-reveal>
               <div className="productImage">
                 <div className="carousel">
                   {productData.images.length !== 1 && !loading && (
@@ -118,8 +120,8 @@ const ProductDetailPage = () => {
                     <img
                       src={productData.images[currentImageIndex]}
                       alt={productData.name}
-                      onLoad={handleImageLoad} // Trigger image load
-                      style={{ display: loading ? 'none' : 'block' }} // Hide image while loading
+                      onLoad={handleImageLoad}
+                      style={{ display: loading ? 'none' : 'block' }}
                     />
                   </div>
                   {productData.images.length !== 1 && !loading && (
@@ -148,7 +150,7 @@ const ProductDetailPage = () => {
                 </div>
               </div>
             </div>
-            <form className="inquiryForm" onSubmit={handleSubmit}>
+            <form className="inquiryForm" onSubmit={handleSubmit} data-reveal>
               <h3>Inquire about this product</h3>
               <div className="formGroup">
                 <label htmlFor="name">Your Name:</label>
@@ -175,7 +177,7 @@ const ProductDetailPage = () => {
               <div className="formGroup">
                 <label htmlFor="address">Address:</label>
                 <input
-                  type="address"
+                  type="text"
                   id="address"
                   name="address"
                   value={formData.address}
@@ -195,19 +197,20 @@ const ProductDetailPage = () => {
               </div>
               <div className="formGroup">
                 <label htmlFor="enquiryDetails">Enquiry Details:</label>
-                <input
+                <textarea
                   id="enquiryDetails"
                   name="enquiryDetails"
                   value={formData.enquiryDetails}
                   onChange={handleChange}
                   required
-                ></input>
+                  rows={4}
+                ></textarea>
               </div>
               <button type="submit">Submit Enquiry</button>
             </form>
           </>
         ) : (
-          <div className="noProduct">
+          <div className="noProduct" data-reveal>
             <h2>No product selected</h2>
             <p>Please select a product from our catalog.</p>
           </div>

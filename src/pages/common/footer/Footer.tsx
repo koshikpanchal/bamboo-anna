@@ -6,13 +6,43 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { NavLink } from 'react-router-dom';
+import LogoColor from '../../../assets/LogoColor.png';
+import CTAButton from '../cta-button/CTAButton';
 
 const Footer = () => {
   return (
     <div className="footerWrapper">
       <footer className="footer">
+        <div className="footerTop">
+          <div className="footerBrand">
+            <img src={LogoColor} alt="Bamboo Anna" />
+            <p>
+              We craft bamboo essentials with local artisans in Rajasthan,
+              building products that are gentle on the planet and generous to the
+              communities behind them.
+            </p>
+            <div className="footerBadges">
+              <span className="pill">Local artisan network</span>
+              <span className="pill">Plastic-free sourcing</span>
+              <span className="pill">Custom brand-ready</span>
+            </div>
+          </div>
+          <div className="footerCTA">
+            <h3>Design your bamboo collection</h3>
+            <p>
+              From hotels to dental clinics, we deliver custom bamboo solutions
+              with reliable timelines and thoughtful craftsmanship.
+            </p>
+            <CTAButton
+              text="Start a project"
+              variant="primary"
+              size="medium"
+              to="/contactUs"
+            />
+          </div>
+        </div>
+
         <div className="footerBlocks">
-          {/* Quick Links Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
               <div className="footerBlockHeading">Quick Links</div>
@@ -33,13 +63,13 @@ const Footer = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contactUs" className="anchor">
-                    Contact Us
+                  <NavLink to="/photoGallery" className="anchor">
+                    Photo Gallery
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/testimonial" className="anchor">
-                    Testimonial
+                  <NavLink to="/contactUs" className="anchor">
+                    Contact Us
                   </NavLink>
                 </li>
                 <li>
@@ -51,7 +81,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
               <div className="footerBlockHeading">Products</div>
@@ -98,10 +127,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Talk To Us Section */}
           <div className="footerBlock">
             <div className="footerBlockContainor">
-              <div className="footerBlockHeading">Follow Us</div>
+              <div className="footerBlockHeading">Connect</div>
               <div className="socialMediaLinks">
                 <a
                   href="https://www.youtube.com/@BambooAnna"
@@ -151,7 +179,6 @@ const Footer = () => {
                 </li>
               </ul>
 
-              {/* Google Map Section */}
               <div className="mapContainer">
                 <iframe
                   className="mapIframe"
@@ -163,8 +190,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footerCopyright">
-          Copyright © {new Date().getFullYear()} Bamboo Anna. All rights
-          reserved.
+          Copyright {new Date().getFullYear()} Bamboo Anna. All rights reserved.
         </div>
       </footer>
     </div>

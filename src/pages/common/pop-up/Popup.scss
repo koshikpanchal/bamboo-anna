@@ -1,61 +1,58 @@
-// Overlay to dim the background
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); // Semi-transparent black background
+  inset: 0;
+  background-color: rgba(10, 12, 9, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; // Ensure the popup is on top of other elements
+  z-index: 1000;
+  backdrop-filter: blur(6px);
 }
 
-// Popup content container
 .popup-content {
-  background-color: white;
-  padding: 20px;
-  width: 400px;
-  max-width: 90%;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--surface-elevated);
+  padding: 28px;
+  width: min(420px, 90%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-outline);
+  box-shadow: var(--shadow-card);
   text-align: center;
 
   h3 {
     margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .popup-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 12px;
     margin-top: 20px;
 
     button {
       padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
+      border-radius: var(--radius-pill);
       cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
+      }
 
       &.btn-cancel {
-        background-color: #f44336;
-        color: white;
-
-        &:hover {
-          background-color: #d32f2f;
-        }
+        background-color: transparent;
+        color: var(--text-color);
+        border-color: var(--color-outline);
       }
 
       &.btn-ok {
-        background-color: #4caf50;
-        color: white;
-
-        &:hover {
-          background-color: #388e3c;
-        }
+        background: linear-gradient(135deg, #1f3f2b 0%, #2f6b3f 100%);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.2);
       }
     }
   }

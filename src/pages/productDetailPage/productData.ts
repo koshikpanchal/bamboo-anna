@@ -1,34 +1,34 @@
 // brushes
 import brush from '../../assets/dentalCare/P1030940-min.jpg';
-import brush2 from '../../assets/dentalCare/P1040027-min.png';
-import brush3 from '../../assets/dentalCare/P1030932-min.png';
-import brush4 from '../../assets/dentalCare/P1040052-min.png';
+import brush2 from '../../assets/dentalCare/TB 2-min.jpg';
+import brush3 from '../../assets/dentalCare/TB 3-min.jpg';
+import brush4 from '../../assets/dentalCare/P1030899-min.jpg';
 
-import tongueCleaner from '../../assets/dentalCare/dentalKit.jpg';
+import tongueCleaner from '../../assets/dentalCare/bamboo-tongue-cleaner-.jpeg';
 
 // neem brush
-import nBrush from '../../assets/dentalCare/TB 3-min.jpg';
-import nBrush1 from '../../assets/dentalCare/P1030895-min.png';
-import nBrush2 from '../../assets/dentalCare/P1030814-min.png';
+import nBrush from '../../assets/dentalCare/P1030943-min.jpg';
+import nBrush1 from '../../assets/dentalCare/TB 3-min.jpg';
+import nBrush2 from '../../assets/dentalCare/P1030899-min.jpg';
 
 //comb
 import comb from '../../assets/comb/Brush 2.jpg';
 import comb1 from '../../assets/comb/Brush 3.jpg';
-import comb2 from '../../assets/comb/P1040084-min.png';
-import comb3 from '../../assets/comb/P1040088-min.png';
+import comb2 from '../../assets/comb/H&B Comb.jpg';
+import comb3 from '../../assets/comb/H&B Combs.jpg';
 
 //beard Comb
 import bComb from '../../assets/comb/H&B Comb.jpg';
 import bComb1 from '../../assets/comb/H&B Combs.jpg';
 
 //pocketCombs
-import pComb from '../../assets/comb/P1040125-min.png';
+import pComb from '../../assets/comb/Neem Comb-min.jpg';
 
 //straw
 import straw from '../../assets/straw/STRAWS-min.jpg';
 
 //razor
-import razor from '../../assets/razor/Razor 1.jpg';
+import razor from '../../assets/razor/P1030998-min.jpg';
 
 //pencil
 import pencil from '../../assets/penPencil/plantable-seed-penciljpg.jpg';
@@ -124,7 +124,7 @@ const productDetails: Record<string, productDetailsType> = {
     keyFeatures: [
       'Durable & Reusable: Built to last, our bamboo straw can be used again and again, making it a practical addition to your daily routine.',
       'Includes Cleaning Brush: Comes with a flexible, stainless steel cleaning brush to make washing easy and thorough, ensuring your straw is always ready for use.',
-      'Portable & Convenient: Lightweight and compact, it’s easy to carry in your bag or keep in your kitchen for everyday use.',
+      "Portable & Convenient: Lightweight and compact, it's easy to carry in your bag or keep in your kitchen for everyday use.",
     ],
   },
   razor: {
@@ -141,7 +141,7 @@ const productDetails: Record<string, productDetailsType> = {
   pencil: {
     name: 'Plantable Seed Pencil',
     description:
-      'Discover a new way to write and grow with our innovative Plantable Seed Pencil. Crafted from eco-friendly materials, this unique pencil is embedded with seeds, allowing you to plant it once it’s used up. Each pencil transforms into a source of life and beauty, making it a perfect choice for environmentally conscious individuals who want to leave a positive impact on the planet.',
+      "Discover a new way to write and grow with our innovative Plantable Seed Pencil. Crafted from eco-friendly materials, this unique pencil is embedded with seeds, allowing you to plant it once it's used up. Each pencil transforms into a source of life and beauty, making it a perfect choice for environmentally conscious individuals who want to leave a positive impact on the planet.",
     images: [pencil],
     keyFeatures: [
       'Eco-Friendly & Sustainable: Made from recycled newspaper and non-toxic materials, this pencil helps reduce waste and supports a greener planet.',
@@ -152,7 +152,7 @@ const productDetails: Record<string, productDetailsType> = {
   pen: {
     name: 'Plantable Seed Pen',
     description:
-      'Revolutionize your writing experience with our Plantable Seed Pen, where sustainability meets functionality. This eco-friendly pen is crafted from recycled materials and embedded with seeds, allowing you to plant it once it’s out of ink. Each pen transforms into a source of life, making it a perfect choice for those who want to combine everyday utility with a commitment to environmental stewardship.',
+      "Revolutionize your writing experience with our Plantable Seed Pen, where sustainability meets functionality. This eco-friendly pen is crafted from recycled materials and embedded with seeds, allowing you to plant it once it's out of ink. Each pen transforms into a source of life, making it a perfect choice for those who want to combine everyday utility with a commitment to environmental stewardship.",
     images: [pen],
     keyFeatures: [
       'Smooth Writing Experience: Designed for a comfortable grip and smooth writing, it offers the performance of a high-quality pen with the added benefit of sustainability.',
@@ -163,3 +163,4 @@ const productDetails: Record<string, productDetailsType> = {
 
 export { productDetails };
 export type { productDetailsType };
+

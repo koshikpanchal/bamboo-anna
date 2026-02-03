@@ -9,20 +9,20 @@ interface CTAButtonProps {
   className?: string;
 }
 
-const CTAButton = ({ 
-  text = 'Contact Us', 
+const CTAButton = ({
+  text = 'Contact Us',
   variant = 'primary',
   size = 'medium',
   to = '/contactUs',
-  className = ''
+  className = '',
 }: CTAButtonProps) => {
   return (
-    <Link 
-      to={to} 
+    <Link
+      to={to}
       className={`cta-button cta-button--${variant} cta-button--${size} ${className}`}
     >
       {text}
-      <span className="cta-button__arrow">→</span>
+      <span className="cta-button__arrow">-&gt;</span>
     </Link>
   );
 };

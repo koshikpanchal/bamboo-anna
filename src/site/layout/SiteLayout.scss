@@ -1,0 +1,11 @@
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.site-main {
+  flex: 1;
+  position: relative;
+}

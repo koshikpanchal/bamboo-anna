@@ -17,100 +17,96 @@ const CompanySynopsis = () => {
     <>
       <CompanySynopsisHelmet />
       <Header />
-      <div className="company-synopsis-container">
-        <section className="intro-section">
-          <h1>Company Synopsis</h1>
-          <p>Our Journey in Transforming Bamboo into Innovative Solutions</p>
-          <p>
-            We can create customized products for your company/organisation logo
-          </p>
-        </section>
-
-        <section className="mission-section">
-          <div className="mission-image-container">
-            <LazyLoadImage src={brush} alt="Our Mission" effect="blur" />
-          </div>
-          <div className="mission-content">
-            <h2>Online Sellers</h2>
-            <p>
-              At Bamboo Anna Enterprises, we have successfully partnered with a
-              variety of online sellers to provide customized bamboo products.
-              Our eco-friendly items are tailored to meet the specific needs of
-              eCommerce platforms, offering unique customization options that
-              enhance the product appeal and cater to diverse customer
-              preferences.
+      <div className="company-synopsis-page">
+        <section className="page-hero">
+          <div className="page-hero__inner" data-reveal>
+            <span className="eyebrow">Company synopsis</span>
+            <h1 className="page-hero__title">Bamboo solutions for every sector</h1>
+            <p className="page-hero__subtitle">
+              We design custom bamboo products for online sellers, dental
+              clinics, hospitality brands, and corporate gifting programs.
             </p>
           </div>
         </section>
 
-        <section className="values-section">
-          <div className="values-content">
-            <h2>Dentist</h2>
-            <p>
-              We have a proven track record of working with dental care
-              providers to supply bamboo-based products that align with their
-              practice's needs. Our custom solutions include a range of
-              eco-friendly dental items designed to offer a sustainable
-              alternative while meeting the specific requirements of dental
-              professionals.
-            </p>
-          </div>
-          <div className="values-image-container">
-            <LazyLoadImage src={doctorProduct} alt="Our Values" effect="blur" />
+        <section className="split-section">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={brush} alt="Online sellers" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Online sellers</h2>
+              <p>
+                We partner with ecommerce brands to create customizable bamboo
+                goods with premium packaging and reliable delivery.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="mission-section">
-          <div className="mission-image-container">
-            <LazyLoadImage
-              src={HotelAmenities}
-              alt="Hotel Amenities"
-              effect="blur"
-            />
-          </div>
-          <div className="mission-content">
-            <h2>Hotel Amenities</h2>
-            <p>
-              Our bamboo products are a popular choice for hotels seeking to
-              enhance their sustainability efforts. We provide customized bamboo
-              amenities that add a touch of eco-friendly luxury to guest
-              experiences, including a range of products designed to meet the
-              high standards of the hospitality industry.
-            </p>
+        <section className="split-section split-section--reverse">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={doctorProduct} alt="Dentist" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Dentist</h2>
+              <p>
+                Bamboo dental kits and accessories provide a sustainable upgrade
+                for clinics looking to improve patient care.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="values-section">
-          <div className="values-content">
-            <h2>Corporate Giftings</h2>
-            <p>
-              Bamboo Anna Enterprises offers bespoke bamboo gift solutions for
-              corporate clients. Our custom-designed gifts serve as elegant,
-              eco-conscious tokens of appreciation that align with corporate
-              sustainability goals and leave a lasting impression on recipients.
-            </p>
+        <section className="split-section">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={HotelAmenities} alt="Hotel amenities" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Hotel amenities</h2>
+              <p>
+                Replace single-use plastics with bamboo essentials that elevate
+                guest experiences while meeting sustainability goals.
+              </p>
+            </div>
           </div>
-          <div className="values-image-container">
-            <LazyLoadImage
-              src={corporateGifting}
-              alt="Corporate Gifting"
-              effect="blur"
-            />
+        </section>
+
+        <section className="split-section split-section--reverse">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={corporateGifting} alt="Corporate gifting" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Corporate gifting</h2>
+              <p>
+                Offer elegant bamboo gifts that align with corporate values and
+                leave a lasting impression.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="company-synopsis__cta section">
+          <div className="section__inner" data-reveal>
+            <h2>Still want to learn more?</h2>
+            <p>
+              Download the detailed company overview for product catalogs,
+              manufacturing capacity, and collaboration options.
+            </p>
+            <a
+              className="company-synopsis__button"
+              href={redirectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View company profile
+            </a>
           </div>
         </section>
       </div>
-
-      <section className="learnMoreSection">
-        <h2>Still want to learn more?</h2>
-        <a
-          className="clickMeButton"
-          href={redirectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Click me
-        </a>
-      </section>
       <Footer />
     </>
   );

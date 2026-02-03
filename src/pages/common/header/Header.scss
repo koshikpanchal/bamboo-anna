@@ -1,43 +1,36 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 32px 0 32px;
-  box-sizing: border-box;
-  z-index: 100;
-  background-color: white;
-  color: #2c3e50;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  overflow-x: hidden;
-
-  @media (max-width: 1280px) and (min-width: 769px) {
-    padding: 0 15px 0 15px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 8px 0 8px;
-  }
-}
-
+.header,
 .headerDark {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 32px 0 32px;
+  padding: 12px 32px;
   box-sizing: border-box;
-  z-index: 100;
-  background-color: var(--background-color);
+  z-index: 200;
   color: var(--text-color);
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08);
-  overflow-x: hidden;
+  border-bottom: 1px solid var(--color-outline);
+  box-shadow: 0 18px 45px rgba(20, 23, 16, 0.08);
+  backdrop-filter: blur(18px);
+}
 
-  @media (max-width: 1280px) and (min-width: 769px) {
-    padding: 0 15px 0 15px;
+.header {
+  background: rgba(248, 246, 240, 0.9);
+}
+
+.headerDark {
+  background: rgba(18, 22, 17, 0.9);
+}
+
+@media (max-width: 1280px) and (min-width: 769px) {
+  .header,
+  .headerDark {
+    padding: 10px 20px;
   }
+}
 
-  @media (max-width: 768px) {
-    padding: 0 8px 0 8px;
+@media (max-width: 768px) {
+  .header,
+  .headerDark {
+    padding: 10px 16px;
   }
 }

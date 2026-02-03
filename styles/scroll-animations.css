@@ -1,0 +1,91 @@
+:root.has-animations [data-anim="reveal"],
+:root.has-animations [data-anim="hero"] [data-hero],
+:root.has-animations [data-anim="count"] {
+  will-change: transform, opacity;
+}
+
+:root.has-animations [data-anim="reveal"]:not([data-in="true"]) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+}
+
+:root.has-animations [data-anim="reveal"][data-in="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  transition-delay: var(--delay, 0s);
+}
+
+:root.has-animations [data-anim="hero"]:not([data-in="true"]) [data-hero="title"] {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+:root.has-animations [data-anim="hero"]:not([data-in="true"]) [data-hero="sub"],
+:root.has-animations [data-anim="hero"]:not([data-in="true"]) [data-hero="ctas"] {
+  opacity: 0;
+}
+
+:root.has-animations [data-anim="hero"][data-in="true"] [data-hero="title"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+:root.has-animations [data-anim="hero"][data-in="true"] [data-hero="sub"],
+:root.has-animations [data-anim="hero"][data-in="true"] [data-hero="ctas"] {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+
+:root.has-animations [data-anim="hero"][data-in="true"] [data-hero="sub"] {
+  transition-delay: 80ms;
+}
+
+:root.has-animations [data-anim="hero"][data-in="true"] [data-hero="ctas"] {
+  transition-delay: 140ms;
+}
+
+:root.has-animations [data-anim="count"] {
+  opacity: 0;
+}
+
+:root.has-animations [data-anim="count"].is-counted {
+  opacity: 1;
+  transition: opacity 220ms ease-out;
+}
+
+:root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey="line"] {
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+
+:root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey-step] {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+:root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey-step].is-reached {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+:root.has-animations [data-anim="scroll-craft"][data-enhanced="true"] [data-craft-copy="step-3"] {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+:root.has-animations [data-anim="scroll-craft"][data-enhanced="true"] [data-craft-callout] {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root.has-animations [data-anim="reveal"],
+  :root.has-animations [data-anim="hero"] [data-hero],
+  :root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey-step] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

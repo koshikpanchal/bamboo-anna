@@ -1,214 +1,41 @@
-.company-synopsis-container {
-  padding: 70px 20px;
-  font-family: "Arial", sans-serif;
-}
-
-.intro-section {
+.company-synopsis__cta {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 80px 24px;
 }
 
-.intro-section h1 {
-  font-size: 3rem;
-  color: #2c3e50;
+.company-synopsis__cta .section__inner {
+  background: var(--surface-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-outline);
+  padding: 48px 24px;
+  box-shadow: var(--shadow-card);
 }
 
-.intro-section p {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  max-width: 800px;
-  margin: 0 auto;
+.company-synopsis__cta h2 {
+  font-size: clamp(2rem, 2.5vw, 2.6rem);
+  margin-bottom: 16px;
 }
 
-.mission-section,
-.values-section,
-.team-section {
-  display: flex;
+.company-synopsis__cta p {
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
+
+.company-synopsis__button {
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 50px;
-}
-
-.mission-section .mission-image-container,
-.values-section .values-image-container {
-  flex: 1;
-  text-align: center;
-}
-
-.mission-section img,
-.values-section img {
-  width: 80%;
-  border-radius: 10px;
-}
-
-.mission-section .mission-content,
-.values-section .values-content {
-  flex: 1;
-  padding: 0 20px;
-}
-
-.mission-section h2,
-.values-section h2 {
-  font-size: 2.5rem;
-  color: #5a9b0c;
-}
-
-.mission-section p,
-.values-section p {
-  font-size: 1.2rem;
-  color: #2c3e50;
-}
-
-.values-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.values-section ul li {
-  margin-bottom: 10px;
-}
-
-.learnMoreSection {
-  padding: 50px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.amountSavedSection h2 {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.clickMeButton {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 1rem;
+  justify-content: center;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #1f3f2b 0%, #2f6b3f 100%);
   color: #fff;
-  background-color: #5a9b0c; /* Button color */
   text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
 }
 
-.clickMeButton:hover {
-  background-color: #4a8a0a; /* Darker button color on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.why-bamboo-container {
-  padding: 50px 20px;
-  font-family: "Arial", sans-serif;
-}
-
-.intro-section {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.intro-section h1 {
-  font-size: 3rem;
-  color: var(--text-heading-color);
-}
-
-.intro-section p {
-  font-size: 1.5rem;
-  color: var(--text-heading-color);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.mission-section,
-.values-section,
-.team-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-  flex-direction: row;
-}
-
-.mission-section .mission-image-container,
-.values-section .values-image-container {
-  flex: 1;
-  text-align: center;
-}
-
-.mission-section img,
-.values-section img {
-  width: 80%;
-  border-radius: 10px;
-}
-
-.mission-section .mission-content,
-.values-section .values-content {
-  flex: 1;
-  padding: 0 20px;
-}
-
-.mission-section h2,
-.values-section h2 {
-  font-size: 2.5rem;
-  color: #5a9b0c;
-}
-
-.mission-section p,
-.values-section p {
-  font-size: 1.2rem;
-  color: var(--text-heading-color);
-}
-
-.values-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.values-section ul li {
-  margin-bottom: 10px;
-}
-
-/* Mobile (768px and below) */
 @media (max-width: 768px) {
-  .intro-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .intro-section p {
-    font-size: 1.2rem;
-  }
-
-  .mission-section,
-  .values-section {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Space between grid items */
-    text-align: center;
-  }
-
-  .mission-section .mission-content,
-  .values-section .values-content {
-    order: 3; /* Move content to last */
-    padding: 10px;
-  }
-
-  .mission-section .mission-image-container,
-  .values-section .values-image-container {
-    order: 2; /* Move image before content */
-    width: 100%;
-  }
-
-  .mission-section h2,
-  .values-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .mission-section p,
-  .values-section p {
-    font-size: 1rem;
-  }
-
-  .mission-section img,
-  .values-section img {
-    width: 100%;
-    border-radius: 10px;
+  .company-synopsis__cta .section__inner {
+    padding: 36px 18px;
   }
 }

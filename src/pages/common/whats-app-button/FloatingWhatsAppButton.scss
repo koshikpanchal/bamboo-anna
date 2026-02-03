@@ -1,40 +1,37 @@
-// FloatingWhatsAppButton.scss
 .floating-whatsapp-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  border: none;
+  bottom: 24px;
+  right: 24px;
+  background: var(--color-forest);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-strong);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-  opacity: 0.7;
+  width: 56px;
+  height: 56px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: scale(1.1);
-    opacity: 1;
-  }
+.floating-whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(14, 14, 12, 0.25);
+}
 
-  img {
-    width: 40px;
-    height: 40px;
-  }
+.floating-whatsapp-button img {
+  width: 28px;
+  height: 28px;
+}
 
-  // Make sure it's visible on all screen sizes
-  @media (max-width: 768px) {
-    opacity: 1;
-    bottom: 10px;
-    right: 15px;
-    padding: 8px;
-    img {
-      width: 30px;
-      height: 30px;
-    }
+@media (max-width: 768px) {
+  .floating-whatsapp-button {
+    bottom: 14px;
+    right: 14px;
+    width: 50px;
+    height: 50px;
   }
 }

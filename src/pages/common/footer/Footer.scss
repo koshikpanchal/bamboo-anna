@@ -1,48 +1,101 @@
 .footer {
-  background: linear-gradient(to bottom, #5a9b0c, #5ebb33);
-  color: white;
-  padding: 32px 16px;
-  z-index: 2;
+  background: linear-gradient(180deg, #1f3f2b 0%, #132118 100%);
+  color: #f7f3ea;
+  padding: 72px 24px 32px;
   position: relative;
-  margin-top: auto;
-  font-size: 14px; // Smaller font size for compact layout
-  line-height: 1.4;
-  .anchor {
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  overflow: hidden;
+}
 
-  .anchor:hover {
-    color: #dfffd0;
-  }
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(214, 183, 120, 0.2), transparent 50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.footerTop {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.footerBrand img {
+  width: 160px;
+  margin-bottom: 16px;
+}
+
+.footerBrand p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footerBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footerBadges .pill {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.footerCTA h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footerCTA p {
+  font-size: 0.95rem;
+  opacity: 0.88;
+  margin-bottom: 20px;
 }
 
 .footerBlocks {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap; // Ensure it adjusts on smaller screens
-}
-
-.footerBlock {
-  flex: 1 1 200px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
 }
 
 .footerBlockHeading {
-  padding-bottom: 8px;
-  font-size: 16px;
-  font-weight: 600;
+  padding-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .footerBlockBody {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 8px;
 }
 
-.footerBlockBody li {
-  margin-bottom: 6px;
+.anchor {
+  color: #f7f3ea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.anchor:hover {
+  color: #f0d7a1;
 }
 
 .talkToUsLI {
@@ -51,27 +104,27 @@
 
 .socialMediaLinks {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .socialLink {
-  color: white;
+  color: #fff;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .socialLink:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
 }
 
@@ -80,22 +133,38 @@
 }
 
 .mapContainer {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .mapIframe {
   width: 100%;
-  height: 120px;
+  height: 140px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 10px;
+  filter: grayscale(1) contrast(0.9);
 }
 
-/* Copyright */
 .footerCopyright {
-  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
   text-align: center;
-  font-size: 13px;
-  color: #f0f0f0;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 12px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 56px 16px 24px;
+  }
+
+  .footerTop {
+    padding: 24px;
+  }
+
+  .footerBrand img {
+    width: 140px;
+  }
 }

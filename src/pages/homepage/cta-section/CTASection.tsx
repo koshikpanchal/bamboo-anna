@@ -6,21 +6,35 @@ interface CTASectionProps {
   description?: string;
   buttonText?: string;
   variant?: 'default' | 'gradient' | 'minimal';
+  eyebrow?: string;
 }
 
-const CTASection = ({ 
+const CTASection = ({
   title = 'Ready to Make a Difference?',
-  description = 'Join us in our mission to create a sustainable future. Get in touch to learn more about our eco-friendly bamboo products.',
+  description =
+    'Join us in our mission to create a sustainable future. Get in touch to learn more about our eco-friendly bamboo products.',
   buttonText = 'Get in Touch',
-  variant = 'default'
+  variant = 'default',
+  eyebrow = 'Bamboo Anna Studio',
 }: CTASectionProps) => {
   return (
-    <section className={`cta-section cta-section--${variant}`}>
+    <section className={`cta-section cta-section--${variant}`} data-reveal>
+      <div className="cta-section__glow" />
       <div className="cta-section__content">
+        <span className="eyebrow">{eyebrow}</span>
         <h2 className="cta-section__title">{title}</h2>
         <p className="cta-section__description">{description}</p>
-        <CTAButton text={buttonText} variant="primary" size="large" />
+        <div className="cta-section__actions">
+          <CTAButton text={buttonText} variant="primary" size="large" />
+          <CTAButton
+            text="Browse Products"
+            variant="outline"
+            size="large"
+            to="/products"
+          />
+        </div>
       </div>
+      <div className="cta-section__pattern" />
     </section>
   );
 };

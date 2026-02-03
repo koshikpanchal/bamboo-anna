@@ -27,7 +27,9 @@ const ContactUs = () => {
     navigate('/products');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -72,91 +74,108 @@ const ContactUs = () => {
     <div>
       <ContactUsHelmet />
       <Header />
-      <div className='contact_page_container'>
-        <section className="intro-section">
-          <h1>Contact Us</h1>
+      <div className="contact-page">
+        <section className="page-hero">
+          <div className="page-hero__inner" data-reveal>
+            <span className="eyebrow">Contact</span>
+            <h1 className="page-hero__title">Let us build something together</h1>
+            <p className="page-hero__subtitle">
+              Share your requirements for bamboo essentials, custom branding, or
+              bulk orders. Our team will respond quickly.
+            </p>
+          </div>
         </section>
-        <div className="contactUsPage">
-          <div className="contactInfo">
-            <ContactExperience />
-          </div>
 
-          <div className="enquiryForm">
-            <h2>Send Us Your Enquiry</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="formGroup">
-                <label htmlFor="productService">
-                  Product/Service Looking For:
-                </label>
-                <input
-                  type="text"
-                  id="productService"
-                  name="productService"
-                  value={formData.productService}
-                  onChange={handleChange}
-                  required
-                />
+        <section className="contact-panel">
+          <div className="contact-panel__inner">
+            <div className="contact-panel__visual" data-reveal>
+              <ContactExperience />
+              <div className="contact-panel__details">
+                <h3>Talk to us directly</h3>
+                <p>+91-8000618916, +91-9887392445</p>
+                <p>bambooannaa@gmail.com</p>
+                <p>Plot No. 86, Gali No. 5, Shubash Nagar, Banswara, Rajasthan</p>
               </div>
-              <div className="formGroup">
-                <label htmlFor="name">Your Name:</label>
-                <input
-                  type="text"
-                  id="from_name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="formGroup">
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="formGroup">
-                <label htmlFor="address">Address:</label>
-                <input
-                  type="address"
-                  id="address"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="formGroup">
-                <label htmlFor="phone">Phone/Mobile:</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="formGroup">
-                <label htmlFor="enquiryDetails">Enquiry Details:</label>
-                <input
-                  id="enquiryDetails"
-                  name="enquiryDetails"
-                  value={formData.enquiryDetails}
-                  onChange={handleChange}
-                  required
-                ></input>
-              </div>
-              <button type="submit">Submit Enquiry</button>
-            </form>
+            </div>
+
+            <div className="contact-panel__form" data-reveal>
+              <h2>Send us your enquiry</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="formGroup">
+                  <label htmlFor="productService">
+                    Product/Service Looking For:
+                  </label>
+                  <input
+                    type="text"
+                    id="productService"
+                    name="productService"
+                    value={formData.productService}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="name">Your Name:</label>
+                  <input
+                    type="text"
+                    id="from_name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="address">Address:</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="phone">Phone/Mobile:</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="formGroup">
+                  <label htmlFor="enquiryDetails">Enquiry Details:</label>
+                  <textarea
+                    id="enquiryDetails"
+                    name="enquiryDetails"
+                    value={formData.enquiryDetails}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                  ></textarea>
+                </div>
+                <button type="submit">Submit Enquiry</button>
+              </form>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
       <Popup
-        message="Thanks for choosing Bamboo Anna, we'll connect to you soon! Do you want to browser our more products"
+        message="Thanks for choosing Bamboo Anna, we'll connect to you soon! Do you want to browse more products?"
         onClose={() => setPopupOpen(false)}
         onConfirm={handleConfirm}
         isOpen={isPopupOpen}

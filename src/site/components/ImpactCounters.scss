@@ -1,0 +1,31 @@
+.impact-counters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.impact-card {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.impact-card__value {
+  font-size: 2rem;
+  font-family: var(--font-display);
+  color: var(--color-forest);
+  margin-bottom: 8px;
+}
+
+.impact-card__label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.impact-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+}

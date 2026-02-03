@@ -9,7 +9,7 @@ const CameraAnimation = () => {
   const radiusRef = useRef(7);
   const heightRef = useRef(3);
   const isUserInteractingRef = useRef(false);
-  const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const inactivityTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleInteractionStart = () => {
     isUserInteractingRef.current = true;

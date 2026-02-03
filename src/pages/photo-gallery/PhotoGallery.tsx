@@ -19,20 +19,34 @@ const PhotoGallery = () => {
     <>
       <PhotoGalleryHelmet />
       <Header />
-      <div className="photo-gallery-container">
-        <h1>Photo Gallery</h1>
-        <PhotoProvider>
-          <div className="masonry-grid">
-            {images.map((image, index) => (
-              <div key={index} className="masonry-item">
-                <PhotoView src={image.src}>
-                  <img src={image.src} alt={image.alt} />
-                </PhotoView>
-                <p>{image.alt}</p>
-              </div>
-            ))}
+      <div className="photo-gallery-page">
+        <section className="page-hero">
+          <div className="page-hero__inner" data-reveal>
+            <span className="eyebrow">Gallery</span>
+            <h1 className="page-hero__title">Inside the Bamboo Anna workshop</h1>
+            <p className="page-hero__subtitle">
+              A glimpse into the artisans, spaces, and materials behind every
+              bamboo essential.
+            </p>
           </div>
-        </PhotoProvider>
+        </section>
+
+        <section className="photo-gallery-section" data-reveal>
+          <div className="photo-gallery-container">
+            <PhotoProvider>
+              <div className="masonry-grid">
+                {images.map((image, index) => (
+                  <div key={index} className="masonry-item">
+                    <PhotoView src={image.src}>
+                      <img src={image.src} alt={image.alt} />
+                    </PhotoView>
+                    <p>{image.alt}</p>
+                  </div>
+                ))}
+              </div>
+            </PhotoProvider>
+          </div>
+        </section>
       </div>
       <Footer />
     </>

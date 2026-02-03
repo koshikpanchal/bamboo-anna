@@ -10,130 +10,138 @@ import Header from '../common/header/Header';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import WhyBambooHelmet from './WhyBambooHelmet';
-import CTAButton from "../common/cta-button/CTAButton";
+import CTASection from '../homepage/cta-section/CTASection';
 
 const WhyBamboo = () => {
   return (
     <>
       <WhyBambooHelmet />
       <Header />
-      <div className="why-bamboo-container">
-        <section className="intro-section">
-          <h1>Why Bamboo</h1>
-          <p>
-            Bamboo is not just a plant; it's a powerful ally in our fight
-            against climate change. Its rapid growth cycle, often reaching full
-            maturity in just 3-5 years, makes it an incredibly renewable
-            resource.
-          </p>
-        </section>
-
-        <section className="mission-section">
-          <div className="mission-image-container">
-            <LazyLoadImage
-              src={bambooSustainability}
-              alt="Our Mission"
-              effect="blur"
-            />
-          </div>
-          <div className="mission-content">
-            <h2>Sustainability at Its Best</h2>
-            <p>
-              Bamboo is not just a plant; it's a powerful ally in our fight
-              against climate change. Its rapid growth cycle—often reaching full
-              maturity in just 3-5 years—makes it an incredibly renewable
-              resource. By choosing bamboo, you’re supporting a product that
-              replenishes itself quickly, reducing the pressure on forests and
-              helping to preserve biodiversity.
+      <div className="why-bamboo-page">
+        <section className="page-hero">
+          <div className="page-hero__inner" data-reveal>
+            <span className="eyebrow">Why bamboo</span>
+            <h1 className="page-hero__title">A material built for tomorrow</h1>
+            <p className="page-hero__subtitle">
+              Bamboo grows rapidly, regenerates without replanting, and creates
+              products that return to the earth without harm.
             </p>
           </div>
         </section>
 
-        <section className="values-section">
-          <div className="values-content">
-            <h2>Eco-Friendly and Biodegradable</h2>
-            <p>
-              Unlike traditional materials, bamboo is naturally biodegradable.
-              This means that products made from bamboo won't contribute to
-              landfill waste when disposed of. Its low impact on the environment
-              makes it an ideal choice for those looking to make greener choices
-              in their daily lives.
-            </p>
-          </div>
-          <div className="values-image-container">
-            <LazyLoadImage src={products} alt="Our Values" effect="blur" />
-          </div>
-        </section>
-
-        <section className="mission-section">
-          <div className="mission-image-container">
-            <LazyLoadImage
-              src={howStrongIsBamboo}
-              alt="Our Values"
-              effect="blur"
-            />
-          </div>
-          <div className="mission-content">
-            <h2>Versatility and Strength</h2>
-            <p>
-              Bamboo is not only strong but also incredibly versatile. From
-              furniture and flooring to utensils and packaging, bamboo can be
-              crafted into a wide array of products. Its natural resilience and
-              flexibility ensure durability and quality, making it a practical
-              choice for many applications.
-            </p>
-          </div>
-        </section>
-        <section className="values-section">
-          <div className="values-content">
-            <h2>Healthier Living Spaces</h2>
-            <p>
-              Bamboo has natural antibacterial properties that help to keep your
-              living spaces cleaner and healthier. It’s also less likely to
-              harbor dust mites and other allergens, contributing to a more
-              hygienic environment for you and your loved ones.
-            </p>
-          </div>
-          <div className="values-image-container">
-            <LazyLoadImage src={ecoFriendly} alt="Our Values" effect="blur" />
+        <section className="split-section">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage
+                src={bambooSustainability}
+                alt="Sustainable bamboo"
+                effect="blur"
+              />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Sustainability at its best</h2>
+              <p>
+                Bamboo matures in 3-5 years, making it a renewable material that
+                reduces pressure on forests and supports biodiversity.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="mission-section">
-          <div className="mission-image-container">
-            <LazyLoadImage src={tb} alt="Our Values" effect="blur" />
-          </div>
-          <div className="mission-content">
-            <h2>Aesthetic Appeal</h2>
-            <p>
-              With its sleek, modern look and smooth texture, bamboo adds a
-              touch of elegance to any setting. Whether you're outfitting your
-              home with stylish furniture or choosing eco-friendly packaging,
-              bamboo's natural beauty enhances the aesthetic of your products
-              and spaces.
-            </p>
+        <section className="split-section split-section--reverse">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={products} alt="Eco-friendly" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Eco-friendly and biodegradable</h2>
+              <p>
+                Bamboo products break down naturally without leaving harmful
+                residues, helping reduce landfill waste.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="values-section">
-          <div className="values-content">
-            <h2>Supporting Local Communities</h2>
-            <p>
-              Many bamboo products are sourced from small-scale farmers and
-              artisans, supporting local economies and fostering fair trade
-              practices. By choosing bamboo, you’re helping to create jobs and
-              improve livelihoods in communities around the world.
-            </p>
-          </div>
-          <div className="values-image-container">
-            <LazyLoadImage src={bambooFarmer} alt="Our Values" effect="blur" />
+        <section className="split-section">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage
+                src={howStrongIsBamboo}
+                alt="Bamboo strength"
+                effect="blur"
+              />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Versatility and strength</h2>
+              <p>
+                Bamboo is resilient, lightweight, and flexible, making it ideal
+                for everyday products that need to last.
+              </p>
+            </div>
           </div>
         </section>
-        <div className="hero-hero-cta">
-          <h1 className="hero-main-title">Sustainable Living Starts Here</h1>
-          <p className="hero-subtitle">Discover eco-friendly bamboo products that make a difference</p>
-          <CTAButton text="Talk to Our Experts" variant="primary" size="large" />
-        </div>
+
+        <section className="split-section split-section--reverse">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage
+                src={ecoFriendly}
+                alt="Healthy living"
+                effect="blur"
+              />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Healthier living spaces</h2>
+              <p>
+                Bamboo has natural antibacterial properties and is less likely to
+                retain odors or allergens.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="split-section">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage src={tb} alt="Aesthetic appeal" effect="blur" />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Aesthetic appeal</h2>
+              <p>
+                Bamboo adds warmth and elegance to any space, blending modern
+                design with natural textures.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="split-section split-section--reverse">
+          <div className="split-section__inner">
+            <div className="split-section__media" data-reveal>
+              <LazyLoadImage
+                src={bambooFarmer}
+                alt="Supporting communities"
+                effect="blur"
+              />
+            </div>
+            <div className="split-section__content" data-reveal>
+              <h2>Supporting local communities</h2>
+              <p>
+                Bamboo sourcing and production create jobs for local farmers and
+                artisans, strengthening rural economies.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <CTASection
+          title="Sustainable living starts here"
+          description="Discover eco-friendly bamboo products that make a difference for the planet and local artisans."
+          buttonText="Talk to Our Experts"
+          variant="gradient"
+          eyebrow="Bamboo benefits"
+        />
       </div>
       <Footer />
     </>

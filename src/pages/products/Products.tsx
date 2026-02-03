@@ -22,34 +22,45 @@ const Products = () => {
     <>
       <ProductsHelmet />
       <Header />
-      <div className="products-page-container">
-        <h1>Our Bamboo Products</h1>
+      <div className="products-page">
+        <section className="page-hero">
+          <div className="page-hero__inner" data-reveal>
+            <span className="eyebrow">Our range</span>
+            <h1 className="page-hero__title">Bamboo products for daily rituals</h1>
+            <p className="page-hero__subtitle">
+              Curated essentials for wellness, hospitality, and gifting, crafted
+              with artisan precision.
+            </p>
+          </div>
+        </section>
 
-        {/* Dental Care Section */}
-        <section className="product-group">
-          <h2>Dental care</h2>
+        <section className="product-group" data-reveal>
+          <div className="product-group__header">
+            <h2>Dental care</h2>
+          </div>
           <div className="product-items">
             <Link
               to="/pdp?product=softBristleToothbrush"
               className="product-item"
             >
-              <img src={brush} alt="Razor 1" />
+              <img src={brush} alt="Soft bristle toothbrush" />
               <p>Soft bristle toothbrush</p>
             </Link>
             <Link to="/pdp?product=bambooToothbrush" className="product-item">
-              <img src={brush1} alt="Razor 1" />
+              <img src={brush1} alt="Bamboo Toothbrush" />
               <p>Bamboo Toothbrush</p>
             </Link>
             <Link to="/pdp?product=tongueCleaner" className="product-item">
-              <img src={tongueCleaner} alt="Razor 1" />
+              <img src={tongueCleaner} alt="Tongue cleaner" />
               <p>Tongue cleaner</p>
             </Link>
           </div>
         </section>
 
-        {/* Wooden Combs Section */}
-        <section className="product-group">
-          <h2>Wooden Combs</h2>
+        <section className="product-group" data-reveal>
+          <div className="product-group__header">
+            <h2>Wooden combs</h2>
+          </div>
           <div className="product-items">
             <Link to="/pdp?product=comb" className="product-item">
               <LazyLoadImage
@@ -84,9 +95,10 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Razors Section */}
-        <section className="product-group">
-          <h2>Razors</h2>
+        <section className="product-group" data-reveal>
+          <div className="product-group__header">
+            <h2>Razors</h2>
+          </div>
           <div className="product-items">
             <Link to="/pdp?product=razor" className="product-item">
               <LazyLoadImage
@@ -101,26 +113,28 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Straw Section */}
-        <section className="product-group">
-          <h2>Straw</h2>
+        <section className="product-group" data-reveal>
+          <div className="product-group__header">
+            <h2>Straws</h2>
+          </div>
           <div className="product-items">
             <Link to="/pdp?product=straw" className="product-item">
               <LazyLoadImage
                 src={straw}
-                alt="Coconut leaf Straw"
+                alt="Coconut leaf straw"
                 effect="blur"
                 width="300"
                 height="300"
               />
-              <p>Coconut leaf Straw</p>
+              <p>Coconut leaf straw</p>
             </Link>
           </div>
         </section>
 
-        {/* Pen & Pencil Section */}
-        <section className="product-group">
-          <h2>Pen & Pencil</h2>
+        <section className="product-group" data-reveal>
+          <div className="product-group__header">
+            <h2>Pen & Pencil</h2>
+          </div>
           <div className="product-items">
             <Link to="/pdp?product=pencil" className="product-item">
               <LazyLoadImage
@@ -144,11 +158,13 @@ const Products = () => {
             </Link>
           </div>
         </section>
+
         <CTASection
-          title="Have Questions About Our Products?"
-          description="We're here to help! Whether you're looking for bulk orders, custom solutions, or just want to learn more about sustainable living, our team is ready to assist you."
+          title="Have questions about our products?"
+          description="We can help with bulk orders, custom branding, and sustainable material guidance for your business."
           buttonText="Contact Our Team"
-          variant="default"
+          variant="minimal"
+          eyebrow="Talk to us"
         />
       </div>
       <Footer />
