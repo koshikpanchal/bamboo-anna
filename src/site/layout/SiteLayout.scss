@@ -3,9 +3,94 @@
   display: flex;
   flex-direction: column;
   background: transparent;
+  position: relative;
+  z-index: 1;
+  --bamboo-offset: 0px;
+  --bamboo-offset-invert: 0px;
 }
 
 .site-main {
   flex: 1;
   position: relative;
+}
+
+.bamboo-parallax {
+  position: fixed;
+  top: -110vh;
+  bottom: -110vh;
+  width: clamp(190px, 18vw, 280px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  background-color: var(--bamboo-shadow);
+  -webkit-mask-image: var(--bamboo-mask);
+  mask-image: var(--bamboo-mask);
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
+  -webkit-mask-size: var(--bamboo-mask-size, 260px 3600px);
+  mask-size: var(--bamboo-mask-size, 260px 3600px);
+  -webkit-mask-position: top center;
+  mask-position: top center;
+  filter: blur(0.6px);
+  will-change: transform;
+  --layer-offset: var(--bamboo-offset);
+  --layer-offset-invert: var(--bamboo-offset-invert);
+  --layer-scale: 1;
+}
+
+.bamboo-parallax--left {
+  transform: translate3d(0, var(--layer-offset), 0) scale(var(--layer-scale));
+}
+
+.bamboo-parallax--right {
+  transform: translate3d(0, var(--layer-offset-invert), 0) scale(var(--layer-scale))
+    scaleX(-1);
+}
+
+.bamboo-parallax--back {
+  opacity: 0.2;
+  filter: blur(1.4px);
+  --layer-offset: calc(var(--bamboo-offset) * 0.35);
+  --layer-offset-invert: calc(var(--bamboo-offset-invert) * 0.35);
+  --layer-scale: 0.96;
+  --bamboo-mask: url('/bamboo-shadow-back.svg');
+  --bamboo-mask-size: 260px 3600px;
+}
+
+.bamboo-parallax--front {
+  opacity: 0.48;
+  filter: blur(0.6px);
+  --layer-offset: calc(var(--bamboo-offset) * 0.85);
+  --layer-offset-invert: calc(var(--bamboo-offset-invert) * 0.85);
+  --layer-scale: 1;
+  --bamboo-mask: url('/bamboo-shadow-front.svg');
+  --bamboo-mask-size: 260px 3600px;
+}
+
+.bamboo-parallax--left.bamboo-parallax--back {
+  left: -80px;
+}
+
+.bamboo-parallax--left.bamboo-parallax--front {
+  left: -34px;
+}
+
+.bamboo-parallax--right.bamboo-parallax--back {
+  right: -80px;
+}
+
+.bamboo-parallax--right.bamboo-parallax--front {
+  right: -34px;
+}
+
+@media (max-width: 900px) {
+  .bamboo-parallax {
+    opacity: 0.28;
+  }
+}
+
+@media (max-width: 720px) {
+  .bamboo-parallax {
+    display: none;
+  }
 }
