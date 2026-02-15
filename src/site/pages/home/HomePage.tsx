@@ -215,7 +215,7 @@ const HomePage = () => {
           <div className="home-about__media" data-anim="reveal">
             <img src={founderImage} alt="Bamboo Anna founders" loading="lazy" />
             <div className="home-about__caption">
-              CEO &amp; M.D. Mr. Anil Chauhan and Founder Mr. Sawan Vaishnav
+              Founder Mr. Sawan Vaishnav and CEO &amp; M.D. Mr. Anil Chauhan 
             </div>
           </div>
         </div>
