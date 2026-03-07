@@ -6,7 +6,7 @@ import ScrollReveal from './pages/common/scroll-reveal/ScrollReveal';
 import SiteLayout from './site/layout/SiteLayout';
 
 const HomePage = lazy(() => import('./site/pages/home/HomePage'));
-const StudioPage = lazy(() => import('./site/pages/studio/StudioPage'));
+const AboutPage = lazy(() => import('./site/pages/studio/StudioPage'));
 const CollectionsPage = lazy(() => import('./site/pages/collections/CollectionsPage'));
 const CataloguePage = lazy(() => import('./site/pages/catalogue/CataloguePage'));
 const ImpactPage = lazy(() => import('./site/pages/impact/ImpactPage'));
@@ -27,7 +27,7 @@ const App: React.FC = () => {
           <Routes>
             <Route element={<SiteLayout />}>
               <Route path="/" element={<HomePage />} />
-              <Route path="/studio" element={<StudioPage />} />
+              <Route path="/about-us" element={<AboutPage />} />
               <Route path="/collections" element={<CollectionsPage />} />
               <Route path="/catalogue" element={<CataloguePage />} />
               <Route path="/product/:slug" element={<ProductPage />} />
@@ -35,7 +35,7 @@ const App: React.FC = () => {
               <Route path="/custom" element={<CustomPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/aboutUs" element={<StudioPage />} />
+              <Route path="/aboutUs" element={<AboutPage />} />
               <Route path="/products" element={<CataloguePage />} />
               <Route path="/whyBamboo" element={<ImpactPage />} />
               <Route path="/companySynopsis" element={<CustomPage />} />

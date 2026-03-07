@@ -1,4 +1,4 @@
-# Bamboo Anna Studio Website
+# Bamboo Anna Website
 
 ## Development
 

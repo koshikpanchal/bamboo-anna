@@ -11,7 +11,7 @@ if (!envUrl) {
 
 const pages = [
   '/',
-  '/studio',
+  '/about-us',
   '/collections',
   '/catalogue',
   '/impact',

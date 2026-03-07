@@ -2,6 +2,8 @@ import './CustomPage.scss';
 import hotelAmenities from '../../../assets/HotelAmenities.webp';
 import doctorProduct from '../../../assets/doctorProduct.webp';
 import corporateGifting from '../../../assets/corporateGifting.webp';
+import bambooFarmer from '../../../assets/bambooFarmer.jpg';
+import craftImage from '../../../assets/organicproducts1.jpg';
 import { Link } from 'react-router-dom';
 import Seo from '../../seo/Seo';
 
@@ -21,16 +23,31 @@ const segments = [
     copy: 'Custom bamboo kits designed for brand impact.',
     image: corporateGifting,
   },
+  {
+    title: 'FMCG brands',
+    copy: 'Shelf-ready bamboo products and branded packaging support.',
+    image: craftImage,
+  },
+  {
+    title: 'NGOs',
+    copy: 'Community-focused kits for awareness drives and field programs.',
+    image: bambooFarmer,
+  },
+  {
+    title: 'Ecommerce sellers',
+    copy: 'Reliable bamboo product batches for online marketplaces and D2C stores.',
+    image: hotelAmenities,
+  },
 ];
 
 const CustomPage = () => {
   return (
     <div className="custom-page">
       <Seo
-        title="Custom Bamboo Lines for Brands"
-        description="Build branded bamboo kits for hospitality, dental clinics, and corporate gifting with flexible MOQs and reliable timelines."
+        title="Custom Bamboo Solutions for Brands"
+        description="Build branded bamboo kits for hospitality, dental clinics, and corporate gifting with flexible MOQs and reliable delivery schedules."
         keywords={[
-          'custom bamboo line',
+          'custom bamboo solutions',
           'branded bamboo kits',
           'hospitality kits',
           'dental clinic kits',
@@ -43,10 +60,10 @@ const CustomPage = () => {
       <section className="page-hero">
         <div className="page-hero__inner" data-reveal>
           <span className="chip">Custom</span>
-          <h1>Build a branded bamboo line with us.</h1>
+          <h1>Build branded bamboo products with us.</h1>
           <p>
             We help hospitality brands, clinics, and corporate teams create
-            custom bamboo essentials with trusted supply timelines.
+            custom bamboo essentials with trusted supply schedules.
           </p>
         </div>
       </section>
@@ -75,20 +92,29 @@ const CustomPage = () => {
         <div className="section__inner custom-process__inner">
           <div>
             <span className="chip">Process</span>
-            <h2>From brief to delivery in three steps.</h2>
+            <h2>From idea to doorstep in 3 simple steps.</h2>
           </div>
           <div className="custom-process__steps">
             <div>
               <strong>01</strong>
-              <p>Share your product requirements and branding goals.</p>
+              <p>
+                Tell us what you need: product type, quantity, logo details,
+                and expected delivery date.
+              </p>
             </div>
             <div>
               <strong>02</strong>
-              <p>We prototype, confirm packaging, and lock timelines.</p>
+              <p>
+                We share sample options and packaging visuals. You approve the
+                final look and budget.
+              </p>
             </div>
             <div>
               <strong>03</strong>
-              <p>Production, quality checks, and delivery to your team.</p>
+              <p>
+                Our team manufactures, performs quality checks, and ships your
+                order with regular updates.
+              </p>
             </div>
           </div>
         </div>
@@ -99,7 +125,7 @@ const CustomPage = () => {
           <div>
             <h2>Ready for a proposal?</h2>
             <p>
-              Tell us about quantities, branding, and timelines. We will respond
+              Tell us about quantities, branding, and delivery dates. We will respond
               within 48 hours.
             </p>
           </div>

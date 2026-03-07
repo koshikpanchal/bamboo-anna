@@ -13,6 +13,9 @@ const ContactPage = () => {
     enquiryDetails: '',
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const mapAddress = encodeURIComponent(
+    'Plot 58/59, Industrial Area, 1st Floor King Bakers Building, Dahod Road, Banswara, Rajasthan 327001'
+  );
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,8 +63,8 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <Seo
-        title="Contact Bamboo Anna Studio"
-        description="Share your requirements for bamboo essentials, custom branding, or bulk orders. Contact the Bamboo Anna Studio team in Rajasthan."
+        title="Contact Bamboo Anna"
+        description="Share your requirements for bamboo essentials, custom branding, or bulk orders. Contact the Bamboo Anna team in Rajasthan."
         keywords={[
           'contact bamboo anna',
           'bamboo essentials enquiry',
@@ -87,20 +90,20 @@ const ContactPage = () => {
       <section className="contact-panel section">
         <div className="section__inner contact-panel__inner">
           <div className="contact-info" data-reveal>
-            <h2>Direct lines</h2>
-            <p>+91-8000618916, +91-9887392445</p>
-            <p>bambooannaa@gmail.com</p>
-            <p>Plot No. 86, Gali No. 5, Shubash Nagar, Banswara, Rajasthan</p>
+            <h2>Direct contact</h2>
+            <p>+91-8000618916, +91-7014779733</p>
+            <p>support@bambooannaa.com</p>
+            <p>Plot 58/59, industrial area, 1st floor King Bakers building, Dahod road Banswara, Rajasthan</p>
 
             <div className="contact-info__card">
-              <h3>Studio hours</h3>
+              <h3>Business hours</h3>
               <p>Monday - Saturday, 10:00 AM - 6:00 PM</p>
               <p>Sunday: By appointment only</p>
             </div>
 
             <iframe
               className="contact-map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.1051262121267!2d74.44992621501598!3d23.546111484689246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967c7f6eb4b87e7%3A0xc26c73b1b849d0ff!2sBanswara%2C%20Rajasthan%20327001%2C%20India!5e0!3m2!1sen!2sus!4v1630927849010!5m2!1sen!2sus"
+              src={`https://www.google.com/maps?q=${mapAddress}&output=embed`}
               loading="lazy"
               title="Bamboo Anna location"
             ></iframe>

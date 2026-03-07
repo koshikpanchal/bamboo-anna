@@ -38,7 +38,7 @@ const SiteFooter = () => {
               </p>
             </div>
             <div className="site-footer__cta">
-              <h3>Ready to build a custom bamboo line?</h3>
+              <h3>Ready to build a custom bamboo range?</h3>
               <p>Share your requirements and our team will craft a proposal.</p>
               <Link to="/contact" className="btn btn--primary">
                 Start a Project
@@ -50,7 +50,7 @@ const SiteFooter = () => {
         <div className="site-footer__grid">
           <div className="site-footer__col">
             <h4>Explore</h4>
-            <NavLink to="/studio">Studio</NavLink>
+            <NavLink to="/about-us">About</NavLink>
             <NavLink to="/catalogue">Catalogue</NavLink>
             <NavLink to="/impact">Impact</NavLink>
             <NavLink to="/custom">Custom</NavLink>
@@ -66,14 +66,13 @@ const SiteFooter = () => {
           <div className="site-footer__col">
             <h4>Contact</h4>
             <p>
-              <PhoneIcon /> +91-8000618916, +91-9887392445
+              <PhoneIcon /> +91-8000618916, +91-7014779733
             </p>
             <p>
-              <EmailIcon /> bambooannaa@gmail.com
+              <EmailIcon /> support@bambooannaa.com
             </p>
             <p>
-              <LocationOnIcon /> Plot No. 86, Gali No. 5, Shubash Nagar,
-              Banswara, Rajasthan
+              <LocationOnIcon /> Plot 58/59, industrial area, 1st floor King Bakers building, Dahod road Banswara, Rajasthan
             </p>
           </div>
           <div className="site-footer__col">

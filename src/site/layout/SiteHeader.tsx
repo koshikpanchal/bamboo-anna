@@ -9,11 +9,11 @@ import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 
 const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Studio', to: '/studio' },
+  { label: 'About', to: '/about-us' },
   { label: 'Catalogue', to: '/catalogue' },
   { label: 'Impact', to: '/impact' },
   { label: 'Custom', to: '/custom' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Awards & Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
 ];
 

@@ -55,7 +55,7 @@
   transition: opacity 220ms ease-out;
 }
 
-:root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey="line"] {
+:root.has-animations [data-anim="journey"][data-enhanced="true"] [data-journey="progress"] {
   transform: scaleY(0);
   transform-origin: top center;
 }

@@ -164,17 +164,17 @@ const Footer = () => {
                 <li>
                   <PhoneIcon />{' '}
                   <span className="talkToUsLI">
-                    +91-8000618916, +91-9887392445
+                    +91-8000618916, +91-7014779733
                   </span>
                 </li>
                 <li>
                   <EmailIcon />{' '}
-                  <span className="talkToUsLI">bambooannaa@gmail.com</span>
+                  <span className="talkToUsLI">support@bambooannaa.com</span>
                 </li>
                 <li>
                   <LocationOnIcon />{' '}
                   <span className="talkToUsLI">
-                    Plot No. 86, Gali No. 5, Shubash Nagar, Banswara, Rajasthan
+                    Plot 58/59, industrial area, 1st floor King Bakers building, Dahod road Banswara, Rajasthan
                   </span>
                 </li>
               </ul>

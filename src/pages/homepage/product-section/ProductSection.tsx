@@ -73,7 +73,7 @@ const ProductSection = () => {
     <section className="productSection section" data-reveal>
       <div className="section__inner">
         <div className="productSection__header">
-          <span className="eyebrow">Signature line</span>
+          <span className="eyebrow">Signature range</span>
           <h2>Explore bamboo essentials made to last.</h2>
           <p>
             Thoughtful tools for daily rituals, crafted with natural bamboo and

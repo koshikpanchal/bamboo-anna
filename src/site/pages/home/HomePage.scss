@@ -143,6 +143,7 @@ body[data-theme='midnight'] .hero-sequence__shade {
 .partners.section {
   padding-top: 12px;
   padding-bottom: 48px;
+  overflow-x: clip;
 }
 
 .partners__inner {
@@ -150,6 +151,7 @@ body[data-theme='midnight'] .hero-sequence__shade {
   gap: 18px;
   justify-items: center;
   text-align: center;
+  min-width: 0;
 }
 
 .partners__header {
@@ -172,31 +174,8 @@ body[data-theme='midnight'] .hero-sequence__shade {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.partners-grid {
-  display: none;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 16px;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-line);
-  background: var(--color-card);
-  padding: 20px;
-  width: min(980px, 100%);
-}
-
-.partners-grid__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.partners-grid__item img {
-  height: 32px;
-  width: auto;
-  max-width: 140px;
-  filter: grayscale(1);
-  opacity: 0.7;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .home-about__inner {
@@ -763,14 +742,6 @@ body[data-theme='midnight'] .hero-sequence__shade {
 
   .home-hero__inner {
     min-height: clamp(360px, 70vh, 520px);
-  }
-
-  .partners__inner .partners-marquee {
-    display: none;
-  }
-
-  .partners-grid {
-    display: grid;
   }
 
   .stats-grid {

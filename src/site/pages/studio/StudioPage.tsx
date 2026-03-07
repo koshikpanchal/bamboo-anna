@@ -4,32 +4,41 @@ import { Link } from 'react-router-dom';
 import Seo from '../../seo/Seo';
 
 const timeline = [
-  { year: '2018', text: 'Bamboo Anna is founded in Banswara, Rajasthan.' },
-  { year: '2020', text: 'Expanded to artisan grooming and dental essentials.' },
-  { year: '2022', text: 'Partnered with hospitality and gifting brands.' },
-  { year: '2024', text: 'Scaled production with community training programs.' },
+  { year: '2022', text: 'Bamboo Anna is founded in Banswara, Rajasthan.' },
+  {
+    year: '2023',
+    text: 'Connected with local artisans and expanded operations online.',
+  },
+  {
+    year: '2024',
+    text: 'Expanded for B2B and B2G bulk orders across multiple sectors.',
+  },
+  {
+    year: '2025',
+    text: 'Expanded product range for corporate and private event requirements.',
+  },
 ];
 
 const StudioPage = () => {
   return (
     <div className="studio-page">
       <Seo
-        title="Bamboo Anna Studio"
-        description="Meet the Bamboo Anna Studio team in Rajasthan, where artisan craft meets modern bamboo design."
+        title="About Bamboo Anna"
+        description="Meet the Bamboo Anna team in Rajasthan, where artisan craft meets modern bamboo design."
         keywords={[
-          'bamboo studio',
+          'bamboo business',
           'artisan workshop',
           'bamboo manufacturer',
           'Rajasthan artisans',
           'sustainable craft',
         ]}
-        canonicalPath="/studio"
+        canonicalPath="/about-us"
         image="/LogoColor.png"
       />
       <section className="page-hero">
         <div className="page-hero__inner" data-reveal>
-          <span className="chip">Studio</span>
-          <h1>Where bamboo meets thoughtful design.</h1>
+          <span className="chip">About</span>
+          <h1>Where bamboo meets thoughtful business.</h1>
           <p>
             We craft sustainable essentials with local artisans, mixing heritage
             techniques with modern aesthetics for conscious brands.
@@ -43,7 +52,7 @@ const StudioPage = () => {
             <h2>Rooted in Banswara, growing with every partnership.</h2>
             <p>
               Bamboo Anna is a manufacturer and supplier that champions bamboo
-              alternatives to plastic. Our studio brings together farmers,
+              alternatives to plastic. Our business brings together farmers,
               makers, and brand partners to create products that feel premium
               and responsible.
             </p>
@@ -52,11 +61,11 @@ const StudioPage = () => {
               your customers feel the difference in every touch.
             </p>
             <Link to="/custom" className="btn btn--primary">
-              Work with our studio
+              Work with Bamboo Anna
             </Link>
           </div>
           <div className="studio-story__media" data-reveal>
-            <img src={studioImage} alt="Bamboo Anna studio" loading="lazy" />
+            <img src={studioImage} alt="Bamboo Anna team" loading="lazy" />
           </div>
         </div>
       </section>

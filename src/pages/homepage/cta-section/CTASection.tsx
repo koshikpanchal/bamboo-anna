@@ -15,7 +15,7 @@ const CTASection = ({
     'Join us in our mission to create a sustainable future. Get in touch to learn more about our eco-friendly bamboo products.',
   buttonText = 'Get in Touch',
   variant = 'default',
-  eyebrow = 'Bamboo Anna Studio',
+  eyebrow = 'Bamboo Anna',
 }: CTASectionProps) => {
   return (
     <section className={`cta-section cta-section--${variant}`} data-reveal>

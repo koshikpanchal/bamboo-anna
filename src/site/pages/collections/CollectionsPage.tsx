@@ -98,7 +98,7 @@ const CollectionsPage = () => {
             <h2>Need the full catalog?</h2>
             <p>
               We can share detailed specifications, MOQ, and packaging options
-              for each product line.
+              for each product category.
             </p>
           </div>
           <Link to="/contact" className="btn btn--primary">

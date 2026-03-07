@@ -92,9 +92,9 @@ const ContactUs = () => {
               <ContactExperience />
               <div className="contact-panel__details">
                 <h3>Talk to us directly</h3>
-                <p>+91-8000618916, +91-9887392445</p>
-                <p>bambooannaa@gmail.com</p>
-                <p>Plot No. 86, Gali No. 5, Shubash Nagar, Banswara, Rajasthan</p>
+                <p>+91-8000618916, +91-7014779733</p>
+                <p>support@bambooannaa.com</p>
+                <p>Plot 58/59, industrial area, 1st floor King Bakers building, Dahod road Banswara, Rajasthan</p>
               </div>
             </div>
 

@@ -74,9 +74,9 @@ const HomePage = () => {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Bamboo Anna Studio',
+    name: 'Bamboo Anna',
     description:
-      'Bamboo Anna Studio crafts modern bamboo essentials with local artisans in Rajasthan, focusing on plastic-free essentials and custom branding.',
+      'Bamboo Anna crafts modern bamboo essentials with local artisans in Rajasthan, focusing on plastic-free essentials and custom branding.',
     ...(baseUrl
       ? {
           url: baseUrl,
@@ -90,7 +90,7 @@ const HomePage = () => {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Bamboo Anna Studio',
+    name: 'Bamboo Anna',
     ...(baseUrl
       ? {
           url: baseUrl,
@@ -101,7 +101,7 @@ const HomePage = () => {
   return (
     <div className="home" data-page="home">
       <Seo
-        title="Bamboo Anna Studio - Modern bamboo essentials"
+        title="Bamboo Anna - Modern bamboo essentials"
         description="Modern bamboo essentials crafted with local artisans in Rajasthan. Plastic-free dental care, grooming, hospitality kits, and custom branding."
         keywords={[
           'bamboo essentials',
@@ -140,10 +140,10 @@ const HomePage = () => {
         <div className="section__inner home-hero__inner">
           <div className="home-hero__copy">
             <span className="chip" data-hero="sub">
-              Bamboo Anna Studio
+              Bamboo Anna
             </span>
             <h1 data-hero="title">
-              Bamboo Anna Studio - Modern bamboo essentials.
+              Bamboo Anna - Modern bamboo essentials.
             </h1>
             <p data-hero="sub">
               Crafted with local artisans in Rajasthan for homes, hotels, dental
@@ -154,7 +154,7 @@ const HomePage = () => {
                 Explore Catalogue
               </Link>
               <Link to="/custom" className="btn btn--ghost">
-                Build a Custom Line
+                Build Custom Products
               </Link>
               <Link to="/contact" className="btn btn--outline">
                 Start a Project
@@ -302,7 +302,8 @@ const HomePage = () => {
           <h2>Custom-ready. Premium-feel. Plastic-free.</h2>
           <p>
             Custom packaging, kit assortments, and consistent finishes - ready for
-            hospitality programs, clinics, and gifting teams.
+            hospitality programs, clinics, FMCG brands, NGOs, ecommerce sellers,
+            and gifting teams.
           </p>
         </div>
       </section>
@@ -312,19 +313,17 @@ const HomePage = () => {
           <div className="pillars__inner">
             <div className="pillars__lead" data-anim="reveal">
               <span className="chip">Why Bamboo Anna</span>
-              <h2>We are not a dropship brand.</h2>
+              <h2>Sustainability that works for business and communities.</h2>
               <p>
-                We are a studio: sourcing, crafting, finishing, and delivering
-                bamboo essentials with real people, real process, and real
-                accountability.
+                Because sustainability should be practical, affordable, and impactful. Bamboo Anna offers eco-friendly alternatives made from natural materials, supporting rural employment and helping businesses shift towards a greener future.
               </p>
               <div
                 className="pillars__lead-actions"
                 data-anim="reveal"
                 style={{ '--delay': '0.08s' } as CSSProperties}
               >
-                <Link to="/studio" className="btn btn--ghost">
-                  See the studio
+                <Link to="/about-us" className="btn btn--ghost">
+                  See our story
                 </Link>
                 <Link to="/catalogue" className="btn btn--outline">
                   Browse products
@@ -415,7 +414,7 @@ const HomePage = () => {
 
           <div className="journey__timeline">
             <div className="journey__line" aria-hidden="true">
-              <span className="journey__line-fill" data-journey="line" />
+              <span className="journey__line-fill" data-journey="progress" />
             </div>
             {[
               {
@@ -460,15 +459,22 @@ const HomePage = () => {
       <section className="custom section">
         <div className="section__inner custom__inner" data-anim="reveal">
           <div className="custom__content">
-            <span className="chip">Custom lines</span>
+            <span className="chip">Custom solutions</span>
             <h2>Built for hotels, clinics, and gifting teams.</h2>
             <p>
               From hospitality amenities to corporate gifting, we build branded
-              bamboo sets with flexible minimums and reliable lead times.
+              bamboo sets with flexible minimums and reliable delivery timelines.
             </p>
           </div>
           <div className="custom__cards">
-            {['Hospitality kits', 'Dental clinics', 'Corporate gifting'].map(
+            {[
+              'Hospitality kits',
+              'Dental clinics',
+              'Corporate gifting',
+              'FMCG brands',
+              'NGOs',
+              'Ecommerce sellers',
+            ].map(
               (item) => (
                 <div key={item} className="custom-card">
                   {item}
@@ -492,13 +498,6 @@ const HomePage = () => {
           <div className="partners__marquee" data-anim="reveal">
             <PartnersMarquee logos={partners} speed="slow" />
           </div>
-          <div className="partners-grid" data-anim="reveal">
-            {partners.map((logo) => (
-              <div key={logo.alt} className="partners-grid__item">
-                <img src={logo.src} alt={logo.alt} loading="lazy" />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -506,7 +505,7 @@ const HomePage = () => {
         <div className="section__inner cta__inner" data-anim="reveal">
           <div className="cta__content">
             <span className="chip">Get started</span>
-            <h2>Ready to present a premium bamboo line?</h2>
+            <h2>Ready to present a premium bamboo range?</h2>
             <p>
               Share your goals and we will curate a bamboo collection tailored
               to your brand and audience.

@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.gallery-grid .section__header {
+  margin-bottom: 20px;
+}
+
 .gallery-grid__wrap {
   column-count: 3;
   column-gap: 16px;
@@ -27,6 +31,14 @@
   padding: 10px 12px;
   font-size: 0.9rem;
   color: var(--color-muted);
+}
+
+.gallery-empty {
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-line);
+  padding: 18px;
+  color: var(--color-muted);
+  background: var(--color-card);
 }
 
 @media (max-width: 1024px) {

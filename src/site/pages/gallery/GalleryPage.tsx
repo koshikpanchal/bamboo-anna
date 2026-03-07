@@ -1,43 +1,46 @@
 import './GalleryPage.scss';
-import founders from '../../../assets/photoGallery/founders.jpg';
+import founders from '../../../assets/photoGallery/founders.jpeg';
 import labour from '../../../assets/photoGallery/labour.jpg';
 import office from '../../../assets/photoGallery/office.jpg';
 import bambooFarmer from '../../../assets/bambooFarmer.jpg';
-import craftImage from '../../../assets/organicproducts1.jpg';
 import corporateGifting from '../../../assets/corporateGifting.webp';
+import RepublicAward from '../../../assets/awardImages/Republic Recognition  (1).jpg';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import Seo from '../../seo/Seo';
 
 const GalleryPage = () => {
-  const images = [
+  const awardImages = [
+    { src: RepublicAward, alt: 'Banswara IAS Officer giving award to the founders.' },
+  ];
+  const galleryImages = [
     { src: founders, alt: 'Founders' },
     { src: labour, alt: 'Workshop craft' },
-    { src: office, alt: 'Studio space' },
+    { src: office, alt: 'Workspace' },
     { src: bambooFarmer, alt: 'Bamboo farming' },
-    { src: craftImage, alt: 'Bamboo craftsmanship' },
     { src: corporateGifting, alt: 'Custom bamboo kits' },
   ];
 
   return (
     <div className="gallery-page">
       <Seo
-        title="Bamboo Anna Gallery"
-        description="See the Bamboo Anna studio, artisans, and bamboo essentials in action."
+        title="Bamboo Anna Awards and Gallery"
+        description="See Bamboo Anna awards, artisans, and bamboo essentials in action."
         keywords={[
+          'bamboo awards',
           'bamboo gallery',
           'bamboo artisans',
           'bamboo workshop',
           'bamboo products',
-          'studio photos',
+          'award photos',
         ]}
         canonicalPath="/gallery"
         image="/LogoColor.png"
       />
       <section className="page-hero">
         <div className="page-hero__inner" data-reveal>
-          <span className="chip">Gallery</span>
-          <h1>A look inside our bamboo workshop.</h1>
+          <span className="chip">Awards & Gallery</span>
+          <h1>Achievements, people, and bamboo craft in one place.</h1>
           <p>
             Meet the people, materials, and moments that define Bamboo Anna.
           </p>
@@ -46,9 +49,42 @@ const GalleryPage = () => {
 
       <section className="gallery-grid section" data-reveal>
         <div className="section__inner">
+          <div className="section__header">
+            <h2>Awards</h2>
+            <p>
+              A glimpse of our award moments.
+            </p>
+          </div>
+          {awardImages.length > 0 ? (
+            <PhotoProvider>
+              <div className="gallery-grid__wrap">
+                {awardImages.map((image) => (
+                  <PhotoView key={image.src} src={image.src}>
+                    <figure className="gallery-item">
+                      <img src={image.src} alt={image.alt} loading="lazy" />
+                      <figcaption>{image.alt}</figcaption>
+                    </figure>
+                  </PhotoView>
+                ))}
+              </div>
+            </PhotoProvider>
+          ) : (
+            <div className="gallery-empty">
+              Add award photos and they will appear here.
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="gallery-grid section" data-reveal>
+        <div className="section__inner">
+          <div className="section__header">
+            <h2>Gallery</h2>
+            <p>Inside views from our team, process, and product stories.</p>
+          </div>
           <PhotoProvider>
             <div className="gallery-grid__wrap">
-              {images.map((image) => (
+              {galleryImages.map((image) => (
                 <PhotoView key={image.src} src={image.src}>
                   <figure className="gallery-item">
                     <img src={image.src} alt={image.alt} loading="lazy" />

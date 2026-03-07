@@ -74,7 +74,7 @@ const ProductPage = () => {
     image: images.map((image) => toAbsolute(image)),
     brand: {
       '@type': 'Brand',
-      name: 'Bamboo Anna Studio',
+      name: 'Bamboo Anna',
     },
   };
 

@@ -311,7 +311,7 @@ const initJourney = (root: ParentNode) => {
   const section = root.querySelector<HTMLElement>('[data-anim="journey"]');
   if (!section) return () => {};
 
-  const line = section.querySelector<HTMLElement>('[data-journey="line"]');
+  const line = section.querySelector<HTMLElement>('[data-journey="progress"]');
   const steps = Array.from(section.querySelectorAll<HTMLElement>('[data-journey-step]'));
   if (!line || steps.length === 0) return () => {};
 
@@ -431,9 +431,9 @@ export const initHomepageAnimations = (options: InitOptions = {}) => {
       };
     });
   } else {
-    root.querySelectorAll<HTMLElement>('[data-anim="journey"] [data-journey="line"]').forEach((line) => {
-      line.style.transform = 'scaleY(1)';
-      line.style.transformOrigin = 'top center';
+    root.querySelectorAll<HTMLElement>('[data-anim="journey"] [data-journey="progress"]').forEach((progress) => {
+      progress.style.transform = 'scaleY(1)';
+      progress.style.transformOrigin = 'top center';
     });
   }
 

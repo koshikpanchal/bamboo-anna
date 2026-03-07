@@ -14,7 +14,7 @@ type SeoProps = {
   jsonLd?: JsonLd | JsonLd[];
 };
 
-const SITE_NAME = 'Bamboo Anna Studio';
+const SITE_NAME = 'Bamboo Anna';
 const DEFAULT_IMAGE = '/LogoColor.png';
 
 const getBaseUrl = () => {
@@ -106,4 +106,3 @@ const Seo = ({
 };
 
 export default Seo;
-
