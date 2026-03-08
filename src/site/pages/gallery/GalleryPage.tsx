@@ -2,7 +2,7 @@ import './GalleryPage.scss';
 import founders from '../../../assets/photoGallery/founders.jpg';
 import labour from '../../../assets/photoGallery/labour.jpg';
 import office from '../../../assets/photoGallery/office.jpg';
-import bambooFarmer from '../../../assets/bambooFarmer.jpg';
+import bambooFarmer from '../../../assets/otherPhotos/0d50abaa-43cb-485c-85c5-422c8c5d4c6a.jpg';
 import ProductsRange from '../../../assets/otherPhotos/products.jpg';
 import bambooSourcing from '../../../assets/otherPhotos/Logistics.jpg';
 import corporateGifting from '../../../assets/corporateGifting.webp';
