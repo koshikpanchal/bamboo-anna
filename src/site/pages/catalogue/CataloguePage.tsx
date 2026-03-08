@@ -12,11 +12,13 @@ const CataloguePage = () => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return catalogueProducts.filter((product) => {
-      const matchesCategory = category === 'All' || product.category === category;
+      const matchesCategory =
+        category === 'All' || product.category.includes(category);
       const matchesQuery =
         !normalizedQuery ||
         product.name.toLowerCase().includes(normalizedQuery) ||
         product.description.toLowerCase().includes(normalizedQuery) ||
+        product.category.some((item) => item.toLowerCase().includes(normalizedQuery)) ||
         product.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
 
       return matchesCategory && matchesQuery;
@@ -87,7 +89,7 @@ const CataloguePage = () => {
 
           <div
             className={
-              filtered.length < 3 ? 'catalogue__grid catalogue__grid--sparse' : 'catalogue__grid'
+              filtered.length === 1 ? 'catalogue__grid catalogue__grid--sparse' : 'catalogue__grid'
             }
           >
             {filtered.map((product) => (
@@ -99,7 +101,11 @@ const CataloguePage = () => {
                 <div className="product-card__media">
                   <img src={product.images[0]} alt={product.name} loading="lazy" />
                   <div className="product-card__tags">
-                    <span className="tag">{product.category}</span>
+                    {product.category.map((item) => (
+                      <span className="tag" key={`${product.slug}-${item}`}>
+                        {item}
+                      </span>
+                    ))}
                     {product.tags.slice(0, 2).map((tag) => (
                       <span className="tag tag--ghost" key={tag}>
                         {tag}

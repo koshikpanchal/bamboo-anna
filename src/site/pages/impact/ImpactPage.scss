@@ -3,6 +3,93 @@
   flex-direction: column;
 }
 
+.impact-compare__shell {
+  margin-top: 24px;
+}
+
+.impact-compare__labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.impact-compare__frame {
+  position: relative;
+  width: 100%;
+  height: min(520px, 58vw);
+  min-height: 260px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-strong);
+  background: var(--color-card);
+}
+
+.impact-compare__image {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.impact-compare__image--before {
+  z-index: 1;
+}
+
+.impact-compare__image--after {
+  z-index: 2;
+}
+
+.impact-compare__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.22);
+  z-index: 5;
+}
+
+.impact-compare__knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-card);
+  color: var(--color-forest);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.impact-compare__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 6;
+}
+
 .impact-facts__inner {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -40,8 +127,18 @@
 
 .impact-tile img {
   width: 100%;
-  height: 220px;
+  height: 280px;
   object-fit: cover;
+  object-position: center;
+}
+
+.impact-tile--hospitality img {
+  // Pull focus upward so product tops are visible instead of clipped.
+  object-position: center 28%;
+}
+
+.impact-tile--artisans img {
+  object-position: center 44%;
 }
 
 .impact-tile h3 {
@@ -54,6 +151,10 @@
 }
 
 @media (max-width: 1024px) {
+  .impact-compare__frame {
+    height: min(430px, 66vw);
+  }
+
   .impact-facts__inner {
     grid-template-columns: 1fr;
   }

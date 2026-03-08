@@ -34,7 +34,7 @@ const Footer = () => {
               with reliable timelines and thoughtful craftsmanship.
             </p>
             <CTAButton
-              text="Start a project"
+              text="Send Enquiry"
               variant="primary"
               size="medium"
               to="/contactUs"

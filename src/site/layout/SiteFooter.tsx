@@ -41,7 +41,7 @@ const SiteFooter = () => {
               <h3>Ready to build a custom bamboo range?</h3>
               <p>Share your requirements and our team will craft a proposal.</p>
               <Link to="/contact" className="btn btn--primary">
-                Start a Project
+                Send Enquiry
               </Link>
             </div>
           </div>

@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './ProductPage.scss';
-import { catalogueProducts } from '../../data/catalogue';
+import { catalogueProducts, CatalogueCategory } from '../../data/catalogue';
 import Seo from '../../seo/Seo';
 
 const ProductPage = () => {
@@ -15,8 +15,14 @@ const ProductPage = () => {
 
   const related = useMemo(() => {
     if (!product) return [];
+    const productCategories = new Set(product.category);
+
     return catalogueProducts
-      .filter((item) => item.slug !== product.slug && item.category === product.category)
+      .filter(
+        (item) =>
+          item.slug !== product.slug &&
+          item.category.some((category) => productCategories.has(category))
+      )
       .slice(0, 4);
   }, [product]);
 
@@ -58,19 +64,38 @@ const ProductPage = () => {
   const primaryImage = images[0] ?? '/LogoColor.png';
   const seoTitle = product.name;
   const seoDescription = truncate(product.description);
+  const categoryLabel = product.category.join(' / ');
+  const primaryCategory = product.category[0];
   const seoKeywords = [
     product.name,
-    product.category,
+    ...product.category,
     'bamboo product',
     'bamboo essentials',
     ...product.tags,
+  ];
+  const categoryContext: Record<CatalogueCategory, string> = {
+    'Personal Care':
+      'This category is focused on daily-use hygiene and grooming products that help replace disposable plastic alternatives with durable bamboo options.',
+    Stationery:
+      'Stationery items in this range are made for schools, teams, and campaigns where utility, brand visibility, and sustainability need to work together.',
+    Hospitality:
+      'Hospitality essentials are designed for easy guest usage and smooth bulk supply, with packaging and branding adjusted to hotel or clinic workflows.',
+    'Corporate Gifting':
+      'Corporate gifting products are curated for events, employee kits, and client campaigns where custom branding and premium presentation are essential.',
+  };
+  const defaultContext =
+    'This product is built for practical use, strong brand presentation, and repeat bulk supply.';
+  const detailParagraphs = [
+    `${product.name} is developed for repeat bulk use and can be adapted to your quantity, packaging, and branding requirements.`,
+    primaryCategory ? categoryContext[primaryCategory] : defaultContext,
+    'Each batch is processed with local artisan participation in Rajasthan, then quality-checked and packed for B2B, institutional, and event deliveries.',
   ];
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    category: product.category,
+    category: categoryLabel,
     image: images.map((image) => toAbsolute(image)),
     brand: {
       '@type': 'Brand',
@@ -95,7 +120,7 @@ const ProductPage = () => {
             <Link to="/catalogue" className="product-hero__back">
               {'\u2190'} Back to catalogue
             </Link>
-            <span className="chip">{product.category}</span>
+            <span className="chip">{categoryLabel}</span>
           </div>
           <h1>{product.name}</h1>
           <p>{product.description}</p>
@@ -147,6 +172,12 @@ const ProductPage = () => {
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
+              <div className="product-info__details">
+                <h3>Detailed overview</h3>
+                {detailParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             <div className="product-info__cta">
@@ -165,7 +196,7 @@ const ProductPage = () => {
         <section className="related section" data-reveal>
           <div className="section__inner">
             <div className="related__header">
-              <h2>Related in {product.category}</h2>
+              <h2>Related in {categoryLabel}</h2>
               <Link to="/catalogue" className="text-link">
                 View all
               </Link>
@@ -180,7 +211,7 @@ const ProductPage = () => {
                   <img src={item.images[0]} alt={item.name} loading="lazy" />
                   <div>
                     <h3>{item.name}</h3>
-                    <p>{item.tags[0] ?? item.category}</p>
+                    <p>{item.tags[0] ?? item.category[0]}</p>
                   </div>
                 </Link>
               ))}

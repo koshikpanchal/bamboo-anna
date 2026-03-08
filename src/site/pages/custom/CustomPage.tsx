@@ -1,9 +1,10 @@
 import './CustomPage.scss';
-import hotelAmenities from '../../../assets/HotelAmenities.webp';
+import hotelAmenities from '../../../assets/bamboo-products.jpg';
+import Ecommerce from '../../../assets/otherPhotos/drivePhotos/Ecommerce.jpg';
 import doctorProduct from '../../../assets/doctorProduct.webp';
 import corporateGifting from '../../../assets/corporateGifting.webp';
-import bambooFarmer from '../../../assets/bambooFarmer.jpg';
-import craftImage from '../../../assets/organicproducts1.jpg';
+import NGO from '../../../assets/NGO.jpg';
+import craftImage from '../../../assets/straw/fmcgStraw.jpg';
 import { Link } from 'react-router-dom';
 import Seo from '../../seo/Seo';
 
@@ -31,12 +32,12 @@ const segments = [
   {
     title: 'NGOs',
     copy: 'Community-focused kits for awareness drives and field programs.',
-    image: bambooFarmer,
+    image: NGO,
   },
   {
     title: 'Ecommerce sellers',
     copy: 'Reliable bamboo product batches for online marketplaces and D2C stores.',
-    image: hotelAmenities,
+    image: Ecommerce,
   },
 ];
 

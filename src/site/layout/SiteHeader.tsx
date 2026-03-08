@@ -14,7 +14,6 @@ const navItems = [
   { label: 'Impact', to: '/impact' },
   { label: 'Custom', to: '/custom' },
   { label: 'Awards & Gallery', to: '/gallery' },
-  { label: 'Contact', to: '/contact' },
 ];
 
 const iconForTheme = (key: ThemeKey) => {
@@ -139,7 +138,7 @@ const SiteHeader = () => {
               </div>
             </div>
             <NavLink to="/contact" className="btn btn--primary" onClick={handleClose}>
-              Start a Project
+              Contact Us
             </NavLink>
           </div>
         </nav>

@@ -3,7 +3,10 @@ import founders from '../../../assets/photoGallery/founders.jpeg';
 import labour from '../../../assets/photoGallery/labour.jpg';
 import office from '../../../assets/photoGallery/office.jpg';
 import bambooFarmer from '../../../assets/bambooFarmer.jpg';
+import ProductsRange from '../../../assets/otherPhotos/products.jpg';
+import bambooSourcing from '../../../assets/otherPhotos/Logistics.jpg';
 import corporateGifting from '../../../assets/corporateGifting.webp';
+import bambooProfiling from '../../../assets/otherPhotos/profiling.jpg';
 import RepublicAward from '../../../assets/awardImages/Republic Recognition  (1).jpg';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -16,8 +19,11 @@ const GalleryPage = () => {
   const galleryImages = [
     { src: founders, alt: 'Founders' },
     { src: labour, alt: 'Workshop craft' },
+    { src: bambooSourcing, alt: 'Local bamboo sourcing' },
     { src: office, alt: 'Workspace' },
+    { src: ProductsRange, alt: 'Our products range' },
     { src: bambooFarmer, alt: 'Bamboo farming' },
+    { src: bambooProfiling, alt: 'Bamboo profiling' },
     { src: corporateGifting, alt: 'Custom bamboo kits' },
   ];
 
@@ -47,7 +53,7 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      <section className="gallery-grid section" data-reveal>
+      <section className="gallery-grid section award" data-reveal>
         <div className="section__inner">
           <div className="section__header">
             <h2>Awards</h2>

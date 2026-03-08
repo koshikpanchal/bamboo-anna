@@ -10,8 +10,8 @@ import artisanImage from '../../../assets/bambooFarmer.jpg';
 import studioImage from '../../../assets/Homepage-image.jpg';
 import craftImage from '../../../assets/dentalCare/P1030899-min.jpg';
 import collectionDental from '../../../assets/dentalCare/dentalKit.jpg';
-import collectionGrooming from '../../../assets/comb/Neem Comb-min.jpg';
-import collectionHospitality from '../../../assets/HotelAmenities.webp';
+import collectionGrooming from '../../../assets/otherPhotos/drivePhotos/grooming.jpg';
+import collectionHospitality from '../../../assets/HotelAmenities-dark.png';
 import heroLightBackground from '../../../assets/HotelAmenities.webp';
 import heroDarkBackground from '../../../assets/HotelAmenities-dark-theme.png';
 import founderImage from '../../../assets/photoGallery/founders.jpg';
@@ -20,9 +20,20 @@ import partnerIhcl from '../../../assets/partners/indian-hotels-company-ltd-ihcl
 import partnerIndianOil from '../../../assets/partners/Indian_Oil_Logo.svg.png';
 import partnerNcdc from '../../../assets/partners/NCDCNewlogo.png';
 import partnerRamada from '../../../assets/partners/ra1631rede-ramada-logo-ramada-logo-evolution-history-and-meaning.png';
-import partnerSandysTower from '../../../assets/partners/SANDYS TOWER-01.png';
+import partnerSandysTower from '../../../assets/partners/SANDYS TOWER-02.png';
 import partnerNaturalWash from '../../../assets/partners/the-natural-wash.jpg';
 import partnerTjr from '../../../assets/partners/tjr-logo.png';
+import partnerDCMShriram from '../../../assets/partners/DCMShriram.png';
+import partnerAxplore from '../../../assets/partners/Axplore.png';
+import partnerRabhGarhPalace from '../../../assets/partners/RabhGarhPalace.png';
+import partnerRadisson from '../../../assets/partners/Radisson.png';
+import partnerMPGov from '../../../assets/partners/MPGov.png';
+import partnerDRVed from '../../../assets/partners/DRVed.png';
+import partnerLIC from '../../../assets/partners/LIC.png';
+import partnerPurexa from '../../../assets/partners/Purexa.png';
+import partnerWildernest from '../../../assets/partners/Wildernest.png';
+import partnerOrasore from '../../../assets/partners/orasore.jpg';
+import partnerUnionBank from '../../../assets/partners/UnionBank.png';
 import PartnersMarquee from '../../components/PartnersMarquee';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
@@ -56,6 +67,17 @@ const partners = [
   { src: partnerSandysTower, alt: 'Sandys Tower' },
   { src: partnerNaturalWash, alt: 'The Natural Wash' },
   { src: partnerTjr, alt: 'TJR' },
+  { src: partnerOrasore, alt: 'Orasore' },
+  { src: partnerUnionBank, alt: 'Union Bank' },
+  { src: partnerWildernest, alt: 'Wildernest' },
+  { src: partnerDCMShriram, alt: 'DCM Shriram' },
+  { src: partnerRabhGarhPalace, alt: 'Rabh Garh Palace' },
+  { src: partnerRadisson, alt: 'Radisson' },
+  { src: partnerMPGov, alt: 'Madhya Pradesh Government' },
+  { src: partnerDRVed, alt: 'Doctor Ved Science' },
+  { src: partnerLIC, alt: 'LIC Life Insurance' },
+  { src: partnerPurexa, alt: 'Purexa Oral Welness' },
+  { src: partnerAxplore, alt: 'Axplore Travelplus' },
 ];
 
 const craftGrid = { rows: 3, cols: 4 };
@@ -174,16 +196,21 @@ const HomePage = () => {
               Mini story
             </span>
             <div className="mini-story__stack">
-              <h2 data-story="title">Artisan story</h2>
               <p data-story="supporting">
-                Every order funds steady work for local artisans and families.
+                From irregular daily wages to leading quality work for bamboo
+                products.
               </p>
             </div>
             <p className="mini-story__fine" data-anim="reveal">
-              Every order supports steady income, skills training, and pride of
-              craft that stays in local communities. We reinvest in safer tools,
-              better finishes, and mentorship so each batch raises the quality
-              and confidence of our artisan teams.
+              When Kamla joined Bamboo Anna, she was taking seasonal work with
+              uncertain income. She trained in bamboo shaping, sanding, and
+              finish checks, and today she mentors newer women artisans in her
+              team. Her monthly earnings now support school fees, home expenses,
+              and more financial stability for her family. Each bulk order from
+              hotels, clinics, and gifting programs creates repeat work for
+              local hands like hers. This is our business model in action:
+              manufacture with local artisans, upgrade skills, provide safer
+              tools, and deliver brand-ready bamboo products with pride.
             </p>
           </div>
         </div>
@@ -296,17 +323,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="built-for section">
-        <div className="section__inner built-for__inner" data-anim="reveal">
-          <span className="chip">Built for brands</span>
-          <h2>Custom-ready. Premium-feel. Plastic-free.</h2>
-          <p>
-            Custom packaging, kit assortments, and consistent finishes - ready for
-            hospitality programs, clinics, FMCG brands, NGOs, ecommerce sellers,
-            and gifting teams.
-          </p>
-        </div>
-      </section>
 
       <section className="pillars section">
         <div className="section__inner">
@@ -516,9 +532,6 @@ const HomePage = () => {
               </Link>
               <Link to="/contact" className="btn btn--ghost">
                 Talk with our team
-              </Link>
-              <Link to="/gallery" className="btn btn--outline">
-                View gallery
               </Link>
             </div>
           </div>
