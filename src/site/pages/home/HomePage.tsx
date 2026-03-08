@@ -1,19 +1,21 @@
 import './HomePage.scss';
 import '../../../../styles/scroll-animations.css';
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { initHomepageAnimations } from '../../../../scripts/scroll-animations';
 import ImpactCounters from '../../components/ImpactCounters';
 import Seo from '../../seo/Seo';
 import artisanImage from '../../../assets/bambooFarmer.jpg';
+import artisanImage2 from '../../../assets/photoGallery/labour.jpg';
 import studioImage from '../../../assets/Homepage-image.jpg';
 import craftImage from '../../../assets/dentalCare/P1030899-min.jpg';
+import whyBambooSlideImage from '../../../assets/bambooSustainability.webp';
+import energySectorSlideImage from '../../../assets/otherPhotos/energy4.png';
+import constructionSlideImage from '../../../assets/how-strong-is-bamboo.webp';
 import collectionDental from '../../../assets/dentalCare/dentalKit.jpg';
 import collectionGrooming from '../../../assets/otherPhotos/drivePhotos/grooming.jpg';
 import collectionHospitality from '../../../assets/HotelAmenities-dark.png';
-import heroLightBackground from '../../../assets/HotelAmenities.webp';
-import heroDarkBackground from '../../../assets/HotelAmenities-dark-theme.png';
 import founderImage from '../../../assets/photoGallery/founders.jpeg';
 import partnerFairmont from '../../../assets/partners/Fairmont_Logo.svg.png';
 import partnerIhcl from '../../../assets/partners/indian-hotels-company-ltd-ihcl-1-638.jpg';
@@ -58,6 +60,45 @@ const collections = [
   },
 ];
 
+const heroSlides = [
+  {
+    id: 'why-bamboo',
+    eyebrow: 'Why Bamboo',
+    title: 'Bamboo makes sustainability practical.',
+    subtitle:
+      'Fast regrowth, lower plastic dependency, and cleaner end-of-life cycles make bamboo a practical business choice.',
+    image: whyBambooSlideImage,
+    primaryCta: { label: 'Why Bamboo', to: '/impact' },
+  },
+  {
+    id: 'artisans',
+    eyebrow: 'Artisans',
+    title: 'Local artisans shape every batch we deliver.',
+    subtitle:
+      'We manufacture with skilled teams in Rajasthan, creating reliable livelihoods while maintaining quality standards.',
+    image: artisanImage2,
+    primaryCta: { label: 'Meet Our Story', to: '/about-us' },
+  },
+  {
+    id: 'energy-sector',
+    eyebrow: 'Energy Sector',
+    title: 'Bamboo for ethanol and clean bioenergy.',
+    subtitle:
+      'Bamboo biomass can support 2G ethanol and cleaner fuel pathways, connecting sustainable agriculture with the future energy ecosystem.',
+    image: energySectorSlideImage,
+    primaryCta: { label: 'Source Bamboo', to: '/contact' },
+  },
+  {
+    id: 'engineered-construction',
+    eyebrow: 'Engineered Bamboo',
+    title: 'Engineered bamboo is ready for future construction.',
+    subtitle:
+      'Its strength-to-weight profile and renewable source potential make it a serious material for modern build ecosystems.',
+    image: constructionSlideImage,
+    primaryCta: { label: 'See Impact', to: '/impact' },
+  },
+];
+
 const partners = [
   { src: partnerFairmont, alt: 'Fairmont' },
   { src: partnerIhcl, alt: 'IHCL' },
@@ -91,7 +132,33 @@ const craftTiles = Array.from(
 );
 
 const HomePage = () => {
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+
   useLayoutEffect(() => initHomepageAnimations(), []);
+
+  useEffect(() => {
+    const rotation = window.setInterval(() => {
+      setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+    }, 6000);
+
+    return () => {
+      window.clearInterval(rotation);
+    };
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setActiveHeroSlide(index);
+  };
+
+  const goToPrevSlide = () => {
+    setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const goToNextSlide = () => {
+    setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+  };
+
+  const currentHeroSlide = heroSlides[activeHeroSlide];
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -141,47 +208,63 @@ const HomePage = () => {
         jsonLd={[organizationSchema, websiteSchema]}
       />
       <section className="home-hero" data-anim="hero">
-        <div className="hero-sequence" aria-hidden="true">
-          <img
-            src={heroLightBackground}
-            alt=""
-            className="hero-sequence__image hero-sequence__image--light"
-            loading="eager"
-            decoding="async"
-          />
-          <img
-            src={heroDarkBackground}
-            alt=""
-            className="hero-sequence__image hero-sequence__image--dark"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="hero-sequence__shade" aria-hidden="true" />
+        <div className="home-hero__slides" aria-hidden="true">
+          {heroSlides.map((slide, index) => (
+            <img
+              key={slide.id}
+              src={slide.image}
+              alt=""
+              className={index === activeHeroSlide ? 'home-hero__slide is-active' : 'home-hero__slide'}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ))}
+          <div className="home-hero__shade" aria-hidden="true" />
         </div>
 
         <div className="section__inner home-hero__inner">
-          <div className="home-hero__copy">
-            <span className="chip" data-hero="sub">
-              Bamboo Anna
-            </span>
-            <h1 data-hero="title">
-              Bamboo Anna - Modern bamboo essentials.
-            </h1>
-            <p data-hero="sub">
-              Crafted with local artisans in Rajasthan for homes, hotels, dental
-              clinics, and brands that want a plastic-free upgrade.
-            </p>
-            <div className="home-hero__actions" data-hero="ctas">
-              <Link to="/catalogue" className="btn btn--primary">
-                Explore Catalogue
+          <div className="home-hero__copy" data-hero-reveal>
+            <h1>{currentHeroSlide.title}</h1>
+            <p>{currentHeroSlide.subtitle}</p>
+            <div className="home-hero__actions">
+              <Link to={currentHeroSlide.primaryCta.to} className="btn btn--primary">
+                {currentHeroSlide.primaryCta.label}
               </Link>
-              <Link to="/custom" className="btn btn--ghost">
-                Build Custom Products
-              </Link>
-              <Link to="/contact" className="btn btn--outline">
-                Start a Project
+              <Link to="/contact" className="btn btn--ghost">
+                Send Enquiry
               </Link>
             </div>
+          </div>
+
+          <div className="home-hero__nav" data-hero-reveal aria-label="Hero slider controls">
+            <button
+              type="button"
+              className="home-hero__arrow"
+              onClick={goToPrevSlide}
+              aria-label="Previous slide"
+            >
+              {'\u2039'}
+            </button>
+            <div className="home-hero__dots" role="tablist" aria-label="Hero slides">
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  className={index === activeHeroSlide ? 'home-hero__dot is-active' : 'home-hero__dot'}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to ${slide.eyebrow} slide`}
+                  aria-current={index === activeHeroSlide ? 'true' : undefined}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              className="home-hero__arrow"
+              onClick={goToNextSlide}
+              aria-label="Next slide"
+            >
+              {'\u203A'}
+            </button>
           </div>
         </div>
       </section>
@@ -212,6 +295,68 @@ const HomePage = () => {
               manufacture with local artisans, upgrade skills, provide safer
               tools, and deliver brand-ready bamboo products with pride.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="pillars section">
+        <div className="section__inner">
+          <div className="pillars__inner">
+            <div className="pillars__lead" data-anim="reveal">
+              <span className="chip">Why Bamboo Anna</span>
+              <h2>Sustainability that works for business and communities.</h2>
+              <p>
+                Because sustainability should be practical, affordable, and impactful. Bamboo Anna offers eco-friendly alternatives made from natural materials, supporting rural employment and helping businesses shift towards a greener future.
+              </p>
+              <div
+                className="pillars__lead-actions"
+                data-anim="reveal"
+                style={{ '--delay': '0.08s' } as CSSProperties}
+              >
+                <Link to="/about-us" className="btn btn--ghost">
+                  See our story
+                </Link>
+                <Link to="/catalogue" className="btn btn--outline">
+                  Browse products
+                </Link>
+              </div>
+            </div>
+
+            <div className="pillars__bento">
+              {[
+                {
+                  title: 'Artisan-first supply',
+                  copy: 'Local makers first - skills and income stay in Rajasthan.',
+                  icon: <HandshakeOutlinedIcon />,
+                },
+                {
+                  title: 'Material science',
+                  copy: 'Fast-growing bamboo with durable, everyday performance.',
+                  icon: <ScienceOutlinedIcon />,
+                },
+                {
+                  title: 'Brand-ready kits',
+                  copy: 'Hospitality, clinics, and gifting programs delivered on time.',
+                  icon: <LocalMallOutlinedIcon />,
+                },
+                {
+                  title: 'Quality + consistency',
+                  copy: 'Reliable finishes, inspection, and packaging standards at scale.',
+                  icon: <VerifiedOutlinedIcon />,
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className="bento-card"
+                  data-anim="reveal"
+                  style={{ '--delay': `${index * 0.1}s` } as CSSProperties}
+                >
+                  <div className="bento-card__icon">{item.icon}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -316,69 +461,6 @@ const HomePage = () => {
                 >
                   <strong>{callout.label}</strong>
                   <span>{callout.sub}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="pillars section">
-        <div className="section__inner">
-          <div className="pillars__inner">
-            <div className="pillars__lead" data-anim="reveal">
-              <span className="chip">Why Bamboo Anna</span>
-              <h2>Sustainability that works for business and communities.</h2>
-              <p>
-                Because sustainability should be practical, affordable, and impactful. Bamboo Anna offers eco-friendly alternatives made from natural materials, supporting rural employment and helping businesses shift towards a greener future.
-              </p>
-              <div
-                className="pillars__lead-actions"
-                data-anim="reveal"
-                style={{ '--delay': '0.08s' } as CSSProperties}
-              >
-                <Link to="/about-us" className="btn btn--ghost">
-                  See our story
-                </Link>
-                <Link to="/catalogue" className="btn btn--outline">
-                  Browse products
-                </Link>
-              </div>
-            </div>
-
-            <div className="pillars__bento">
-              {[
-                {
-                  title: 'Artisan-first supply',
-                  copy: 'Local makers first - skills and income stay in Rajasthan.',
-                  icon: <HandshakeOutlinedIcon />,
-                },
-                {
-                  title: 'Material science',
-                  copy: 'Fast-growing bamboo with durable, everyday performance.',
-                  icon: <ScienceOutlinedIcon />,
-                },
-                {
-                  title: 'Brand-ready kits',
-                  copy: 'Hospitality, clinics, and gifting programs delivered on time.',
-                  icon: <LocalMallOutlinedIcon />,
-                },
-                {
-                  title: 'Quality + consistency',
-                  copy: 'Reliable finishes, inspection, and packaging standards at scale.',
-                  icon: <VerifiedOutlinedIcon />,
-                },
-              ].map((item, index) => (
-                <div
-                  key={item.title}
-                  className="bento-card"
-                  data-anim="reveal"
-                  style={{ '--delay': `${index * 0.1}s` } as CSSProperties}
-                >
-                  <div className="bento-card__icon">{item.icon}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
                 </div>
               ))}
             </div>
