@@ -1,5 +1,5 @@
 import './GalleryPage.scss';
-import founders from '../../../assets/photoGallery/founders.jpeg';
+import founders from '../../../assets/photoGallery/founders.jpg';
 import labour from '../../../assets/photoGallery/labour.jpg';
 import office from '../../../assets/photoGallery/office.jpg';
 import bambooFarmer from '../../../assets/bambooFarmer.jpg';

@@ -14,7 +14,7 @@ import collectionGrooming from '../../../assets/otherPhotos/drivePhotos/grooming
 import collectionHospitality from '../../../assets/HotelAmenities-dark.png';
 import heroLightBackground from '../../../assets/HotelAmenities.webp';
 import heroDarkBackground from '../../../assets/HotelAmenities-dark-theme.png';
-import founderImage from '../../../assets/photoGallery/founders.jpg';
+import founderImage from '../../../assets/photoGallery/founders.jpeg';
 import partnerFairmont from '../../../assets/partners/Fairmont_Logo.svg.png';
 import partnerIhcl from '../../../assets/partners/indian-hotels-company-ltd-ihcl-1-638.jpg';
 import partnerIndianOil from '../../../assets/partners/Indian_Oil_Logo.svg.png';
