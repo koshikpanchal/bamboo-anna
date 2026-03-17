@@ -11,7 +11,6 @@ import paddleBrushImage from '../../assets/otherPhotos/drivePhotos/Comb 1.jpg';
 import paddleBrushImage2 from '../../assets/comb/catPaddle2.png';
 import razorImage from '../../assets/razor/P1030998-min.jpg';
 import razorImage2 from '../../assets/otherPhotos/drivePhotos/grooming.jpg';
-import loofahImage from '../../assets/HotelAmenities.webp';
 import tongueCleanerImage from '../../assets/dentalCare/bamboo-tongue-cleaner-.jpeg';
 import tongueCleanerImage2 from '../../assets/otherPhotos/drivePhotos/ToungueCleaner.jpg';
 import bambooStrawImage from '../../assets/otherPhotos/drivePhotos/Straws.jpg';
@@ -19,10 +18,25 @@ import Straws2 from '../../assets/eco-friendly-environment-bamboo-tube-straws.jp
 import coconutStrawImage from '../../assets/straw/coconut-leaf-straw.jpeg';
 import bambooPenImage from '../../assets/penPencil/plantable-seed-pen.jpg';
 import bambooPenImage2 from '../../assets/penPencil/Pen.png';
-import diaryImage from '../../assets/corporateGifting.webp';
 import dentalKitImage from '../../assets/dentalCare/dentalKit.jpg';
+import dentalKitImage1 from '../../assets/dentalCare/dentalKit1.jpg';
+import dentalKitImage2 from '../../assets/dentalCare/dentalKit2.avif';
+import shaving1 from '../../assets/shavingKit/shaving1.jpg';
+import shaving2 from '../../assets/shavingKit/shaving2.jpg';
+import shaving3 from '../../assets/shavingKit/shaving3.webp';
+import loofah from '../../assets/loofah/loofah.jpg';
+import loofah2 from '../../assets/loofah/loofah2.jpg';
+import slipper from '../../assets/slippers/slippers1.jpg';
+import slipper2 from '../../assets/slippers/slippers2.jpg';
+import bottle from '../../assets/bottles/bottle1.jpg';
+import sipper from '../../assets/bottles/sipper.jpg';
+import mug from '../../assets/bottles/mug.jpg';
+import cup from '../../assets/bottles/cup.jpg';
+import diary from '../../assets/diary/diary1.jpg';
+import diary2 from '../../assets/diary/diary2.webp';
+import diary3 from '../../assets/diary/diary3.jpeg';
 import giftingImage from '../../assets/bamboo-products.jpg';
-import speakerImage from '../../assets/LogoColor.png';
+import speaker from '../../assets/speaker/speaker.jpg';
 
 export type CatalogueCategory =
   | 'Personal Care'
@@ -96,7 +110,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Dental Kit',
     description:
       'Hospitality dental kit that combines oral-care basics in a clean, guest-ready format.',
-    images: [dentalKitImage, toothbrushImage],
+    images: [dentalKitImage1, dentalKitImage2],
     keyFeatures: [
       'Guest amenity use',
       'Compact kit format',
@@ -111,7 +125,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Shaving Kit',
     description:
       'Ready-to-place shaving kit for hotel rooms, travel stays, and clinic recovery packs.',
-    images: [razorImage, loofahImage],
+    images: [shaving1, shaving2, shaving3],
     keyFeatures: [
       'Includes shaving essentials',
       'Compact amenity format',
@@ -156,7 +170,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Loofahs',
     description:
       'Natural jute/tori loofah option for bath essentials, guest amenity baskets, and wellness bundles.',
-    images: [loofahImage],
+    images: [loofah, loofah2],
     keyFeatures: [
       'Natural fiber texture',
       'Body exfoliation use',
@@ -186,7 +200,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bathroom Slipper',
     description:
       'Eco-friendly jute/terry bathroom slipper perfect for hotel guest amenities, spa centers, and wellness retreat packages.',
-    images: [razorImage, loofahImage],
+    images: [slipper, slipper2],
     keyFeatures: [
       'Natural jute/terry material',
       'Durable and slip-resistant',
@@ -201,7 +215,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Water Bottle',
     description:
       'Bamboo water bottle for corporate giveaways, event kits, and employee onboarding packs.',
-    images: [giftingImage],
+    images: [bottle, giftingImage],
     keyFeatures: [
       'Premium gifting appeal',
       'Refill-friendly use',
@@ -216,7 +230,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Sipper',
     description:
       'Bamboo sipper built for office desks, event welcome kits, and repeat brand recall.',
-    images: [giftingImage],
+    images: [sipper],
     keyFeatures: [
       'Daily carry use',
       'Gift campaign fit',
@@ -231,7 +245,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Travel Mug',
     description:
       'Classic bamboo mug for conference kits, client hampers, and hospitality gifting.',
-    images: [giftingImage],
+    images: [mug],
     keyFeatures: [
       'Reusable drinkware',
       'Smooth finish',
@@ -246,7 +260,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Cup',
     description:
       'Premium bamboo cup variant designed for high-value campaigns and festive corporate packs.',
-    images: [diaryImage],
+    images: [cup],
     keyFeatures: [
       'Premium visual style',
       'Reusable format',
@@ -276,7 +290,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Diary',
     description:
       'Bamboo cover diary for curated office kits, premium gifting, and executive hampers. Comes in two variants with and without lock.',
-    images: [diaryImage],
+    images: [diary, diary2, diary3],
     keyFeatures: [
       'Premium bamboo look',
       'A5 style form factor',
@@ -291,7 +305,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Bamboo Speaker',
     description:
       'Bamboo speaker concept for premium campaigns where utility and sustainability go together.',
-    images: [speakerImage, giftingImage],
+    images: [speaker],
     keyFeatures: [
       'Premium category product',
       'Brand recall friendly',

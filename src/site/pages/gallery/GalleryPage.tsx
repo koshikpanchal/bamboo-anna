@@ -20,7 +20,7 @@ const GalleryPage = () => {
     { src: founders, alt: 'Founders' },
     { src: labour, alt: 'Workshop craft' },
     { src: bambooSourcing, alt: 'Local bamboo sourcing' },
-    { src: office, alt: 'Workspace' },
+    { src: office, alt: 'Office space' },
     { src: ProductsRange, alt: 'Our products range' },
     { src: bambooFarmer, alt: 'Bamboo farming' },
     { src: bambooProfiling, alt: 'Bamboo profiling' },

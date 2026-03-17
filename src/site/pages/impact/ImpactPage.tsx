@@ -4,8 +4,8 @@ import ImpactCounters from '../../components/ImpactCounters';
 import bambooSustainability from '../../../assets/bambooSustainability.webp';
 import ecoFriendly from '../../../assets/otherPhotos/drivePhotos/cleanerHospitality.jpg';
 import artisanImpactImage from '../../../assets/otherPhotos/artisan2.jpg';
-import beforeImage from '../../../assets/otherPhotos/Before.png';
-import afterImage from '../../../assets/otherPhotos/After.png';
+import beforeImage from '../../../assets/otherPhotos/beforeNew.png';
+import afterImage from '../../../assets/otherPhotos/afterNew.png';
 import Seo from '../../seo/Seo';
 
 const ImpactPage = () => {
