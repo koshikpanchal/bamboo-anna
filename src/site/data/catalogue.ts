@@ -21,6 +21,7 @@ import bambooPenImage2 from '../../assets/penPencil/Pen.png';
 import dentalKitImage from '../../assets/dentalCare/dentalKit.jpg';
 import dentalKitImage1 from '../../assets/dentalCare/dentalKit1.jpg';
 import dentalKitImage2 from '../../assets/dentalCare/dentalKit2.avif';
+import dentalKitImage3 from '../../assets/dentalCare/dentalKit3.jpg';
 import shaving1 from '../../assets/shavingKit/shaving1.jpg';
 import shaving2 from '../../assets/shavingKit/shaving2.jpg';
 import shaving3 from '../../assets/shavingKit/shaving3.webp';
@@ -110,7 +111,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     name: 'Dental Kit',
     description:
       'Hospitality dental kit that combines oral-care basics in a clean, guest-ready format.',
-    images: [dentalKitImage1, dentalKitImage2],
+    images: [dentalKitImage3, dentalKitImage1, dentalKitImage2],
     keyFeatures: [
       'Guest amenity use',
       'Compact kit format',

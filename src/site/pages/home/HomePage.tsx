@@ -365,23 +365,24 @@ const HomePage = () => {
         <div className="section__inner home-about__inner">
           <div className="home-about__copy" data-anim="reveal">
             <span className="chip">About us</span>
-            <h2>Built on the belief that small swaps change big systems.</h2>
+            <h2>Built on the belief that small choices can transform entire systems.</h2>
             <p className="home-about__motto">
               पर्यावरण संरक्षणम् - protecting the environment.
             </p>
             <p>
-              CEO &amp; M.D. Mr. Anil Chauhan and Founder Mr. Sawan Vaishnav
-              started Bamboo Anna in 2022 to replace daily plastic essentials
-              with bamboo alternatives. India uses massive amounts of plastic
-              every day, and toothbrushes are one of the most common items that
-              end up in landfills within months.
+              Founded in 2022 by Co-Founder Mr. Anil Chauhan and Founder Mr. Sawan Vaishnav, Bamboo Anna was established with a clear strategic vision — to replace high-volume plastic consumption in daily-use essentials with scalable, sustainable bamboo alternatives.
             </p>
             <p>
-              Our focus is simple: replace plastic toothbrushes and daily-use
-              amenities with eco-friendly bamboo products, and work with local
-              partners to grow the movement. Over the last three years we have
-              expanded across the Indian market, supporting startups and
-              institutions that share the same mission.
+              In India, millions of single-use plastic products are discarded every day, with items like toothbrushes contributing significantly to long-term environmental waste. Bamboo Anna addresses this challenge at scale by offering reliable, eco-friendly replacements designed for both individual consumers and institutional use.
+            </p>
+            <p>
+              Today, Bamboo Anna operates at the intersection of sustainability and supply efficiency. We partner with hotels, corporate groups, and emerging brands to deliver eco-conscious amenity solutions without compromising on quality, consistency, or operational timelines.
+            </p>
+            <p>
+              Our approach is not limited to products — it extends to building an ecosystem. By working closely with local artisans and manufacturing partners, we ensure responsible sourcing, consistent production capacity, and meaningful social impact.
+            </p>
+            <p>
+              Within a short span, Bamboo Anna has expanded its presence across the Indian market, becoming a trusted partner for organizations seeking to align with sustainable practices and ESG-driven goals.
             </p>
           </div>
           <div className="home-about__media" data-anim="reveal">
